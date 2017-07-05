@@ -74,7 +74,7 @@ module PivotalCardChecker
         has_sys_label = false
         needs_criteria = true
         sys_label_detected = "None"
-        sys_lable_from_commit = getSystemLabelFromCommit(story_id)
+        sys_label_from_commit = getSystemLabelFromCommit(story_id)
         temp = []
 
         @all_labels[story_id].each do |label|
@@ -110,8 +110,8 @@ module PivotalCardChecker
 
         if !has_sys_label
           message = "No system labels detected (reader, cms, dct, etc...)"
-          if sys_lable_from_commit != "sysLabelUnknown"
-            message = "Did not find expected label: '#{sys_label}'"
+          if sys_label_from_commit != "sysLabelUnknown"
+            message = "Did not find expected label: '#{sys_label_from_commit}'"
           end
 
           temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,
@@ -124,14 +124,14 @@ module PivotalCardChecker
             puts "ADDED #{sys_label} to: #{story.name}"
 =end
         else
-          if sys_lable_from_commit != "sysLabelUnknown" and !hasLabel(story_id, sys_label)
+          if sys_label_from_commit != "sysLabelUnknown" and !hasLabel(story_id, sys_label_from_commit)
             temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,
             "https://www.pivotaltracker.com/story/show/#{story_id}",
-            "Expected label: '#{sys_label}', but found '#{sys_label_detected}' instead."))
+            "Expected label: '#{sys_label_from_commit}', but found '#{sys_label_detected}' instead."))
           end
         end
 
-        if story.current_state === "finished" and sys_lable_from_commit === "sysLabelUnknown"
+        if story.current_state === "finished" and sys_label_from_commit === "sysLabelUnknown"
           temp.push(BadCard.new(OTHER_ISSUE_TYPE, story.name,
           "https://www.pivotaltracker.com/story/show/#{story_id}",
           "Card is marked 'finished', but has no commits."))
