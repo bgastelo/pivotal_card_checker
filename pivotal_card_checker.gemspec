@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["vkaganyuk@hedgeye.com"]
   spec.summary       = %q{Checks cards in PivotTracker}
   #spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/hedgeyedev/pivotal_card_checker"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
