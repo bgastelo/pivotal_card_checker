@@ -10,7 +10,11 @@ module PivotalCardChecker
   class CardChecker
     HEDGEYE_PROJECT_ID = 414867
 
+  #  def checkCards
+
     def self.checkCards(api_key)
+      #card_checker = new(proj_id, api_key)
+      #card_checker.checkCards
       client = TrackerApi::Client.new(token: api_key)
       hedgeye_project = client.project(HEDGEYE_PROJECT_ID)
 
@@ -60,7 +64,7 @@ module PivotalCardChecker
         card_owners = getOwners(story_id)
         if story.current_state === "accepted"
           if (searchComments(story_id, "prod acceptance") === "not found" and
-            getSystemLabelFromCommit(story_id) != "sysLabelUnknown")
+            getSystemLabelFromCommit(story_id) != "sysLabelUnknown") and hasLabel(story_id, "to_prod")
             if bad_card_info[card_owners].nil?
               bad_card_info[card_owners] = BadCardManager.new
             end
@@ -116,13 +120,6 @@ module PivotalCardChecker
 
           temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,
           "https://www.pivotaltracker.com/story/show/#{story_id}", message))
-=begin
-          else
-            #message about missing label
-            story.add_label(sys_label)
-            story.save
-            puts "ADDED #{sys_label} to: #{story.name}"
-=end
         else
           if sys_label_from_commit != "sysLabelUnknown" and !hasLabel(story_id, sys_label_from_commit)
             temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,

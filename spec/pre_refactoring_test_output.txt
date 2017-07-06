@@ -1,0 +1,21 @@
+
+========= Results ===========
+OWNER(s): Brett Novak, Don Humphreys
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295
+        Other issues:
+                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295 - Card is marked 'finished', but has no commits.
+
+OWNER(s): Diego Scataglini
+        Missing system label:
+                hedgeye tv section not showing up on homepage - https://www.pivotaltracker.com/story/show/148341469 - Did not find expected label: 'cms'
+
+OWNER(s): Don Humphreys, Renaldo Pierre Louis
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                TOS acceptance turns on web/email access and sends normal welcome email - https://www.pivotaltracker.com/story/show/146411083
+
+OWNER(s): Alex Handler
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                ETF Pro billboard - https://www.pivotaltracker.com/story/show/148416243
+                migration for ETF pro billboard - https://www.pivotaltracker.com/story/show/148419255
+
