@@ -3,7 +3,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14,7 +14,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -111,7 +111,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/iterations?scope=current_backlog
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -122,7 +122,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -1957,7 +1957,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148145781/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -1968,7 +1968,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2057,7 +2057,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148145781/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2068,7 +2068,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2151,7 +2151,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148145629/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2162,7 +2162,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2250,7 +2250,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148145629/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2261,7 +2261,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2344,7 +2344,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148146145/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2355,7 +2355,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2443,7 +2443,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148146145/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2454,7 +2454,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2537,7 +2537,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148146299/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2548,7 +2548,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2648,7 +2648,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148146299/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2659,7 +2659,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2742,7 +2742,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148151801/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2753,7 +2753,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -2937,7 +2937,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148151801/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -2948,7 +2948,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3031,7 +3031,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147651485/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3042,7 +3042,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3206,7 +3206,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147651485/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3217,7 +3217,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3300,7 +3300,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148170483/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3311,7 +3311,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3454,7 +3454,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148170483/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3465,7 +3465,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3551,7 +3551,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148362235/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3562,7 +3562,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3697,7 +3697,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148362235/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3708,7 +3708,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3791,7 +3791,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147948241/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3802,7 +3802,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3883,7 +3883,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147948241/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3894,7 +3894,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -3977,7 +3977,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147948261/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -3988,7 +3988,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4069,7 +4069,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147948261/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4080,7 +4080,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4163,7 +4163,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148085319/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4174,7 +4174,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4343,7 +4343,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148085319/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4354,7 +4354,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4437,7 +4437,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147040771/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4448,7 +4448,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4589,7 +4589,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147040771/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4600,7 +4600,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4683,7 +4683,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408297/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4694,7 +4694,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4797,7 +4797,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408297/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4808,7 +4808,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -4891,7 +4891,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408513/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -4902,7 +4902,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5008,7 +5008,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408513/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5019,7 +5019,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5102,7 +5102,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408695/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5113,7 +5113,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5201,7 +5201,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148408695/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5212,7 +5212,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5295,7 +5295,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148415485/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5306,7 +5306,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5397,7 +5397,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148415485/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5408,7 +5408,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5491,7 +5491,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148349393/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5502,7 +5502,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5587,7 +5587,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148349393/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5598,7 +5598,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5681,7 +5681,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148007013/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5692,7 +5692,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5851,7 +5851,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148007013/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5862,7 +5862,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -5945,7 +5945,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146533243/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -5956,7 +5956,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6037,7 +6037,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146533243/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6048,7 +6048,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6134,7 +6134,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146886811/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6145,7 +6145,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6226,7 +6226,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146886811/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6237,7 +6237,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6320,7 +6320,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147450251/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6331,7 +6331,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6469,7 +6469,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147450251/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6480,7 +6480,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6563,7 +6563,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147608669/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6574,7 +6574,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6794,7 +6794,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147608669/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6805,7 +6805,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6891,7 +6891,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147348973/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6902,7 +6902,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -6983,7 +6983,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147348973/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -6994,7 +6994,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7077,7 +7077,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146938625/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7088,7 +7088,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7169,7 +7169,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146938625/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7180,7 +7180,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7269,7 +7269,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147883443/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7280,7 +7280,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7632,7 +7632,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147883443/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7643,7 +7643,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7726,7 +7726,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147886635/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7737,7 +7737,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7818,7 +7818,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147886635/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7829,7 +7829,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -7912,7 +7912,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144203209/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -7923,7 +7923,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8040,7 +8040,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144203209/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8051,7 +8051,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8134,7 +8134,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138870299/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8145,7 +8145,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8226,7 +8226,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138870299/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8237,7 +8237,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8320,7 +8320,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149585/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8331,7 +8331,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8431,7 +8431,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149585/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8442,7 +8442,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8525,7 +8525,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148148887/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8536,7 +8536,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8645,7 +8645,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148148887/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8656,7 +8656,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8739,7 +8739,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152113/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8750,7 +8750,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8831,7 +8831,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152113/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8842,7 +8842,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -8925,7 +8925,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148151793/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -8936,7 +8936,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9017,7 +9017,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148151793/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9028,7 +9028,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9111,7 +9111,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149295/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9122,7 +9122,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9203,7 +9203,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149295/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9214,7 +9214,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9300,7 +9300,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148341469/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9311,7 +9311,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9429,7 +9429,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148341469/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9440,7 +9440,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9523,7 +9523,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146411083/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9534,7 +9534,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9660,7 +9660,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146411083/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9671,7 +9671,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9757,7 +9757,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148377609/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9768,7 +9768,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9849,7 +9849,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148377609/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9860,7 +9860,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -9943,7 +9943,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148142639/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -9954,7 +9954,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10055,7 +10055,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148142639/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10066,7 +10066,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10149,7 +10149,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148412831/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10160,7 +10160,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10241,7 +10241,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148412831/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10252,7 +10252,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10335,7 +10335,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143668071/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10346,7 +10346,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10427,7 +10427,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143668071/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10438,7 +10438,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10521,7 +10521,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147712791/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10532,7 +10532,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10613,7 +10613,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147712791/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10624,7 +10624,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10707,7 +10707,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148416243/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10718,7 +10718,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10810,7 +10810,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148416243/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10821,7 +10821,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -10904,7 +10904,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148419255/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -10915,7 +10915,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11007,7 +11007,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148419255/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11018,7 +11018,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11101,7 +11101,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148420543/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11112,7 +11112,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11193,7 +11193,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148420543/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11204,7 +11204,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11287,7 +11287,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138332121/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11298,7 +11298,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11389,7 +11389,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138332121/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11400,7 +11400,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11483,7 +11483,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152485/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11494,7 +11494,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11575,7 +11575,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152485/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11586,7 +11586,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11669,7 +11669,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152551/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11680,7 +11680,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11761,7 +11761,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148152551/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11772,7 +11772,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11855,7 +11855,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149795/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11866,7 +11866,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -11947,7 +11947,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148149795/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -11958,7 +11958,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12041,7 +12041,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147285165/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12052,7 +12052,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12133,7 +12133,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147285165/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12144,7 +12144,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12230,7 +12230,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148155389/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12241,7 +12241,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12322,7 +12322,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/148155389/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12333,7 +12333,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12416,7 +12416,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147954471/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12427,7 +12427,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12508,7 +12508,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147954471/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12519,7 +12519,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12600,7 +12600,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147715511/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12611,7 +12611,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12692,7 +12692,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147715511/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12703,7 +12703,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12784,7 +12784,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144112345/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12795,7 +12795,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12876,7 +12876,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144112345/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12887,7 +12887,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -12973,7 +12973,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147715793/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -12984,7 +12984,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13078,7 +13078,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147715793/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13089,7 +13089,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13172,7 +13172,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147448309/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13183,7 +13183,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13264,7 +13264,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147448309/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13275,7 +13275,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13358,7 +13358,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147702877/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13369,7 +13369,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13450,7 +13450,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147702877/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13461,7 +13461,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13544,7 +13544,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138721949/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13555,7 +13555,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13636,7 +13636,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138721949/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13647,7 +13647,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13730,7 +13730,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146939553/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13741,7 +13741,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13822,7 +13822,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146939553/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13833,7 +13833,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -13922,7 +13922,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146534717/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -13933,7 +13933,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14014,7 +14014,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146534717/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14025,7 +14025,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14108,7 +14108,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144734071/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14119,7 +14119,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14200,7 +14200,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144734071/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14211,7 +14211,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14294,7 +14294,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/145558721/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14305,7 +14305,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14392,7 +14392,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/145558721/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14403,7 +14403,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14486,7 +14486,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144292305/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14497,7 +14497,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14578,7 +14578,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144292305/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14589,7 +14589,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14672,7 +14672,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147351097/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14683,7 +14683,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14764,7 +14764,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/147351097/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14775,7 +14775,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14858,7 +14858,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/136922719/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14869,7 +14869,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -14950,7 +14950,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/136922719/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -14961,7 +14961,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15044,7 +15044,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140150633/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15055,7 +15055,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15136,7 +15136,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140150633/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15147,7 +15147,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15230,7 +15230,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143668457/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15241,7 +15241,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15329,7 +15329,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143668457/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15340,7 +15340,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15423,7 +15423,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144536049/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15434,7 +15434,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15515,7 +15515,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144536049/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15526,7 +15526,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15609,7 +15609,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146409181/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15620,7 +15620,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15701,7 +15701,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/146409181/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15712,7 +15712,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15795,7 +15795,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/139028527/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15806,7 +15806,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15905,7 +15905,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/139028527/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -15916,7 +15916,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -15999,7 +15999,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/133881993/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16010,7 +16010,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16096,7 +16096,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/133881993/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16107,7 +16107,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16190,7 +16190,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144403881/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16201,7 +16201,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16286,7 +16286,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/144403881/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16297,7 +16297,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16380,7 +16380,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143670657/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16391,7 +16391,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16472,7 +16472,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/143670657/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16483,7 +16483,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16569,7 +16569,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/141030953/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16580,7 +16580,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16661,7 +16661,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/141030953/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16672,7 +16672,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16755,7 +16755,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138278387/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16766,7 +16766,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16847,7 +16847,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/138278387/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16858,7 +16858,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -16941,7 +16941,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140792301/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -16952,7 +16952,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17033,7 +17033,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140792301/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17044,7 +17044,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17127,7 +17127,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/141353739/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17138,7 +17138,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17219,7 +17219,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/141353739/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17230,7 +17230,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17313,7 +17313,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/120856103/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17324,7 +17324,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17482,7 +17482,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/120856103/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17493,7 +17493,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17582,7 +17582,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140419699/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17593,7 +17593,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17674,7 +17674,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/140419699/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17685,7 +17685,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17768,7 +17768,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134600631/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17779,7 +17779,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17860,7 +17860,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134600631/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17871,7 +17871,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -17957,7 +17957,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134176415/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -17968,7 +17968,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18049,7 +18049,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134176415/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18060,7 +18060,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18149,7 +18149,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134596903/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18160,7 +18160,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18241,7 +18241,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134596903/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18252,7 +18252,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18333,7 +18333,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132575629/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18344,7 +18344,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18431,7 +18431,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132575629/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18442,7 +18442,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18523,7 +18523,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132331123/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18534,7 +18534,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18615,7 +18615,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132331123/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18626,7 +18626,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18707,7 +18707,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134362009/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18718,7 +18718,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18807,7 +18807,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/134362009/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18818,7 +18818,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18899,7 +18899,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/118423903/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -18910,7 +18910,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -18991,7 +18991,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/118423903/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19002,7 +19002,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19085,7 +19085,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132333989/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19096,7 +19096,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19177,7 +19177,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/132333989/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19188,7 +19188,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19271,7 +19271,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/133285749/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19282,7 +19282,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19363,7 +19363,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/133285749/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19374,7 +19374,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19455,7 +19455,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/96542842/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19466,7 +19466,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19547,7 +19547,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/96542842/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19558,7 +19558,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19644,7 +19644,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/119411593/comments
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19655,7 +19655,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
@@ -19736,7 +19736,7 @@
   request: !ruby/struct:VCR::Request
     method: :get
     uri: https://www.pivotaltracker.com:443/services/v5/projects/414867/stories/119411593/owners
-    body: 
+    body:
     headers:
       user-agent:
       - Ruby/1.9.3 (x86_64-darwin16.6.0; ruby) TrackerApi/1.7.1 Faraday/0.9.2
@@ -19747,7 +19747,7 @@
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: 
+      message:
     headers:
       !binary "YWNjZXNzLWNvbnRyb2wtYWxsb3ctY3JlZGVudGlhbHM=":
       - !binary |-
