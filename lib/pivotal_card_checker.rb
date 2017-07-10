@@ -1,4 +1,5 @@
 require 'pivotal_card_checker/version'
+require 'data_retriever'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -26,20 +27,13 @@ module PivotalCardChecker
       # Stores all bad card info. Maps owner string to BadCardManager.
       bad_card_info = Hash.new {}
 
-      # Gets the current iteration and all backlog iterations.
-      iterations = hedgeye_project.iterations(scope: :current_backlog)
-
       should_have_to_prod = []
 
-      iterations.each do |iteration|
-        iteration.stories.each do |story|
-          curr_id = story.id
-          @all_stories[curr_id] = story
-          @all_labels[curr_id] = story.labels
-          @all_comments[curr_id] = story.comments
-          @all_owners[curr_id] = story.owners
-        end
-      end
+      result = DataRetriever.new(api_key).retrieve_data
+      @all_stories = result[0]
+      @all_labels = result[1]
+      @all_comments = result[2]
+      @all_owners = result[3]
 
       find_candidate_stories(should_have_to_prod)
       analyze_candidates(should_have_to_prod, bad_card_info)
