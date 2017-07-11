@@ -49,7 +49,7 @@ module PivotalCardChecker
       #find_candidate_stories(should_have_to_prod)
       #analyze_candidates(should_have_to_prod, bad_card_info)
       #ViolationsOrganizer
-      ReportPrinter.new(bad_card_info).print_report
+      ReportPrinter.new(bad_card_info, @all_stories).print_report
       #print_report(bad_card_info)
     end
 

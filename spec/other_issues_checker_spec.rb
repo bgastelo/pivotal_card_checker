@@ -18,4 +18,16 @@ describe OtherIssuesChecker do
 
     expect(result.length).to eql(3)
   end
+
+  it 'should detect one story that is marked \'delivered\', but doesn\'t have staging acceptance' do
+    VCR.use_cassette 'multiple_card_violations_response' do
+      @all_stories, @all_labels, @all_comments, @all_owners =
+        DataRetriever.new('using cassette', 414_867).retrieve_data
+    end
+
+    result = OtherIssuesChecker.new(@all_stories, @all_labels,
+                                    @all_comments).other_issues_check
+
+    expect(result.length).to eql(2)
+  end
 end

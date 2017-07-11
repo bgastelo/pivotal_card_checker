@@ -19,7 +19,8 @@ class OtherIssuesChecker < Checker
           sys_label_from_commit != 'sysLabelUnknown') &&
           has_label?(story_id, 'to_prod')
       @results[story_id] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
-    elsif has_label?(story_id, 'to_prod') # state == 'started' or state == 'unstarted'
+    elsif (state == 'started' || state == 'unstarted') &&
+          has_label?(story_id, 'to_prod')
       @results[story_id] = "Card is #{state}, but has the 'to_prod' label."
     end
   end

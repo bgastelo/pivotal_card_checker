@@ -18,11 +18,12 @@ class SysLabelChecker < Checker
         return label.name if ALL_SYSTEM_LABELS.include? label.name
       end
     end
+    label_name = 'not found'
   end
 
   def sys_label_violation_check(story_id, sys_label_on_story)
     sys_label_from_commit = get_system_label_from_commit(story_id)
-    if sys_label_on_story.nil?
+    if sys_label_on_story == 'not found'
       if sys_label_from_commit == 'sysLabelUnknown'
         @results[story_id] = 'No system labels detected (reader, cms, dct, etc...)'
       else

@@ -1,8 +1,8 @@
 class CardViolation
-  attr_accessor :type, :title, :link, :message
+  attr_accessor :id, :message
 
-  def initialize(type = 0, title = 'Default title', link = 'Default link', message = nil)
-    @title = title
+  def initialize(id = 0, message = nil)
+    @id = id
     @message = message
   end
 end
