@@ -1,5 +1,6 @@
 require 'pivotal_card_checker/version'
-require 'data_retriever'
+require 'pivotal_card_checker/data_retriever'
+require 'pivotal_card_checker/report_printer'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -11,7 +12,7 @@ module PivotalCardChecker
   class CardChecker
     attr_accessor :api_key, :proj_id
 
-    def initialize(api_key = 0, proj_id = 0)
+    def initialize(api_key, proj_id)
       @api_key = api_key
       @proj_id = proj_id
       @all_stories = Hash.new {}
@@ -21,23 +22,17 @@ module PivotalCardChecker
     end
 
     def check_cards
-      client = TrackerApi::Client.new(token: api_key)
-      hedgeye_project = client.project(proj_id)
-
       # Stores all bad card info. Maps owner string to BadCardManager.
       bad_card_info = Hash.new {}
 
       should_have_to_prod = []
 
-      result = DataRetriever.new(api_key).retrieve_data
-      @all_stories = result[0]
-      @all_labels = result[1]
-      @all_comments = result[2]
-      @all_owners = result[3]
+      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
 
       find_candidate_stories(should_have_to_prod)
       analyze_candidates(should_have_to_prod, bad_card_info)
-      print_report(bad_card_info)
+      ReportPrinter.print_report(bad_card_info)
+      #print_report(bad_card_info)
     end
 
     def self.check_cards(api_key, proj_id)
