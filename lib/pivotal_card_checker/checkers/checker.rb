@@ -9,7 +9,7 @@ class Checker
     @results = Hash.new {}
   end
 
-  def candidate?(story_id, state)
+  def is_candidate?(story_id, state)
     state == 'finished' || state == 'delivered' || (state == 'accepted' &&
     search_comments(story_id, 'Commit by') != 'not found')
   end

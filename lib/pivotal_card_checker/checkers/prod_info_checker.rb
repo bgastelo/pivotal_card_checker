@@ -1,18 +1,10 @@
 
 class ProdInfoChecker < Checker
-  attr_accessor :all_stories, :all_labels, :all_comments
-
-  def initialize(all_stories, all_labels, all_comments)
-    @all_stories = all_stories
-    @all_labels = all_labels
-    @all_comments = all_comments
-  end
-
   def prod_check
     missing_prod_info = []
 
     @all_stories.each do |story_id, story|
-      if candidate?(story_id, story.current_state) &&
+      if is_candidate?(story_id, story.current_state) &&
          !has_label?(story_id, 'to_prod') &&
          !has_label?(story_id, 'delayed_prod') &&
          !has_label?(story_id, 'not_to_prod')

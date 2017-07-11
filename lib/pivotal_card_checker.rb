@@ -1,6 +1,17 @@
 require 'pivotal_card_checker/version'
 require 'pivotal_card_checker/data_retriever'
 require 'pivotal_card_checker/report_printer'
+require 'pivotal_card_checker/checkers/checker'
+require 'pivotal_card_checker/checkers/prod_info_checker'
+require 'pivotal_card_checker/checkers/sys_label_checker'
+require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
+require 'pivotal_card_checker/checkers/other_issues_checker'
+#Dir[File.dirname(__FILE__) + 'pivotal_card_checker/checkers/*.rb'].each do |file| 
+#  require File.basename(file, File.extname(file))
+#end
+require 'pivotal_card_checker/bad_card_manager'
+require 'pivotal_card_checker/card_violation'
+require 'pivotal_card_checker/violations_organizer'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -23,15 +34,22 @@ module PivotalCardChecker
 
     def check_cards
       # Stores all bad card info. Maps owner string to BadCardManager.
-      bad_card_info = Hash.new {}
+      #bad_card_info = Hash.new {}
 
-      should_have_to_prod = []
+      #should_have_to_prod = []
 
       @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
 
-      find_candidate_stories(should_have_to_prod)
-      analyze_candidates(should_have_to_prod, bad_card_info)
-      ReportPrinter.print_report(bad_card_info)
+      missing_prod_info = ProdInfoChecker.new(@all_stories, @all_labels, @all_comments).prod_check
+      sys_label_violations = SysLabelChecker.new(@all_stories, @all_labels, @all_comments).sys_label_check
+      acceptance_violations = AcceptanceCritChecker.new(@all_stories, @all_labels, @all_comments).acceptance_crit_check
+      other_violations = OtherIssuesChecker.new(@all_stories, @all_labels, @all_comments).other_issues_check
+      bad_card_info = ViolationsOrganizer.new(@all_stories, @all_owners).organize(missing_prod_info, sys_label_violations, acceptance_violations, other_violations)
+        #link = "https://www.pivotaltracker.com/story/show/#{story_id}"
+      #find_candidate_stories(should_have_to_prod)
+      #analyze_candidates(should_have_to_prod, bad_card_info)
+      #ViolationsOrganizer
+      ReportPrinter.new(bad_card_info).print_report
       #print_report(bad_card_info)
     end
 
@@ -62,7 +80,7 @@ module PivotalCardChecker
             if bad_card_info[card_owners].nil?
               bad_card_info[card_owners] = BadCardManager.new
             end
-            bad_card_info[card_owners].add_card(BadCard.new(OTHER_ISSUE_TYPE,
+            bad_card_info[card_owners].add_card(CardViolation.new(OTHER_ISSUE_TYPE,
                                                             story.name,
                                                             "https://www.pivotaltracker.com/story/show/#{story_id}",
                                                             'Card is marked \'accepted\', but doesn\'t have prod acceptance'))
@@ -91,7 +109,7 @@ module PivotalCardChecker
 
         # If the card doesn't have a to_prod label.
         if !has_prod_label
-          temp.push(BadCard.new(MISSING_PROD_TYPE, story.name,
+          temp.push(CardViolation.new(MISSING_PROD_TYPE, story.name,
                                 "https://www.pivotaltracker.com/story/show/#{story_id}"))
         elsif needs_criteria && (story.current_state == 'finished' || story.current_state == 'delivered')
           message = 'None'
@@ -102,7 +120,7 @@ module PivotalCardChecker
           end
 
           if message != 'None'
-            temp.push(BadCard.new(MISSING_CRITERIA_TYPE, story.name,
+            temp.push(CardViolation.new(MISSING_CRITERIA_TYPE, story.name,
                                   "https://www.pivotaltracker.com/story/show/#{story_id}", message))
           end
         end
@@ -113,20 +131,20 @@ module PivotalCardChecker
             message = "Did not find expected label: '#{sys_label_from_commit}'"
           end
 
-          temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,
+          temp.push(CardViolation.new(MISSING_SYS_LABEL_TYPE, story.name,
                                 "https://www.pivotaltracker.com/story/show/#{story_id}", message))
         elsif sys_label_from_commit != 'sysLabelUnknown' && !has_label?(story_id, sys_label_from_commit)
-          temp.push(BadCard.new(MISSING_SYS_LABEL_TYPE, story.name,
+          temp.push(CardViolation.new(MISSING_SYS_LABEL_TYPE, story.name,
                                 "https://www.pivotaltracker.com/story/show/#{story_id}",
                                 "Expected label: '#{sys_label_from_commit}', but found '#{sys_label_detected}' instead."))
         end
 
         if story.current_state == 'finished' && sys_label_from_commit == 'sysLabelUnknown'
-          temp.push(BadCard.new(OTHER_ISSUE_TYPE, story.name,
+          temp.push(CardViolation.new(OTHER_ISSUE_TYPE, story.name,
                                 "https://www.pivotaltracker.com/story/show/#{story_id}",
                                 'Card is marked \'finished\', but has no commits.'))
         elsif story.current_state == 'delivered' && search_comments(story_id, 'staging acceptance') == 'not found'
-          temp.push(BadCard.new(OTHER_ISSUE_TYPE, story.name,
+          temp.push(CardViolation.new(OTHER_ISSUE_TYPE, story.name,
                                 "https://www.pivotaltracker.com/story/show/#{story_id}",
                                 'Card is marked \'delivered\', but doesn\'t have staging acceptance'))
         end
@@ -249,43 +267,6 @@ module PivotalCardChecker
         end
       end
       result = temp
-    end
-  end
-
-  class BadCardManager
-    attr_accessor :missing_prod_label, :missing_sys_label, :missing_criteria, :other_issues
-
-    def initialize
-      @missing_prod_label = []
-      @missing_sys_label = []
-      @missing_criteria = []
-      @other_issues = []
-    end
-
-    def add_card(card)
-      case card.type
-      when MISSING_PROD_TYPE
-        @missing_prod_label.push(card)
-      when MISSING_SYS_LABEL_TYPE
-        @missing_sys_label.push(card)
-      when MISSING_CRITERIA_TYPE
-        @missing_criteria.push(card)
-      when OTHER_ISSUE_TYPE
-        @other_issues.push(card)
-      else
-        puts 'Card not valid type.'
-      end
-    end
-  end
-
-  class BadCard
-    attr_accessor :type, :title, :link, :message
-
-    def initialize(type = 0, title = 'Default title', link = 'Default link', message = nil)
-      @type = type
-      @title = title
-      @link = link
-      @message = message
     end
   end
 end
