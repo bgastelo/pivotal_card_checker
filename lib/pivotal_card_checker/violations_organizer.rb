@@ -1,6 +1,6 @@
 
 class ViolationsOrganizer
-  attr_accessor :all_stories, :all_owners, :results
+  attr_reader :all_stories, :all_owners, :results
 
   MISSING_PROD_TYPE = 1
   MISSING_SYS_LABEL_TYPE = 2
@@ -27,7 +27,7 @@ class ViolationsOrganizer
       list.each do |story_id, message|
         card_owners = get_owners(story_id)
         @bad_card_info[card_owners] =
-          BadCardManager.new if @bad_card_info[card_owners].nil?
+          CardViolationsManager.new if @bad_card_info[card_owners].nil?
         @bad_card_info[card_owners].add_violation(type, story_id, message)
       end
     end

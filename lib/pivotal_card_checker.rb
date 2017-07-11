@@ -9,7 +9,7 @@ require 'pivotal_card_checker/checkers/other_issues_checker'
 #Dir[File.dirname(__FILE__) + 'pivotal_card_checker/checkers/*.rb'].each do |file| 
 #  require File.basename(file, File.extname(file))
 #end
-require 'pivotal_card_checker/bad_card_manager'
+require 'pivotal_card_checker/card_violations_manager'
 require 'pivotal_card_checker/card_violation'
 require 'pivotal_card_checker/violations_organizer'
 require 'tracker_api'
@@ -21,7 +21,7 @@ module PivotalCardChecker
   OTHER_ISSUE_TYPE = 4
 
   class CardChecker
-    attr_accessor :api_key, :proj_id
+    attr_reader :api_key, :proj_id
 
     def initialize(api_key, proj_id)
       @api_key = api_key

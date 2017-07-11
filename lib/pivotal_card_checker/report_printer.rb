@@ -1,5 +1,5 @@
 class ReportPrinter
-  attr_accessor :bad_card_info, :all_stories
+  attr_reader :bad_card_info, :all_stories
   
   def initialize(bad_card_info, all_stories)
     @bad_card_info = bad_card_info

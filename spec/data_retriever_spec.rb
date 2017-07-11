@@ -1,4 +1,4 @@
-require 'pivotal_card_checker/data_retriever'
+require 'pivotal_card_checker'
 require 'tracker_api'
 require 'spec_helper'
 

@@ -1,5 +1,5 @@
 class CardViolation
-  attr_accessor :id, :message
+  attr_reader :id, :message
 
   def initialize(id = 0, message = nil)
     @id = id

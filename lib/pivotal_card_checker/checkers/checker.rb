@@ -1,6 +1,6 @@
 # Documentation
 class Checker
-  attr_accessor :all_stories, :all_labels, :all_comments, :results
+  attr_reader :all_stories, :all_labels, :all_comments, :results
 
   STORIES_INDEX = 0
   LABELS_INDEX = 1

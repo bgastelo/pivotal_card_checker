@@ -1,6 +1,6 @@
 # Documentation
 class DataRetriever
-  attr_accessor :api_key, :proj_id, :all_stories,
+  attr_reader :api_key, :proj_id, :all_stories,
                 :all_labels, :all_comments, :all_owners
   def initialize(api_key, proj_id)
     @api_key = api_key
