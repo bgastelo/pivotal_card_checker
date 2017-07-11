@@ -1,6 +1,4 @@
-require 'pivotal_card_checker/data_retriever'
-require 'pivotal_card_checker/checkers/checker'
-require 'pivotal_card_checker/checkers/sys_label_checker'
+require 'pivotal_card_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 require 'tracker_api'
 require 'spec_helper'
@@ -15,7 +13,7 @@ describe SystemsToDeployChecker do
     end
 
     result = SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                         @all_comments]).sys_label_check
+                                         @all_comments]).find_systems_to_deploy
     expect(result.length).to eql(1)
     expect(result.first).to eql('billing engine')
   end

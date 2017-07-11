@@ -15,7 +15,7 @@ OWNER(s): Alex Handler
                 ETF Pro billboard - https://www.pivotaltracker.com/story/show/148416243
                 migration for ETF pro billboard - https://www.pivotaltracker.com/story/show/148419255
         Other issues:
-                Implement update button styles on accounts - https://www.pivotaltracker.com/story/show/138332121 - Card is unstarted, but has the 'to_prod' label.
+                Implement update button styles on accounts - https://www.pivotaltracker.com/story/show/138332121 - Card is marked 'unstarted', but has the 'to_prod' label.
 
 OWNER(s): Diego Scataglini
         Missing system label:

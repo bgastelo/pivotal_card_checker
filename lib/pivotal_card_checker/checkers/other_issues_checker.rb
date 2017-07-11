@@ -21,7 +21,7 @@ class OtherIssuesChecker < Checker
       @results[story_id] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
     elsif (state == 'started' || state == 'unstarted') &&
           has_label?(story_id, 'to_prod')
-      @results[story_id] = "Card is #{state}, but has the 'to_prod' label."
+      @results[story_id] = "Card is marked '#{state}', but has the 'to_prod' label."
     end
   end
 end

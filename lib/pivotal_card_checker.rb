@@ -6,6 +6,7 @@ require 'pivotal_card_checker/checkers/prod_info_checker'
 require 'pivotal_card_checker/checkers/sys_label_checker'
 require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
 require 'pivotal_card_checker/checkers/other_issues_checker'
+require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 #Dir[File.dirname(__FILE__) + 'pivotal_card_checker/checkers/*.rb'].each do |file| 
 #  require File.basename(file, File.extname(file))
 #end
@@ -59,5 +60,18 @@ module PivotalCardChecker
       card_checker = new(api_key, proj_id)
       card_checker.check_cards
     end
+
+    def self.systems_to_deploy(api_key, proj_id)
+      all_stories, all_labels, all_comments, all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
+      systems = SystemsToDeployChecker.new([all_stories, all_labels,
+                                 all_comments]).find_systems_to_deploy
+      if systems.empty?
+        puts 'No systems to deploy.'
+      else
+        puts "Systems to deploy: #{systems.join(', ')}"
+      end
+    end
+    
+    #{}"[Pivotal Tracker Help Center](https://www.pivotaltracker.com/help/)"
   end
 end

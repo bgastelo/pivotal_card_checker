@@ -1,6 +1,6 @@
 
 class SystemsToDeployChecker < SysLabelChecker
-  def sys_label_check
+  def find_systems_to_deploy
     systems_to_deploy = Set.new
     @all_stories.each do |story_id, story|
       if has_label?(story_id, 'to_prod')
