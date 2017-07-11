@@ -13,8 +13,8 @@ describe SysLabelChecker do
         DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = SysLabelChecker.new(@all_stories,
-                                 @all_labels, @all_comments).sys_label_check
+    result = SysLabelChecker.new([@all_stories, @all_labels,
+                                  @all_comments]).sys_label_check
     expect(result.length).to eql(1)
   end
 end

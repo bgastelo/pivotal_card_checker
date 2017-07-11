@@ -7,7 +7,7 @@ class ReportPrinter
   end
   
   def print_report
-    puts "\n========= Results ==========="
+    puts "\n========= Pivotal Card Checker ==========="
     if @bad_card_info.empty?
       puts 'CONGRATS! No card violations.'
     else

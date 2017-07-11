@@ -13,8 +13,8 @@ describe OtherIssuesChecker do
         DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = OtherIssuesChecker.new(@all_stories, @all_labels,
-                                    @all_comments).other_issues_check
+    result = OtherIssuesChecker.new([@all_stories, @all_labels,
+                                     @all_comments]).other_issues_check
 
     expect(result.length).to eql(3)
   end
@@ -25,8 +25,8 @@ describe OtherIssuesChecker do
         DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = OtherIssuesChecker.new(@all_stories, @all_labels,
-                                    @all_comments).other_issues_check
+    result = OtherIssuesChecker.new([@all_stories, @all_labels,
+                                     @all_comments]).other_issues_check
 
     expect(result.length).to eql(2)
   end

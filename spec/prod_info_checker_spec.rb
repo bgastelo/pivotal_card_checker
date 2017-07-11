@@ -13,8 +13,8 @@ describe ProdInfoChecker do
         DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = ProdInfoChecker.new(@all_stories,
-                         @all_labels, @all_comments).prod_check
+    result = ProdInfoChecker.new([@all_stories, @all_labels,
+                                  @all_comments]).prod_check
     expect(result.length).to eql(1)
     story_name = 'I quite often see article tagged as "0". This shouldn\'t happen'
     expect(@all_stories[result[0]].name).to eql(story_name)

@@ -13,8 +13,8 @@ describe AcceptanceCritChecker do
         DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = AcceptanceCritChecker.new(@all_stories, @all_labels,
-                                       @all_comments).acceptance_crit_check
+    result = AcceptanceCritChecker.new([@all_stories, @all_labels,
+                                        @all_comments]).acceptance_crit_check
     expect(result.length).to eql(1)
   end
 end

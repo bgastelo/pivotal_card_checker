@@ -2,10 +2,14 @@
 class Checker
   attr_accessor :all_stories, :all_labels, :all_comments, :results
 
-  def initialize(all_stories, all_labels, all_comments)
-    @all_stories = all_stories
-    @all_labels = all_labels
-    @all_comments = all_comments
+  STORIES_INDEX = 0
+  LABELS_INDEX = 1
+  COMMENTS_INDEX = 2
+
+  def initialize(lists)
+    @all_stories = lists[STORIES_INDEX]
+    @all_labels = lists[LABELS_INDEX]
+    @all_comments = lists[COMMENTS_INDEX]
     @results = Hash.new {}
   end
 
