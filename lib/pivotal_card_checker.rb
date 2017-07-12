@@ -1,6 +1,10 @@
 require 'pivotal_card_checker/version'
 require 'pivotal_card_checker/data_retriever'
 require 'pivotal_card_checker/report_printer'
+require 'pivotal_card_checker/deploy_card_creator'
+require 'pivotal_card_checker/card_violations_manager'
+require 'pivotal_card_checker/card_violation'
+require 'pivotal_card_checker/violations_organizer'
 require 'pivotal_card_checker/checkers/checker'
 require 'pivotal_card_checker/checkers/prod_info_checker'
 require 'pivotal_card_checker/checkers/sys_label_checker'
@@ -10,9 +14,6 @@ require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 #Dir[File.dirname(__FILE__) + 'pivotal_card_checker/checkers/*.rb'].each do |file| 
 #  require File.basename(file, File.extname(file))
 #end
-require 'pivotal_card_checker/card_violations_manager'
-require 'pivotal_card_checker/card_violation'
-require 'pivotal_card_checker/violations_organizer'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -59,19 +60,37 @@ module PivotalCardChecker
     def self.check_cards(api_key, proj_id)
       card_checker = new(api_key, proj_id)
       card_checker.check_cards
+      card_checker.find_systems_to_deploy
     end
 
     def self.systems_to_deploy(api_key, proj_id)
-      all_stories, all_labels, all_comments, all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
-      systems = SystemsToDeployChecker.new([all_stories, all_labels,
-                                 all_comments]).find_systems_to_deploy
+      card_checker = new(api_key, proj_id)
+      card_checker.find_systems_to_deploy
+    end
+
+    def self.create_deploy_card(api_key, proj_id)
+      card_checker = new(api_key, proj_id)
+      card_checker.create_deploy_card
+    end
+
+    def find_systems_to_deploy
+      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
+      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
+                                 @all_comments]).find_systems_to_deploy
       if systems.empty?
         puts 'No systems to deploy.'
       else
-        puts "Systems to deploy: #{systems.join(', ')}"
+        puts "Systems to deploy: #{systems.keys.join(', ')}"
       end
     end
-    
-    #{}"[Pivotal Tracker Help Center](https://www.pivotaltracker.com/help/)"
+
+    def create_deploy_card
+      # title = "6/22/17 cms, billing engine, reader, dct deploy"
+      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
+      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
+                                 @all_comments]).find_systems_to_deploy
+      DeployCardCreator.new.create_deploy_card(systems)
+    end
+    # {}"[Pivotal Tracker Help Center](https://www.pivotaltracker.com/help/)"
   end
 end

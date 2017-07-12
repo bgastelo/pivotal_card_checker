@@ -14,7 +14,7 @@ describe SystemsToDeployChecker do
 
     result = SystemsToDeployChecker.new([@all_stories, @all_labels,
                                          @all_comments]).find_systems_to_deploy
-    expect(result.length).to eql(1)
-    expect(result.first).to eql('billing engine')
+    expect(result.keys.length).to eql(1)
+    expect(result.keys.first).to eql('billing engine')
   end
 end
