@@ -65,7 +65,13 @@ module PivotalCardChecker
 
     def self.systems_to_deploy(api_key, proj_id)
       card_checker = new(api_key, proj_id)
-      card_checker.find_systems_to_deploy
+      systems = card_checker.find_systems_to_deploy
+
+      if systems.keys.empty?
+        puts 'No systems to deploy.'
+      else
+        puts "Systems to deploy: #{systems.keys.join(', ')}"
+      end
     end
 
     def self.create_deploy_card(api_key, proj_id)
@@ -74,23 +80,14 @@ module PivotalCardChecker
     end
 
     def find_systems_to_deploy
-      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
-      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                 @all_comments]).find_systems_to_deploy
-      if systems.empty?
-        puts 'No systems to deploy.'
-      else
-        puts "Systems to deploy: #{systems.keys.join(', ')}"
-      end
+      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data
+      SystemsToDeployChecker.new([@all_stories, @all_labels,
+                                  @all_comments]).find_systems_to_deploy
     end
 
     def create_deploy_card
-      # title = "6/22/17 cms, billing engine, reader, dct deploy"
-      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(api_key, proj_id).retrieve_data
-      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                 @all_comments]).find_systems_to_deploy
-      DeployCardCreator.new.create_deploy_card(systems)
+      systems = find_systems_to_deploy
+      DeployCardCreator.new(@api_key, @proj_id).create_deploy_card(systems)
     end
-    # {}"[Pivotal Tracker Help Center](https://www.pivotaltracker.com/help/)"
   end
 end
