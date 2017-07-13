@@ -22,6 +22,9 @@ module PivotalCardChecker
   MISSING_CRITERIA_TYPE = 3
   OTHER_ISSUE_TYPE = 4
 
+  # Checks all of our current and backlog cards for any of our specified
+  # violations, prints out a report containing all violations along with an
+  # error message and the card owner(s) name.
   class CardChecker
     attr_reader :api_key, :proj_id
 
@@ -40,10 +43,16 @@ module PivotalCardChecker
       lists = [@all_stories, @all_labels, @all_comments]
       prod_info_violations = ProdInfoChecker.new(lists).prod_check
       sys_label_violations = SysLabelChecker.new(lists).sys_label_check
-      acceptance_violations = AcceptanceCritChecker.new(lists).acceptance_crit_check
+      acceptance_violations =
+        AcceptanceCritChecker.new(lists).acceptance_crit_check
       other_violations = OtherIssuesChecker.new(lists).other_issues_check
       # Stores all bad card info. Maps owner string to BadCardManager.
-      bad_card_info = ViolationsOrganizer.new(@all_stories, @all_owners).organize(prod_info_violations, sys_label_violations, acceptance_violations, other_violations)
+      bad_card_info =
+        ViolationsOrganizer.new(@all_stories,
+                                @all_owners).organize(prod_info_violations,
+                                                      sys_label_violations,
+                                                      acceptance_violations,
+                                                      other_violations)
 
       ReportPrinter.new(bad_card_info, @all_stories).print_report
 
@@ -60,18 +69,7 @@ module PivotalCardChecker
     def self.check_cards(api_key, proj_id)
       card_checker = new(api_key, proj_id)
       card_checker.check_cards
-      card_checker.find_systems_to_deploy
-    end
-
-    def self.systems_to_deploy(api_key, proj_id)
-      card_checker = new(api_key, proj_id)
-      systems = card_checker.find_systems_to_deploy
-
-      if systems.keys.empty?
-        puts 'No systems to deploy.'
-      else
-        puts "Systems to deploy: #{systems.keys.join(', ')}"
-      end
+      card_checker.find_systems_to_deploy(false)
     end
 
     def self.create_deploy_card(api_key, proj_id)
@@ -79,14 +77,21 @@ module PivotalCardChecker
       card_checker.create_deploy_card
     end
 
-    def find_systems_to_deploy
-      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data
-      SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                  @all_comments]).find_systems_to_deploy
+    def find_systems_to_deploy(need_to_retrieve_data)
+      @all_stories, @all_labels, @all_comments, @all_owners =
+        DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
+
+      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
+                                            @all_comments]).find_systems_to_deploy
+      if systems.keys.empty?
+        puts 'No systems to deploy.'
+      else
+        puts "Systems to deploy: #{systems.keys.join(', ')}"
+      end
     end
 
     def create_deploy_card
-      systems = find_systems_to_deploy
+      systems = find_systems_to_deploy(true)
       DeployCardCreator.new(@api_key, @proj_id).create_deploy_card(systems)
     end
   end

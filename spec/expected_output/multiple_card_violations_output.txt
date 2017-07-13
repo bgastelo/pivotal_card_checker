@@ -21,3 +21,4 @@ OWNER(s): Diego Scataglini
         Missing system label:
                 hedgeye tv section not showing up on homepage - https://www.pivotaltracker.com/story/show/148341469 - Did not find expected label: 'cms'
 
+Systems to deploy: billing engine, cms, reader

@@ -1,7 +1,7 @@
-# Documentation
+# Calls the Pivotal API to retrieve all the card data we need.
 class DataRetriever
   attr_reader :api_key, :proj_id, :all_stories,
-                :all_labels, :all_comments, :all_owners
+              :all_labels, :all_comments, :all_owners
   def initialize(api_key, proj_id)
     @api_key = api_key
     @proj_id = proj_id

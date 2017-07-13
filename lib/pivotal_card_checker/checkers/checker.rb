@@ -1,4 +1,5 @@
-# Documentation
+# Generic Checker class that contains attributes and methods that are used
+# by multiple *_checker classes.
 class Checker
   attr_reader :all_stories, :all_labels, :all_comments, :results
 
@@ -19,17 +20,15 @@ class Checker
   end
 
   def get_system_label_from_commit(story_id)
-    temp = 'sysLabelUnknown'
     search_result = search_comments(story_id, 'github.com/')
+    temp = 'sysLabelUnknown'
 
     if search_result != 'not found'
-      temp = search_result.split(/github.com\/(.*?)\/(.*?)\/commit/)[2]
-      if temp.include? 'hedgeye-'
-        temp = temp[8...temp.length]
-      end
+      temp = search_result.split(%r{/github.com\/(.*?)\/(.*?)\/commit/})[2]
+      temp = temp[8...temp.length] if temp.include? 'hedgeye-'
       temp.tr!('_', ' ')
     end
-    result = temp
+    return temp
   end
 
   def has_label?(story_id, label_looking_for)

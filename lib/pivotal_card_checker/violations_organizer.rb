@@ -32,7 +32,7 @@ class ViolationsOrganizer
       end
     end
   end
-  
+
   # Returns a comma seperated list of all the story's owners.
   def get_owners(story_id)
     owner_names = []

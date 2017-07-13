@@ -18,7 +18,7 @@ class SysLabelChecker < Checker
         return label.name if ALL_SYSTEM_LABELS.include? label.name
       end
     end
-    label_name = 'not found'
+    return 'not found'
   end
 
   def sys_label_violation_check(story_id, sys_label_on_story)

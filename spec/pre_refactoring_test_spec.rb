@@ -13,7 +13,7 @@ end
 
 class CardChecker
   describe 'Check the cards for any errors' do
-    it 'should produce output that matches the text in pre_refactoring_test_output.txt' do
+    it 'should produce output that matches the text in multiple_card_violations_output.txt' do
       # Cassette recorded July 6, 2017
       VCR.use_cassette 'multiple_card_violations_response' do
         printed = capture_stdout do

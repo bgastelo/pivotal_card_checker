@@ -9,7 +9,7 @@ class DeployCardCreator
   end
 
   def create_deploy_card(systems)
-    title = "#{Time.now.strftime("%-m/%-d/%y")} #{systems.keys.join(', ')} deploy"
+    title = "#{Time.now.strftime('%-m/%-d/%y')} #{systems.keys.join(', ')} deploy"
     card_description = create_card_description(systems)
     hedgeye_project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
     story = hedgeye_project.create_story(name: title,

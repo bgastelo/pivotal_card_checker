@@ -1,6 +1,8 @@
+# 
 class CardViolationsManager
-  attr_reader :missing_prod_label, :missing_sys_label, :missing_criteria, :other_issues
-  
+  attr_reader :missing_prod_label, :missing_sys_label, :missing_criteria,
+              :other_issues
+
   MISSING_PROD_TYPE = 1
   MISSING_SYS_LABEL_TYPE = 2
   MISSING_CRITERIA_TYPE = 3

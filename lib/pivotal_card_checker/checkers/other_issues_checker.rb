@@ -1,4 +1,5 @@
-
+# Verifies the cards to see if any of them violate any smaller issues that we
+# classify as "other"
 class OtherIssuesChecker < Checker
   def other_issues_check
     @all_stories.each do |story_id, story|
@@ -7,7 +8,7 @@ class OtherIssuesChecker < Checker
     end
     return @results
   end
-  
+
   def violation_validation(story_id, state, sys_label_from_commit)
     if state == 'finished' && sys_label_from_commit == 'sysLabelUnknown'
       @results[story_id] = 'Card is marked \'finished\', but has no commits.'
