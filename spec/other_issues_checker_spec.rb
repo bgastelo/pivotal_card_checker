@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe OtherIssuesChecker do
-  attr_accessor :all_stories, :all_labels, :all_comments, :all_owners
+  attr_reader :all_stories, :all_labels, :all_comments, :all_owners
 
   it 'should detect one story that is marked \'delivered\', but doesn\'t have staging acceptance' do
     VCR.use_cassette 'other_issue_card_without_staging_acceptance' do
@@ -13,7 +13,6 @@ describe OtherIssuesChecker do
 
     result = OtherIssuesChecker.new([@all_stories, @all_labels,
                                      @all_comments]).other_issues_check
-
     expect(result.length).to eql(3)
   end
 

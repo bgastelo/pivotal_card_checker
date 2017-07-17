@@ -23,6 +23,6 @@ class AcceptanceCritChecker < Checker
       (!description.nil? &&
       (description.downcase.include? 'acceptance criteria')) ||
       # Criteria not found in description, check comments.
-      search_comments(story_id, 'acceptance criteria') != 'not found'
+      has_comment_that_contains?('acceptance criteria', story_id)
   end
 end

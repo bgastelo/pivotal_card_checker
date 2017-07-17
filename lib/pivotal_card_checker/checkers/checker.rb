@@ -16,42 +16,50 @@ class Checker
 
   def is_candidate?(story_id, state)
     state == 'finished' || state == 'delivered' || (state == 'accepted' &&
-    search_comments(story_id, 'Commit by') != 'not found')
+    has_commits?(story_id))
+  end
+
+  def has_commits?(story_id)
+    has_comment_that_contains?('Commit by', story_id, true)
   end
 
   def get_system_label_from_commit(story_id)
-    search_result = search_comments(story_id, 'github.com/')
-    temp = 'sysLabelUnknown'
+    search_results = find_all_comments_that_contain('github.com/', story_id)
+    system_labels_detected = Set.new {}
 
-    if search_result != 'not found'
-      temp = search_result.split(%r{/github.com\/(.*?)\/(.*?)\/commit/})[2]
+    search_results.each do |current_comment|
+      temp = current_comment.split(%r{/github.com\/(.*?)\/(.*?)\/})[2]
       temp = temp[8...temp.length] if temp.include? 'hedgeye-'
-      temp.tr!('_', ' ')
+      system_labels_detected.add(temp.tr('_', ' '))
     end
-    return temp
+    system_labels_detected.to_a
   end
 
   def has_label?(story_id, label_looking_for)
-    found = false
     unless @all_labels[story_id].nil?
       @all_labels[story_id].each do |label|
-        if label.name == label_looking_for
-          found = true
-          break
-        end
+        return true if label.name == label_looking_for
       end
     end
-    return found
+    return false
   end
 
-  def search_comments(story_id, search_string)
-    temp = 'not found'
+  def has_comment_that_contains?(search_string, story_id,
+                                 case_sensitive = false)
     @all_comments[story_id].each do |comment|
-      if !comment.text.nil? && (comment.text.downcase.include? search_string)
-        temp = comment.text
-        break
-      end
+      return true if !comment.text.nil? && (!case_sensitive &&
+         (comment.text.downcase.include? search_string.downcase) ||
+         case_sensitive && (comment.text.include? search_string))
     end
-    return temp
+    false
+  end
+
+  def find_all_comments_that_contain(search_string, story_id)
+    valid_comments = []
+    @all_comments[story_id].each do |comment|
+      valid_comments.push(comment.text) if !comment.text.nil? &&
+                                           (comment.text.include? search_string)
+    end
+    valid_comments
   end
 end

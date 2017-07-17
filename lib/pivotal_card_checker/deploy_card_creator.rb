@@ -15,14 +15,16 @@ class DeployCardCreator
     story = hedgeye_project.create_story(name: title,
                                          description: card_description,
                                          story_type: 'Chore',
-                                         current_state: 'accepted',
+                                         current_state: 'unstarted',
                                          label_ids: [DEPLOY_LABEL_ID])
                                          # owner_ids: [FORREST_ID],
                                          # requested_by_id: FORREST_ID)
+    # works, but would rather do in label_ids...
     systems.keys.each do |label_name|
+      puts label_name
       story.add_label(label_name)
+      story.save
     end
-    story.save
   end
 
   def create_card_description(systems)

@@ -66,10 +66,19 @@ module PivotalCardChecker
 =end
     end
 
-    def self.check_cards(api_key, proj_id)
+    def self.check_cards(api_key, proj_id, print_sys_to_deploy = true)
       card_checker = new(api_key, proj_id)
       card_checker.check_cards
-      card_checker.find_systems_to_deploy(false)
+      card_checker.print_systems_to_deploy if print_sys_to_deploy
+    end
+    
+    def print_systems_to_deploy
+      systems = card_checker.find_systems_to_deploy(false)
+      if systems.keys.empty?
+        puts 'No systems to deploy.'
+      else
+        puts "Systems to deploy: #{systems.keys.join(', ')}"
+      end
     end
 
     def self.create_deploy_card(api_key, proj_id)
@@ -81,18 +90,12 @@ module PivotalCardChecker
       @all_stories, @all_labels, @all_comments, @all_owners =
         DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
-      systems = SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                            @all_comments]).find_systems_to_deploy
-      if systems.keys.empty?
-        puts 'No systems to deploy.'
-      else
-        puts "Systems to deploy: #{systems.keys.join(', ')}"
-      end
+      SystemsToDeployChecker.new([@all_stories, @all_labels, 
+                                  @all_comments]).find_systems_to_deploy
     end
 
     def create_deploy_card
-      systems = find_systems_to_deploy(true)
-      DeployCardCreator.new(@api_key, @proj_id).create_deploy_card(systems)
+      DeployCardCreator.new(@api_key, @proj_id).create_deploy_card(find_systems_to_deploy(true))
     end
   end
 end

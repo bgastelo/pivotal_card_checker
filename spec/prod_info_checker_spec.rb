@@ -13,8 +13,8 @@ describe ProdInfoChecker do
 
     result = ProdInfoChecker.new([@all_stories, @all_labels,
                                   @all_comments]).prod_check
-    expect(result.length).to eql(1)
+    expect(result.length).to eql(2)
     story_name = 'I quite often see article tagged as "0". This shouldn\'t happen'
-    expect(@all_stories[result[0]].name).to eql(story_name)
+    expect(@all_stories[result[1]].name).to eql(story_name)
   end
 end

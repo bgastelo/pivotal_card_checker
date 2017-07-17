@@ -6,13 +6,13 @@ class SystemsToDeployChecker < SysLabelChecker
       next unless has_label?(story_id, 'to_prod') &&
                   (story.current_state == 'finished' ||
                   story.current_state == 'delivered')
-      sys_label = check_labels(story_id)
-      unless sys_label == 'not found'
+      sys_labels_on_story = find_system_labels_on_story(story_id)
+      sys_labels_on_story.each do |sys_label|
         systems_to_deploy[sys_label] = [] if systems_to_deploy[sys_label].nil?
         systems_to_deploy[sys_label].push(story)
       end
     end
-    return systems_to_deploy
+    systems_to_deploy
   end
 end
 
