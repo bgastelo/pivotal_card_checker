@@ -11,9 +11,6 @@ require 'pivotal_card_checker/checkers/sys_label_checker'
 require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
 require 'pivotal_card_checker/checkers/other_issues_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
-#Dir[File.dirname(__FILE__) + 'pivotal_card_checker/checkers/*.rb'].each do |file| 
-#  require File.basename(file, File.extname(file))
-#end
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -41,12 +38,11 @@ module PivotalCardChecker
       @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data
 
       lists = [@all_stories, @all_labels, @all_comments]
-      prod_info_violations = ProdInfoChecker.new(lists).prod_check
-      sys_label_violations = SysLabelChecker.new(lists).sys_label_check
+      prod_info_violations = Checkers::ProdInfoChecker.new(lists).prod_check
+      sys_label_violations = Checkers::SysLabelChecker.new(lists).sys_label_check
       acceptance_violations =
-        AcceptanceCritChecker.new(lists).acceptance_crit_check
-      other_violations = OtherIssuesChecker.new(lists).other_issues_check
-      # Stores all bad card info. Maps owner string to BadCardManager.
+        Checkers::AcceptanceCritChecker.new(lists).acceptance_crit_check
+      other_violations = Checkers::OtherIssuesChecker.new(lists).other_issues_check
       bad_card_info =
         ViolationsOrganizer.new(@all_stories,
                                 @all_owners).organize(prod_info_violations,
@@ -55,15 +51,6 @@ module PivotalCardChecker
                                                       other_violations)
 
       ReportPrinter.new(bad_card_info, @all_stories).print_report
-
-=begin
-      lists = [@all_stories, @all_labels, @all_comments]
-      organizer = ViolationsOrganizer.new(@all_stories, @all_owners)
-      bad_card_info = organizer.organize(ProdInfoChecker.new(lists).prod_check,
-                                         SysLabelChecker.new(lists).sys_label_check,
-                                         AcceptanceCritChecker.new(lists).acceptance_crit_check,
-                                         OtherIssuesChecker.new(lists).other_issues_check)
-=end
     end
 
     def self.check_cards(api_key, proj_id, print_sys_to_deploy = true)
@@ -71,9 +58,9 @@ module PivotalCardChecker
       card_checker.check_cards
       card_checker.print_systems_to_deploy if print_sys_to_deploy
     end
-    
+
     def print_systems_to_deploy
-      systems = card_checker.find_systems_to_deploy(false)
+      systems = find_systems_to_deploy(false)
       if systems.keys.empty?
         puts 'No systems to deploy.'
       else
@@ -90,8 +77,8 @@ module PivotalCardChecker
       @all_stories, @all_labels, @all_comments, @all_owners =
         DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
-      SystemsToDeployChecker.new([@all_stories, @all_labels, 
-                                  @all_comments]).find_systems_to_deploy
+      Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
+                                            @all_comments]).find_systems_to_deploy
     end
 
     def create_deploy_card
