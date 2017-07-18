@@ -1,7 +1,7 @@
 module PivotalCardChecker
   module Checkers
     class SystemsToDeployChecker < SysLabelChecker
-      def find_systems_to_deploy
+      def check
         systems_to_deploy = Hash.new {}
         @all_stories.each do |story_id, story|
           next unless has_label?(story_id, 'to_prod') &&

@@ -38,11 +38,11 @@ module PivotalCardChecker
       @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data
 
       lists = [@all_stories, @all_labels, @all_comments]
-      prod_info_violations = Checkers::ProdInfoChecker.new(lists).prod_check
-      sys_label_violations = Checkers::SysLabelChecker.new(lists).sys_label_check
+      prod_info_violations = Checkers::ProdInfoChecker.new(lists).check
+      sys_label_violations = Checkers::SysLabelChecker.new(lists).check
       acceptance_violations =
-        Checkers::AcceptanceCritChecker.new(lists).acceptance_crit_check
-      other_violations = Checkers::OtherIssuesChecker.new(lists).other_issues_check
+        Checkers::AcceptanceCritChecker.new(lists).check
+      other_violations = Checkers::OtherIssuesChecker.new(lists).check
       bad_card_info =
         ViolationsOrganizer.new(@all_stories,
                                 @all_owners).organize(prod_info_violations,
@@ -68,9 +68,9 @@ module PivotalCardChecker
       end
     end
 
-    def self.create_deploy_card(api_key, proj_id)
+    def self.create_deploy_card(api_key, proj_id, default_label_ids)
       card_checker = new(api_key, proj_id)
-      card_checker.create_deploy_card
+      card_checker.create_deploy_card(default_label_ids)
     end
 
     def find_systems_to_deploy(need_to_retrieve_data)
@@ -78,11 +78,11 @@ module PivotalCardChecker
         DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
       Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                            @all_comments]).find_systems_to_deploy
+                                            @all_comments]).check
     end
 
-    def create_deploy_card
-      DeployCardCreator.new(@api_key, @proj_id).create_deploy_card(find_systems_to_deploy(true))
+    def create_deploy_card(default_label_ids)
+      DeployCardCreator.new(@api_key, @proj_id, default_label_ids).create_deploy_card(find_systems_to_deploy(true))
     end
   end
 end

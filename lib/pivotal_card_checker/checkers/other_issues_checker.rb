@@ -3,7 +3,7 @@ module PivotalCardChecker
     # Verifies the cards to see if any of them violate any smaller issues that we
     # classify as "other"
     class OtherIssuesChecker < Checker
-      def other_issues_check
+      def check
         @all_stories.each do |story_id, story|
           violation_validation(story_id, story.current_state,
                                has_commits?(story_id))

@@ -4,7 +4,7 @@ module PivotalCardChecker
       ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
                            'ui', 'pivotal card health tools', 'mailroom'].freeze
 
-      def sys_label_check
+      def check
         @all_stories.each do |story_id, story|
           next unless is_candidate?(story_id, story.current_state)
           sys_labels_on_story = find_system_labels_on_story(story_id)

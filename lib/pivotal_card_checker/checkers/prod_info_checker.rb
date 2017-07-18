@@ -3,7 +3,7 @@ module PivotalCardChecker
     # Verifies that all of the candidate cards have one of the three prod
     # information labels (to_prod, delayed_prod, or not_to_prod).
     class ProdInfoChecker < Checker
-      def prod_check
+      def check
         missing_prod_info = []
 
         @all_stories.each do |story_id, story|

@@ -16,6 +16,10 @@ module PivotalCardChecker
         @results = Hash.new {}
       end
 
+      def check
+        puts 'Checked something.'
+      end
+
       def is_candidate?(story_id, state)
         state == 'finished' || state == 'delivered' || (state == 'accepted' &&
         has_commits?(story_id))

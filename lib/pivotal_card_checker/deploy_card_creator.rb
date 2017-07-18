@@ -1,11 +1,9 @@
 module PivotalCardChecker
   class DeployCardCreator
-    DEPLOY_LABEL_ID = 2_506_935
-    FORREST_ID = 23_159
-
-    def initialize(api_key, proj_id)
+    def initialize(api_key, proj_id, default_label_ids)
       @api_key = api_key
       @proj_id = proj_id
+      @default_label_ids = default_label_ids
     end
 
     def create_deploy_card(systems)
@@ -16,12 +14,9 @@ module PivotalCardChecker
                                            description: card_description,
                                            story_type: 'Chore',
                                            current_state: 'unstarted',
-                                           label_ids: [DEPLOY_LABEL_ID])
-                                           # owner_ids: [FORREST_ID],
-                                           # requested_by_id: FORREST_ID)
+                                           label_ids: @default_label_ids)
       # works, but would rather do in label_ids...
       systems.keys.each do |label_name|
-        puts label_name
         story.add_label(label_name)
         story.save
       end

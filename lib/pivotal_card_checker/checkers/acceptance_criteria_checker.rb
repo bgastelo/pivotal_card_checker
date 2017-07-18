@@ -3,7 +3,7 @@ module PivotalCardChecker
     # Verifies that all of the given cards that are supposed to have acceptance
     # criteria, actually have acceptance criteria.
     class AcceptanceCritChecker < Checker
-      def acceptance_crit_check
+      def check
         @all_stories.each do |story_id, story|
           next unless has_label?(story_id, 'to_prod') &&
                       (story.current_state == 'finished' ||
