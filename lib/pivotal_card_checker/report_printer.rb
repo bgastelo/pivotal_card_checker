@@ -1,8 +1,6 @@
 module PivotalCardChecker
   # Prints out the report when given the card violation info (bad_card_info).
   class ReportPrinter
-    attr_reader :bad_card_info, :all_stories
-
     def initialize(bad_card_info, all_stories)
       @bad_card_info = bad_card_info
       @all_stories = all_stories

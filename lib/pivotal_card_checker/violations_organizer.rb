@@ -1,7 +1,5 @@
 module PivotalCardChecker
   class ViolationsOrganizer
-    attr_reader :all_stories, :all_owners, :results
-
     def initialize(all_stories, all_owners)
       @all_stories = all_stories
       @all_owners = all_owners

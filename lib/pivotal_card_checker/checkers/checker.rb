@@ -3,8 +3,6 @@
 module PivotalCardChecker
   module Checkers
     class Checker
-      attr_reader :all_stories, :all_labels, :all_comments, :results
-
       STORIES_INDEX = 0
       LABELS_INDEX = 1
       COMMENTS_INDEX = 2

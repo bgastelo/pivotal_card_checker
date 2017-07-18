@@ -23,8 +23,6 @@ module PivotalCardChecker
   # violations, prints out a report containing all violations along with an
   # error message and the card owner(s) name.
   class CardChecker
-    attr_reader :api_key, :proj_id
-
     def initialize(api_key, proj_id)
       @api_key = api_key
       @proj_id = proj_id

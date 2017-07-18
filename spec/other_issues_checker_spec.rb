@@ -3,8 +3,6 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::OtherIssuesChecker do
-  attr_reader :all_stories, :all_labels, :all_comments, :all_owners
-
   it 'should detect one story that is marked \'delivered\', but doesn\'t have staging acceptance' do
     VCR.use_cassette 'other_issue_card_without_staging_acceptance' do
       @all_stories, @all_labels, @all_comments, @all_owners =

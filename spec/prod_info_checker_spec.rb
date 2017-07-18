@@ -3,8 +3,6 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::ProdInfoChecker do
-  attr_accessor :all_stories, :all_labels, :all_comments, :all_owners
-
   it 'should detect one story that is missing a prod info label' do
     VCR.use_cassette 'data_retriever_test' do
       @all_stories, @all_labels, @all_comments, @all_owners =

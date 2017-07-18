@@ -4,8 +4,6 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::SystemsToDeployChecker do
-  attr_reader :all_stories, :all_labels, :all_comments, :all_owners
-
   it 'should detect that we will be deploying only billing engine' do
     VCR.use_cassette 'sys_to_deploy_test' do
       @all_stories, @all_labels, @all_comments, @all_owners =
