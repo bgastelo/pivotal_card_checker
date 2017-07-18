@@ -2,10 +2,10 @@ require 'pivotal_card_checker'
 require 'tracker_api'
 require 'spec_helper'
 
-describe DataRetriever do
+describe PivotalCardChecker::DataRetriever do
   it 'should retrieve all of the current and backlog cards.' do
     VCR.use_cassette 'data_retriever_test' do
-      result = DataRetriever.new('using cassette', 414_867).retrieve_data
+      result = PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
 
       first_story = result[0].values[0]
       first_label = result[1].values[0][0]
