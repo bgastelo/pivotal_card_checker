@@ -1,0 +1,31 @@
+
+========= Pivotal Card Checker ===========
+OWNER(s): Diego Scataglini
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                reader:/hedgeye_tv when reading HomepageConfiguration keep account of override true/false - https://www.pivotaltracker.com/story/show/148146299
+        Missing system label:
+                Change All Insights Lead Article to Most Recent or Sticky  - https://www.pivotaltracker.com/story/show/148148887 - Expected label(s): 'reader', 'cms', but found: 'reader' instead.
+                hedgeye tv section not showing up on homepage - https://www.pivotaltracker.com/story/show/148341469 - Did not find expected label(s): 'cms'
+
+OWNER(s): Scott Smith
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                add asset allocations to mvd script - https://www.pivotaltracker.com/story/show/147040771
+
+OWNER(s): Brett Novak, Don Humphreys
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295
+        Other issues:
+                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295 - Card is marked 'finished', but has no commits.
+
+OWNER(s): Don Humphreys, Renaldo Pierre Louis
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                TOS acceptance turns on web/email access and sends normal welcome email - https://www.pivotaltracker.com/story/show/146411083
+
+OWNER(s): Alex Handler
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                ETF Pro billboard - https://www.pivotaltracker.com/story/show/148416243
+                migration for ETF pro billboard - https://www.pivotaltracker.com/story/show/148419255
+        Other issues:
+                Implement update button styles on accounts - https://www.pivotaltracker.com/story/show/138332121 - Card is marked 'unstarted', but has the 'to_prod' label.
+
+Systems to deploy: billing engine, cms, reader
