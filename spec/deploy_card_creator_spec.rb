@@ -3,8 +3,6 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::DeployCardCreator do
-  attr_reader :all_stories, :all_labels, :all_comments, :all_owners, :story
-
   it 'should create one deploy card with the properties tested below' do
     VCR.use_cassette 'deploy_card_creation_7_17_2017' do
       @story = PivotalCardChecker::CardChecker.create_deploy_card('using cassette', 414_867, [2_506_935])
