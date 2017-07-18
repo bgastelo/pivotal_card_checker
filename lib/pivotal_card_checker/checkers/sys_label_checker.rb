@@ -1,7 +1,10 @@
 
 class SysLabelChecker < Checker
   ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
-                       'ui', 'pivotal card health tools', 'mailroom'].freeze
+                       'ui', 'pivotal card health tools', 'mailroom',
+                       'common'].freeze
+  ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
+                       2_606_529, 18_741_299, 2_713_317, 2_516_203].freeze
 
   def sys_label_check
     @all_stories.each do |story_id, story|
@@ -9,7 +12,7 @@ class SysLabelChecker < Checker
       sys_labels_on_story = find_system_labels_on_story(story_id)
       sys_label_violation_check(story_id, sys_labels_on_story)
     end
-    return @results
+    @results
   end
 
   def find_system_labels_on_story(story_id)
@@ -32,10 +35,10 @@ class SysLabelChecker < Checker
       end
     elsif !sys_labels_from_comments.empty?
       sys_labels_from_comments.each do |sys_label|
-         if !has_label?(story_id, sys_label)
-           @results[story_id] = "Expected label(s): '#{sys_labels_from_comments.join('\', \'')}', but found: '#{sys_labels_on_story.join('\', \'')}' instead."
-           break
-         end
+        unless has_label?(story_id, sys_label)
+          @results[story_id] = "Expected label(s): '#{sys_labels_from_comments.join('\', \'')}', but found: '#{sys_labels_on_story.join('\', \'')}' instead."
+          break
+        end
       end
     end
   end

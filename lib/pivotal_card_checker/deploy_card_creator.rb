@@ -11,20 +11,15 @@ class DeployCardCreator
   def create_deploy_card(systems)
     title = "#{Time.now.strftime('%-m/%-d/%y')} #{systems.keys.join(', ')} deploy"
     card_description = create_card_description(systems)
+    card_labels = gather_card_label_ids(systems.keys)
     hedgeye_project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
-    story = hedgeye_project.create_story(name: title,
-                                         description: card_description,
-                                         story_type: 'Chore',
-                                         current_state: 'unstarted',
-                                         label_ids: [DEPLOY_LABEL_ID])
-                                         # owner_ids: [FORREST_ID],
-                                         # requested_by_id: FORREST_ID)
-    # works, but would rather do in label_ids...
-    systems.keys.each do |label_name|
-      puts label_name
-      story.add_label(label_name)
-      story.save
-    end
+    hedgeye_project.create_story(name: title,
+                                 description: card_description,
+                                 story_type: 'Chore',
+                                 current_state: 'unstarted',
+                                 label_ids: card_labels)
+                                 # owner_ids: [FORREST_ID],
+                                 # requested_by_id: FORREST_ID)
   end
 
   def create_card_description(systems)
@@ -36,6 +31,14 @@ class DeployCardCreator
       end
       card_description << "\n"
     end
-    return card_description
+    card_description
+  end
+
+  def gather_card_label_ids(system_labels)
+    label_ids_for_deploy_card = [DEPLOY_LABEL_ID]
+    SysLabelChecker::ALL_SYSTEM_LABELS.zip(SysLabelChecker::ALL_SYS_LABEL_IDS).each do |name, id|
+      label_ids_for_deploy_card.push(id) if system_labels.include? name
+    end
+    label_ids_for_deploy_card
   end
 end

@@ -73,7 +73,7 @@ module PivotalCardChecker
     end
     
     def print_systems_to_deploy
-      systems = card_checker.find_systems_to_deploy(false)
+      systems = find_systems_to_deploy(false)
       if systems.keys.empty?
         puts 'No systems to deploy.'
       else
@@ -90,7 +90,7 @@ module PivotalCardChecker
       @all_stories, @all_labels, @all_comments, @all_owners =
         DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
-      SystemsToDeployChecker.new([@all_stories, @all_labels, 
+      SystemsToDeployChecker.new([@all_stories, @all_labels,
                                   @all_comments]).find_systems_to_deploy
     end
 
