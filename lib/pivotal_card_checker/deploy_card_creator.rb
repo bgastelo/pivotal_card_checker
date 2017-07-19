@@ -9,17 +9,13 @@ module PivotalCardChecker
     def create_deploy_card(systems)
       title = "#{Time.now.strftime('%-m/%-d/%y')} #{systems.keys.join(', ')} deploy"
       card_description = create_card_description(systems)
+      card_labels = gather_card_label_ids(systems.keys).concat @default_label_ids
       hedgeye_project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
-      story = hedgeye_project.create_story(name: title,
-                                           description: card_description,
-                                           story_type: 'Chore',
-                                           current_state: 'unstarted',
-                                           label_ids: @default_label_ids)
-      # works, but would rather do in label_ids...
-      systems.keys.each do |label_name|
-        story.add_label(label_name)
-        story.save
-      end
+      hedgeye_project.create_story(name: title,
+                                   description: card_description,
+                                   story_type: 'Chore',
+                                   current_state: 'unstarted',
+                                   label_ids: card_labels)
     end
 
     def create_card_description(systems)
@@ -31,7 +27,15 @@ module PivotalCardChecker
         end
         card_description << "\n"
       end
-      return card_description
+      card_description
+    end
+
+    def gather_card_label_ids(system_labels)
+      label_ids_for_deploy_card = []
+      PivotalCardChecker::Checkers::ALL_SYSTEM_LABELS.zip(PivotalCardChecker::Checkers::ALL_SYS_LABEL_IDS).each do |name, id|
+        label_ids_for_deploy_card.push(id) if system_labels.include? name
+      end
+      label_ids_for_deploy_card
     end
   end
 end

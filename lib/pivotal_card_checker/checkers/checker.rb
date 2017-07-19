@@ -2,6 +2,11 @@
 # by multiple *_checker classes.
 module PivotalCardChecker
   module Checkers
+    ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
+                         'ui', 'pivotal card health tools', 'mailroom',
+                         'common'].freeze
+    ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
+                         2_606_529, 18_741_299, 2_713_317, 2_516_203].freeze
     class Checker
       STORIES_INDEX = 0
       LABELS_INDEX = 1
