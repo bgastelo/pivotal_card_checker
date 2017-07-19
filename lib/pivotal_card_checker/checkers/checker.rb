@@ -1,5 +1,3 @@
-# Generic Checker class that contains attributes and methods that are used
-# by multiple *_checker classes.
 module PivotalCardChecker
   module Checkers
     ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
@@ -7,6 +5,8 @@ module PivotalCardChecker
                          'common'].freeze
     ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
                          2_606_529, 18_741_299, 2_713_317, 2_516_203].freeze
+    # Generic Checker class that contains attributes and methods that are used
+    # by multiple *_checker classes.
     class Checker
       STORIES_INDEX = 0
       LABELS_INDEX = 1
@@ -20,7 +20,7 @@ module PivotalCardChecker
       end
 
       def check
-        puts 'Checked something.'
+        puts 'Generic check method.'
       end
 
       def is_candidate?(story_id, state)
@@ -39,7 +39,7 @@ module PivotalCardChecker
         search_results.each do |current_comment|
           temp = current_comment.split(%r{/github.com\/(.*?)\/(.*?)\/})[2]
           temp = temp[8...temp.length] if temp.include? 'hedgeye-'
-          system_labels_detected.add(temp.tr('_', ' '))
+          system_labels_detected << temp.tr('_', ' ')
         end
         system_labels_detected.to_a
       end
@@ -66,8 +66,8 @@ module PivotalCardChecker
       def find_all_comments_that_contain(search_string, story_id)
         valid_comments = []
         @all_comments[story_id].each do |comment|
-          valid_comments.push(comment.text) if !comment.text.nil? &&
-                                               (comment.text.include? search_string)
+          valid_comments << comment.text if !comment.text.nil? &&
+                                            (comment.text.include? search_string)
         end
         valid_comments
       end

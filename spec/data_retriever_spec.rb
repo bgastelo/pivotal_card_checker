@@ -18,4 +18,12 @@ describe PivotalCardChecker::DataRetriever do
       expect(first_owner).to be_a TrackerApi::Resources::Person
     end
   end
+
+  it 'should retrieve all of the epic labels.' do
+    VCR.use_cassette 'data_retriever_epics_test' do
+      result = PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_epics
+
+      expect(result.first).to eql("pivotal card health tools")
+    end
+  end
 end

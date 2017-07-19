@@ -11,9 +11,9 @@ module PivotalCardChecker
                       !has_label?(story_id, 'to_prod') &&
                       !has_label?(story_id, 'delayed_prod') &&
                       !has_label?(story_id, 'not_to_prod')
-          missing_prod_info.push(story_id)
+          missing_prod_info << story_id
         end
-        return missing_prod_info
+        missing_prod_info
       end
     end
   end

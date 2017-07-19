@@ -8,18 +8,25 @@ module PivotalCardChecker
       @all_labels = Hash.new {}
       @all_comments = Hash.new {}
       @all_owners = Hash.new {}
+      client = TrackerApi::Client.new(token: @api_key)
+      @hedgeye_project = client.project(@proj_id)
     end
 
     def retrieve_data
-      client = TrackerApi::Client.new(token: @api_key)
-      hedgeye_project = client.project(@proj_id)
-
       # Gets the current iteration and all backlog iterations.
-      iterations = hedgeye_project.iterations(scope: :current_backlog)
+      iterations = @hedgeye_project.iterations(scope: :current_backlog)
 
       process_iterations(iterations)
 
-      return @all_stories, @all_labels, @all_comments, @all_owners
+      [@all_stories, @all_labels, @all_comments, @all_owners]
+    end
+
+    def retrieve_epics
+      labels = []
+      @hedgeye_project.epics.each do |epic|
+        labels << epic.label.name
+      end
+      labels
     end
 
     def process_iterations(iterations)

@@ -1,8 +1,0 @@
-dct
-[DCT: United Airlines - Resolve lack of results](https://www.pivotaltracker.com/story/show/148673879)
-[DCT: Davita - Resolve lack of results](https://www.pivotaltracker.com/story/show/148745381)
-[DCT: Frac Focus Data Download Project](https://www.pivotaltracker.com/story/show/147517001)
-
-reader
-[Vertical social icons hover behaviora](https://www.pivotaltracker.com/story/show/148871431)
-
