@@ -11,13 +11,14 @@ require 'pivotal_card_checker/checkers/sys_label_checker'
 require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
 require 'pivotal_card_checker/checkers/other_issues_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
+require 'pivotal_card_checker/checkers/epic_cards_checker'
 require 'tracker_api'
 
 module PivotalCardChecker
-  MISSING_PROD_TYPE = 1
-  MISSING_SYS_LABEL_TYPE = 2
-  MISSING_CRITERIA_TYPE = 3
-  OTHER_ISSUE_TYPE = 4
+  PROD_INFO_ISSUE = 1
+  SYS_LABEL_ISSUE = 2
+  ACCEPTANCE_CRIT_ISSUE = 3
+  OTHER_ISSUE = 4
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, prints out a report containing all violations along with an
@@ -72,15 +73,19 @@ module PivotalCardChecker
     end
 
     def find_systems_to_deploy(need_to_retrieve_data)
-      @all_stories, @all_labels, @all_comments, @all_owners =
-        DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
+      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
       Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
                                             @all_comments]).check
     end
 
     def create_deploy_card(default_label_ids)
-      DeployCardCreator.new(@api_key, @proj_id, default_label_ids).create_deploy_card(find_systems_to_deploy(true))
+      systems = find_systems_to_deploy(true)
+      epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
+      ordering = Checkers::EpicCardsChecker.new(systems, epic_labels,
+                                                @all_labels).check
+      DeployCardCreator.new(@api_key, @proj_id,
+                            default_label_ids).create_deploy_card(systems, ordering)
     end
   end
 end

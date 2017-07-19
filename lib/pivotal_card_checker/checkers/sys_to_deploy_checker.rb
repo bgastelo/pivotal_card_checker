@@ -1,5 +1,7 @@
 module PivotalCardChecker
   module Checkers
+    # Checks the cards to generate a list of the systems that are going to be
+    # deployed (determined by the cards labels).
     class SystemsToDeployChecker < SysLabelChecker
       def check
         systems_to_deploy = Hash.new {}

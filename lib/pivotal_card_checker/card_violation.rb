@@ -1,4 +1,5 @@
 module PivotalCardChecker
+  # Holds the story id and error message for card violations.
   class CardViolation
     attr_reader :id, :message
 

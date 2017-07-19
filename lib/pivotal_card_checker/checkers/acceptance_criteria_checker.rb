@@ -15,7 +15,7 @@ module PivotalCardChecker
             @results[story_id] = '\'criteria needed\' label was detected.'
           end
         end
-        return @results
+        @results
       end
 
       def has_acceptance_criteria(story_id, description)

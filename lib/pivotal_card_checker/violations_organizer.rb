@@ -1,4 +1,5 @@
 module PivotalCardChecker
+  # Organizes the violations into a map of owner names -> card violations.
   class ViolationsOrganizer
     def initialize(all_stories, all_owners)
       @all_stories = all_stories
@@ -7,15 +8,18 @@ module PivotalCardChecker
     end
 
     def organize(prod_info, sys_label, acceptance_crit, other_issues)
-      process_list(prod_info, MISSING_PROD_TYPE)
-      process_list(sys_label, MISSING_SYS_LABEL_TYPE)
-      process_list(acceptance_crit, MISSING_CRITERIA_TYPE)
-      process_list(other_issues, OTHER_ISSUE_TYPE)
+      all_violations = [prod_info, sys_label, acceptance_crit, other_issues]
+      types = [PROD_INFO_ISSUE, SYS_LABEL_ISSUE, ACCEPTANCE_CRIT_ISSUE,
+               OTHER_ISSUE]
 
-      return @bad_card_info
+      types.zip(all_violations).each do |type, violations|
+        process_list(type, violations)
+      end
+
+      @bad_card_info
     end
 
-    def process_list(list, type)
+    def process_list(type, list)
       unless list.nil?
         list.each do |story_id, message|
           card_owners = get_owners(story_id)

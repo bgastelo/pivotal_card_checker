@@ -1,5 +1,3 @@
-# Generic Checker class that contains attributes and methods that are used
-# by multiple *_checker classes.
 module PivotalCardChecker
   module Checkers
     ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
@@ -7,6 +5,8 @@ module PivotalCardChecker
                          'common'].freeze
     ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
                          2_606_529, 18_741_299, 2_713_317, 2_516_203].freeze
+    # Generic Checker class that contains attributes and methods that are used
+    # by multiple *_checker classes.
     class Checker
       STORIES_INDEX = 0
       LABELS_INDEX = 1
@@ -20,7 +20,7 @@ module PivotalCardChecker
       end
 
       def check
-        puts 'Checked something.'
+        puts 'Generic check method.'
       end
 
       def is_candidate?(story_id, state)

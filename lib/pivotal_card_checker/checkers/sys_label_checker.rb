@@ -1,6 +1,7 @@
 module PivotalCardChecker
   module Checkers
-
+    # Verifies the cards to see if any of them are either missing a system
+    # label(s) or have an incorrect system label(s).
     class SysLabelChecker < Checker
       def check
         @all_stories.each do |story_id, story|
@@ -31,10 +32,10 @@ module PivotalCardChecker
           end
         elsif !sys_labels_from_comments.empty?
           sys_labels_from_comments.each do |sys_label|
-             if !has_label?(story_id, sys_label)
-               @results[story_id] = "Expected label(s): '#{sys_labels_from_comments.join('\', \'')}', but found: '#{sys_labels_on_story.join('\', \'')}' instead."
-               break
-             end
+            unless has_label?(story_id, sys_label)
+              @results[story_id] = "Expected label(s): '#{sys_labels_from_comments.join('\', \'')}', but found: '#{sys_labels_on_story.join('\', \'')}' instead."
+              break
+            end
           end
         end
       end
