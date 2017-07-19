@@ -24,7 +24,7 @@ module PivotalCardChecker
     def retrieve_epics
       labels = []
       @hedgeye_project.epics.each do |epic|
-        labels.push(epic.label.name)
+        labels << epic.label.name
       end
       labels
     end

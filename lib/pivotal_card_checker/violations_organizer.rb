@@ -8,11 +8,10 @@ module PivotalCardChecker
     end
 
     def organize(prod_info, sys_label, acceptance_crit, other_issues)
-      all_violations = [prod_info, sys_label, acceptance_crit, other_issues]
-      types = [PROD_INFO_ISSUE, SYS_LABEL_ISSUE, ACCEPTANCE_CRIT_ISSUE,
-               OTHER_ISSUE]
-
-      types.zip(all_violations).each do |type, violations|
+      [[PROD_INFO_ISSUE, prod_info],
+       [SYS_LABEL_ISSUE, sys_label],
+       [ACCEPTANCE_CRIT_ISSUE, acceptance_crit],
+       [OTHER_ISSUE, other_issues]].each do |type, violations|
         process_list(type, violations)
       end
 
@@ -34,7 +33,7 @@ module PivotalCardChecker
     def get_owners(story_id)
       owner_names = []
       @all_owners[story_id].each do |person|
-        owner_names.push(person.name)
+        owner_names << person.name
       end
 
       owner_names.join(', ')

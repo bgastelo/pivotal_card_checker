@@ -17,13 +17,13 @@ module PivotalCardChecker
       violation = CardViolation.new(story_id, message)
       case type
       when PROD_INFO_ISSUE
-        @prod_info_issues.push(violation)
+        @prod_info_issues << violation
       when SYS_LABEL_ISSUE
-        @sys_label_issues.push(violation)
+        @sys_label_issues << violation
       when ACCEPTANCE_CRIT_ISSUE
-        @acceptance_crit_issues.push(violation)
+        @acceptance_crit_issues << violation
       when OTHER_ISSUE
-        @other_issues.push(violation)
+        @other_issues << violation
       else
         puts 'Invalid type.'
       end

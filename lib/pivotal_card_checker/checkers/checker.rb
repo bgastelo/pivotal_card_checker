@@ -39,7 +39,7 @@ module PivotalCardChecker
         search_results.each do |current_comment|
           temp = current_comment.split(%r{/github.com\/(.*?)\/(.*?)\/})[2]
           temp = temp[8...temp.length] if temp.include? 'hedgeye-'
-          system_labels_detected.add(temp.tr('_', ' '))
+          system_labels_detected << temp.tr('_', ' ')
         end
         system_labels_detected.to_a
       end
@@ -66,8 +66,8 @@ module PivotalCardChecker
       def find_all_comments_that_contain(search_string, story_id)
         valid_comments = []
         @all_comments[story_id].each do |comment|
-          valid_comments.push(comment.text) if !comment.text.nil? &&
-                                               (comment.text.include? search_string)
+          valid_comments << comment.text if !comment.text.nil? &&
+                                            (comment.text.include? search_string)
         end
         valid_comments
       end

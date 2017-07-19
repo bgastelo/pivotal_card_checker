@@ -6,7 +6,7 @@ module PivotalCardChecker
         @systems = systems
         @epic_labels = epic_labels
         @all_labels = all_labels
-        @results = Hash.new {}
+        @results = Hash.new { |hash, key| hash[key] = [] }
       end
 
       def check
@@ -20,28 +20,23 @@ module PivotalCardChecker
       end
 
       def find_epic_labels_on_story(story_id)
-        epic_labels = Set.new
+        epic_labels = []
         unless @all_labels[story_id].nil?
           @all_labels[story_id].each do |label|
-            epic_labels.add(label.name) if @epic_labels.include? label.name
+            epic_labels << label.name if @epic_labels.include? label.name
           end
         end
-        epic_labels.to_a
+        epic_labels
       end
 
       def process_labels(epic_labels_on_story, sys_label, story)
         if epic_labels_on_story.empty?
-          add_story_to_results(sys_label, story)
+          @results[sys_label] << story
         else
           epic_labels_on_story.each do |epic_label|
-            add_story_to_results(epic_label, story)
+            @results[epic_label] << story
           end
         end
-      end
-
-      def add_story_to_results(label, story)
-        @results[label] = [] if @results[label].nil?
-        @results[label].push(story)
       end
     end
   end

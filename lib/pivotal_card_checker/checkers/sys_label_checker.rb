@@ -16,7 +16,7 @@ module PivotalCardChecker
         sys_labels = Set.new
         unless @all_labels[story_id].nil?
           @all_labels[story_id].each do |label|
-            sys_labels.add(label.name) if ALL_SYSTEM_LABELS.include? label.name
+            sys_labels << label.name if ALL_SYSTEM_LABELS.include? label.name
           end
         end
         sys_labels.to_a

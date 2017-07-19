@@ -34,7 +34,7 @@ module PivotalCardChecker
     def gather_card_label_ids(system_labels)
       label_ids_for_deploy_card = []
       PivotalCardChecker::Checkers::ALL_SYSTEM_LABELS.zip(PivotalCardChecker::Checkers::ALL_SYS_LABEL_IDS).each do |name, id|
-        label_ids_for_deploy_card.push(id) if system_labels.include? name
+        label_ids_for_deploy_card << id if system_labels.include? name
       end
       label_ids_for_deploy_card
     end
@@ -42,7 +42,7 @@ module PivotalCardChecker
     def process_epics(project)
       labels = []
       project.epics.each do |label|
-        labels.push(label.name)
+        labels << label.name
       end
       labels
     end

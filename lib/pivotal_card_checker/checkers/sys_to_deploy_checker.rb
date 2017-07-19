@@ -12,7 +12,7 @@ module PivotalCardChecker
           sys_labels_on_story = find_system_labels_on_story(story_id)
           sys_labels_on_story.each do |sys_label|
             systems_to_deploy[sys_label] = [] if systems_to_deploy[sys_label].nil?
-            systems_to_deploy[sys_label].push(story)
+            systems_to_deploy[sys_label] << story
           end
         end
         systems_to_deploy
