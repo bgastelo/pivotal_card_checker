@@ -1,10 +1,9 @@
 module PivotalCardChecker
   module Checkers
     ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
-                         'ui', 'pivotal card health tools', 'mailroom',
-                         'common'].freeze
+                         'ui', 'pivotal card health tools', 'mailroom'].freeze
     ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
-                         2_606_529, 18_741_299, 2_713_317, 2_516_203].freeze
+                         2_606_529, 18_741_299, 2_713_317].freeze
     # Generic Checker class that contains attributes and methods that are used
     # by multiple *_checker classes.
     class Checker
