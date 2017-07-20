@@ -34,5 +34,15 @@ class PivotalCardChecker::CardChecker
         printed.should eq(IO.read('spec/expected_output/one_card_violation_output.txt'))
       end
     end
+
+    it 'should produce output that matches the text in no_cards_expecting_common_label.txt' do
+      VCR.use_cassette 'no_cards_expecting_common_label' do
+        printed = capture_stdout do
+          PivotalCardChecker::CardChecker.check_cards('using cassette', 414_867)
+        end
+
+        printed.should eq(IO.read('spec/expected_output/no_cards_expecting_common_label.txt'))
+      end
+    end
   end
 end
