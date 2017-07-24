@@ -1,17 +1,20 @@
 module PivotalCardChecker
   # Organizes the violations into a map of owner names -> card violations.
   class ViolationsOrganizer
-    def initialize(all_stories, all_owners)
-      @all_stories = all_stories
-      @all_owners = all_owners
-      @bad_card_info = Hash.new {}
+    PROD_INFO_INDEX = 0
+    SYS_LABEL_INDEX = 1
+    ACCEPTANCE_CRIT_INDEX = 2
+    OTHER_ISSUES_INDEX = 3
+
+    def initialize
+      @bad_card_info = Hash.new { |hash, key| hash[key] = CardViolationsManager.new }
     end
 
-    def organize(prod_info, sys_label, acceptance_crit, other_issues)
-      [[PROD_INFO_ISSUE, prod_info],
-       [SYS_LABEL_ISSUE, sys_label],
-       [ACCEPTANCE_CRIT_ISSUE, acceptance_crit],
-       [OTHER_ISSUE, other_issues]].each do |type, violations|
+    def organize(results)
+      [[PROD_INFO_ISSUE, results[PROD_INFO_INDEX]],
+       [SYS_LABEL_ISSUE, results[SYS_LABEL_INDEX]],
+       [ACCEPTANCE_CRIT_ISSUE, results[ACCEPTANCE_CRIT_INDEX]],
+       [OTHER_ISSUE, results[OTHER_ISSUES_INDEX]]].each do |type, violations|
         process_list(type, violations)
       end
 
@@ -20,19 +23,17 @@ module PivotalCardChecker
 
     def process_list(type, list)
       unless list.nil?
-        list.each do |story_id, message|
-          card_owners = get_owners(story_id)
-          @bad_card_info[card_owners] =
-            CardViolationsManager.new if @bad_card_info[card_owners].nil?
-          @bad_card_info[card_owners].add_violation(type, story_id, message)
+        list.each do |story_card, message|
+          card_owners = get_owners(story_card.owners)
+          @bad_card_info[card_owners].add_violation(type, story_card, message)
         end
       end
     end
 
     # Returns a comma seperated list of all the story's owners.
-    def get_owners(story_id)
+    def get_owners(owners)
       owner_names = []
-      @all_owners[story_id].each do |person|
+      owners.each do |person|
         owner_names << person.name
       end
 

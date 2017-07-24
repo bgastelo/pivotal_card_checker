@@ -29,12 +29,13 @@ module PivotalCardChecker
     def print_section(header_text, list, print_message)
       unless list.empty?
         puts header_text
-        list.each do |card|
-          link = "https://www.pivotaltracker.com/story/show/#{card.id}"
+        list.each do |violation|
+          story_card = violation.story_card
+          link = "https://www.pivotaltracker.com/story/show/#{story_card.id}"
           if print_message
-            puts "                #{@all_stories[card.id].name} - #{link} - #{card.message}"
+            puts "                #{story_card.name} - #{link} - #{violation.message}"
           else
-            puts "                #{@all_stories[card.id].name} - #{link}"
+            puts "                #{story_card.name} - #{link}"
           end
         end
       end

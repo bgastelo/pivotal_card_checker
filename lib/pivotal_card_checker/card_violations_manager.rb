@@ -13,8 +13,8 @@ module PivotalCardChecker
       @other_issues = []
     end
 
-    def add_violation(type, story_id, message)
-      violation = CardViolation.new(story_id, message)
+    def add_violation(type, story_card, message)
+      violation = CardViolation.new(story_card, message)
       case type
       when PROD_INFO_ISSUE
         @prod_info_issues << violation

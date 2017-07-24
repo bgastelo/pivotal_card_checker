@@ -4,10 +4,7 @@ module PivotalCardChecker
     def initialize(api_key, proj_id)
       @api_key = api_key
       @proj_id = proj_id
-      @all_stories = Hash.new {}
-      @all_labels = Hash.new {}
-      @all_comments = Hash.new {}
-      @all_owners = Hash.new {}
+      @result = []
       client = TrackerApi::Client.new(token: @api_key)
       @hedgeye_project = client.project(@proj_id)
     end
@@ -16,9 +13,9 @@ module PivotalCardChecker
       # Gets the current iteration and all backlog iterations.
       iterations = @hedgeye_project.iterations(scope: :current_backlog)
 
-      process_iterations(iterations)
+      process_iterations(iterations, iterations.first.number)
 
-      [@all_stories, @all_labels, @all_comments, @all_owners]
+      @result
     end
 
     def retrieve_epics
@@ -29,14 +26,13 @@ module PivotalCardChecker
       labels
     end
 
-    def process_iterations(iterations)
+    def process_iterations(iterations, current_iteration_number)
       iterations.each do |iteration|
         iteration.stories.each do |story|
-          curr_id = story.id
-          @all_stories[curr_id] = story
-          @all_labels[curr_id] = story.labels
-          @all_comments[curr_id] = story.comments
-          @all_owners[curr_id] = story.owners
+          @result << StoryCard.new(story.id, story.name, story.description,
+                                   story.labels, story.comments, story.owners,
+                                   story.current_state,
+                                   iteration.number == current_iteration_number)
         end
       end
     end
