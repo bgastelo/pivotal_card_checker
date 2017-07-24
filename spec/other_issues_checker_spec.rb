@@ -23,4 +23,16 @@ describe PivotalCardChecker::Checkers::OtherIssuesChecker do
 
     expect(result.length).to eql(2)
   end
+
+  it 'should detect one story that is marked \'accepted\', but doesn\'t have prod acceptance' do
+    VCR.use_cassette 'prod_acceptance_missing' do
+      @all_story_cards =
+        PivotalCardChecker::DataRetriever.new('6399a1acd7b2ab0ac1b30c00fb23f7e8', 414_867).retrieve_data
+    end
+
+    result = PivotalCardChecker::Checkers::OtherIssuesChecker.new(@all_story_cards).check
+
+    expect(result.length).to eql(2)
+    expect(result.values.first).to eql('Card is marked \'accepted\', but doesn\'t have prod acceptance')
+  end
 end

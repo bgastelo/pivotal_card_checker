@@ -19,9 +19,9 @@ module PivotalCardChecker
         elsif state == 'delivered' &&
               !has_comment_that_contains?('staging acceptance', comments)
           @results[story_card] = 'Card is marked \'delivered\', but doesn\'t have staging acceptance'
-        elsif state == 'accepted' &&
-              (has_comment_that_contains?('prod acceptance', comments) &&
-              !has_commits) && has_label?(labels, 'to_prod')
+        elsif state == 'accepted' && has_commits &&
+              has_label?(labels, 'to_prod') &&
+              !has_comment_that_contains?('prod acceptance', comments)
           @results[story_card] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
         elsif (state == 'started' || state == 'unstarted') &&
               has_label?(labels, 'to_prod')
