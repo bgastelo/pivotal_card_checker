@@ -79,9 +79,11 @@ module PivotalCardChecker
     def create_deploy_card(default_label_ids)
       systems = find_systems_to_deploy(true)
       epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
-      ordering = Checkers::EpicCardsChecker.new(systems, epic_labels).check
+      reg_stories, epic_stories = Checkers::EpicCardsChecker.new(systems, epic_labels).check
       DeployCardCreator.new(@api_key, @proj_id,
-                            default_label_ids).create_deploy_card(systems, ordering)
+                            default_label_ids).create_deploy_card(systems,
+                                                                  reg_stories,
+                                                                  epic_stories)
     end
   end
 end

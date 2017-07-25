@@ -1,6 +1,6 @@
+website redo spring 2017
+  cms
+    [Vlads Test Card](https://www.pivotaltracker.com/story/show/149178389)
+
 reader
 [Vertical social icons hover behavior](https://www.pivotaltracker.com/story/show/148871431)
-
-website redo spring 2017
-[Vlads Test Card](https://www.pivotaltracker.com/story/show/149178389)
-
