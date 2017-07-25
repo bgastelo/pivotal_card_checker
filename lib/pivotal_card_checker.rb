@@ -5,6 +5,7 @@ require 'pivotal_card_checker/deploy_card_creator'
 require 'pivotal_card_checker/card_violations_manager'
 require 'pivotal_card_checker/card_violation'
 require 'pivotal_card_checker/violations_organizer'
+require 'pivotal_card_checker/story_card'
 require 'pivotal_card_checker/checkers/checker'
 require 'pivotal_card_checker/checkers/prod_info_checker'
 require 'pivotal_card_checker/checkers/sys_label_checker'
@@ -12,6 +13,7 @@ require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
 require 'pivotal_card_checker/checkers/other_issues_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 require 'pivotal_card_checker/checkers/epic_cards_checker'
+require 'pivotal_card_checker/checkers/all_cards_assigned_checker'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -19,6 +21,7 @@ module PivotalCardChecker
   SYS_LABEL_ISSUE = 2
   ACCEPTANCE_CRIT_ISSUE = 3
   OTHER_ISSUE = 4
+  UNASSIGNED_CARDS_ISSUE = 5
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, prints out a report containing all violations along with an
@@ -27,27 +30,22 @@ module PivotalCardChecker
     def initialize(api_key, proj_id)
       @api_key = api_key
       @proj_id = proj_id
-      @all_stories = Hash.new {}
-      @all_labels = Hash.new {}
-      @all_comments = Hash.new {}
-      @all_owners = Hash.new {}
     end
 
     def check_cards
-      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data
+      @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data
 
-      lists = [@all_stories, @all_labels, @all_comments]
-      prod_info_violations = Checkers::ProdInfoChecker.new(lists).check
-      sys_label_violations = Checkers::SysLabelChecker.new(lists).check
-      acceptance_violations =
-        Checkers::AcceptanceCritChecker.new(lists).check
-      other_violations = Checkers::OtherIssuesChecker.new(lists).check
-      bad_card_info =
-        ViolationsOrganizer.new(@all_stories,
-                                @all_owners).organize(prod_info_violations,
-                                                      sys_label_violations,
-                                                      acceptance_violations,
-                                                      other_violations)
+      checkers = [Checkers::ProdInfoChecker.new(@all_story_cards),
+                  Checkers::SysLabelChecker.new(@all_story_cards),
+                  Checkers::AcceptanceCritChecker.new(@all_story_cards),
+                  Checkers::OtherIssuesChecker.new(@all_story_cards),
+                  Checkers::AllCardsAssignedChecker.new(@all_story_cards)]
+      results = []
+      checkers.each do |checker|
+        results << checker.check
+      end
+
+      bad_card_info = ViolationsOrganizer.new.organize(results)
 
       ReportPrinter.new(bad_card_info, @all_stories).print_report
     end
@@ -73,17 +71,15 @@ module PivotalCardChecker
     end
 
     def find_systems_to_deploy(need_to_retrieve_data)
-      @all_stories, @all_labels, @all_comments, @all_owners = DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
+      @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
-      Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                            @all_comments]).check
+      Checkers::SystemsToDeployChecker.new(@all_story_cards).check
     end
 
     def create_deploy_card(default_label_ids)
       systems = find_systems_to_deploy(true)
       epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
-      ordering = Checkers::EpicCardsChecker.new(systems, epic_labels,
-                                                @all_labels).check
+      ordering = Checkers::EpicCardsChecker.new(systems, epic_labels).check
       DeployCardCreator.new(@api_key, @proj_id,
                             default_label_ids).create_deploy_card(systems, ordering)
     end

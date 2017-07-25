@@ -22,6 +22,7 @@ module PivotalCardChecker
         print_section('        Missing system label:', card_manager.sys_label_issues, true)
         print_section('        Missing acceptance criteria:', card_manager.acceptance_crit_issues, true)
         print_section('        Other issues:', card_manager.other_issues, true)
+        print_section('        Nobody is assigned to the following cards:', card_manager.unassigned_cards_issues, false)
         puts "\n"
       end
     end
@@ -29,12 +30,13 @@ module PivotalCardChecker
     def print_section(header_text, list, print_message)
       unless list.empty?
         puts header_text
-        list.each do |card|
-          link = "https://www.pivotaltracker.com/story/show/#{card.id}"
+        list.each do |violation|
+          story_card = violation.story_card
+          link = "https://www.pivotaltracker.com/story/show/#{story_card.id}"
           if print_message
-            puts "                #{@all_stories[card.id].name} - #{link} - #{card.message}"
+            puts "                #{story_card.name} - #{link} - #{violation.message}"
           else
-            puts "                #{@all_stories[card.id].name} - #{link}"
+            puts "                #{story_card.name} - #{link}"
           end
         end
       end

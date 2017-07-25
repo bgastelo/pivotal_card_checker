@@ -4,17 +4,18 @@ module PivotalCardChecker
   # issues, and other/miscellaneous issues)
   class CardViolationsManager
     attr_reader :prod_info_issues, :sys_label_issues, :acceptance_crit_issues,
-                :other_issues
+                :other_issues, :unassigned_cards_issues
 
     def initialize
       @prod_info_issues = []
       @sys_label_issues = []
       @acceptance_crit_issues = []
       @other_issues = []
+      @unassigned_cards_issues = []
     end
 
-    def add_violation(type, story_id, message)
-      violation = CardViolation.new(story_id, message)
+    def add_violation(type, story_card, message)
+      violation = CardViolation.new(story_card, message)
       case type
       when PROD_INFO_ISSUE
         @prod_info_issues << violation
@@ -24,6 +25,8 @@ module PivotalCardChecker
         @acceptance_crit_issues << violation
       when OTHER_ISSUE
         @other_issues << violation
+      when UNASSIGNED_CARDS_ISSUE
+        @unassigned_cards_issues << violation
       else
         puts 'Invalid type.'
       end

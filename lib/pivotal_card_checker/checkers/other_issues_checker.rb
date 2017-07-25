@@ -4,26 +4,28 @@ module PivotalCardChecker
     # classify as "other"
     class OtherIssuesChecker < Checker
       def check
-        @all_stories.each do |story_id, story|
-          violation_validation(story_id, story.current_state,
-                               has_commits?(story_id))
+        @all_story_cards.each do |story_card|
+          violation_validation(story_card, has_commits?(story_card.comments))
         end
         @results
       end
 
-      def violation_validation(story_id, state, has_commits)
+      def violation_validation(story_card, has_commits)
+        state = story_card.current_state
+        comments = story_card.comments
+        labels = story_card.labels
         if state == 'finished' && !has_commits
-          @results[story_id] = 'Card is marked \'finished\', but has no commits.'
+          @results[story_card] = 'Card is marked \'finished\', but has no commits.'
         elsif state == 'delivered' &&
-              !has_comment_that_contains?('staging acceptance', story_id)
-          @results[story_id] = 'Card is marked \'delivered\', but doesn\'t have staging acceptance'
-        elsif state == 'accepted' &&
-              (has_comment_that_contains?('prod acceptance', story_id) &&
-              !has_commits) && has_label?(story_id, 'to_prod')
-          @results[story_id] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
+              !has_comment_that_contains?('staging acceptance', comments)
+          @results[story_card] = 'Card is marked \'delivered\', but doesn\'t have staging acceptance'
+        elsif state == 'accepted' && has_commits &&
+              has_label?(labels, 'to_prod') &&
+              !has_comment_that_contains?('prod acceptance', comments)
+          @results[story_card] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
         elsif (state == 'started' || state == 'unstarted') &&
-              has_label?(story_id, 'to_prod')
-          @results[story_id] = "Card is marked '#{state}', but has the 'to_prod' label."
+              has_label?(labels, 'to_prod')
+          @results[story_card] = "Card is marked '#{state}', but has the 'to_prod' label."
         end
       end
     end

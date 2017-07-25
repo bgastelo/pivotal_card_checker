@@ -6,24 +6,22 @@ require 'spec_helper'
 describe PivotalCardChecker::Checkers::SystemsToDeployChecker do
   it 'should detect that we will be deploying only billing engine' do
     VCR.use_cassette 'sys_to_deploy_test' do
-      @all_stories, @all_labels, @all_comments, @all_owners =
+      @all_story_cards =
         PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                         @all_comments]).check
-    expect(result.keys.length).to eql(1)
+    result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new(@all_story_cards).check
+    expect(result.length).to eql(1)
     expect(result.keys.first).to eql('billing engine')
   end
 
   it 'should detect that we are deploying: billing engine, cms, and reader' do
     VCR.use_cassette 'multiple_card_violations_response' do
-      @all_stories, @all_labels, @all_comments, @all_owners =
+      @all_story_cards =
         PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
     end
 
-    result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new([@all_stories, @all_labels,
-                                         @all_comments]).check
+    result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new(@all_story_cards).check
     expect(result.keys).to eql(['billing engine', 'cms', 'reader'])
   end
 end

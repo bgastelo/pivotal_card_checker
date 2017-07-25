@@ -4,28 +4,29 @@ module PivotalCardChecker
     # criteria, actually have acceptance criteria.
     class AcceptanceCritChecker < Checker
       def check
-        @all_stories.each do |story_id, story|
-          next unless has_label?(story_id, 'to_prod') &&
-                      (story.current_state == 'finished' ||
-                      story.current_state == 'delivered')
-          if !has_acceptance_criteria(story_id,
-                                      @all_stories[story_id].description)
-            @results[story_id] = 'No acceptance criteria in desciption or comments.'
-          elsif has_label?(story_id, 'criteria needed')
-            @results[story_id] = '\'criteria needed\' label was detected.'
+        @all_story_cards.each do |story_card|
+          next unless has_label?(story_card.labels, 'to_prod') &&
+                      (story_card.current_state == 'finished' ||
+                      story_card.current_state == 'delivered')
+          if !has_acceptance_criteria(story_card.labels,
+                                      story_card.description,
+                                      story_card.comments)
+            @results[story_card] = 'No acceptance criteria in desciption or comments.'
+          elsif has_label?(story_card.labels, 'criteria needed')
+            @results[story_card] = '\'criteria needed\' label was detected.'
           end
         end
         @results
       end
 
-      def has_acceptance_criteria(story_id, description)
+      def has_acceptance_criteria(labels, description, comments)
         # Check for 'criteria approved' label
-        has_label?(story_id, 'criteria approved') ||
+        has_label?(labels, 'criteria approved') ||
           # Check for acceptance criteria in card descrption.
           (!description.nil? &&
           (description.downcase.include? 'acceptance criteria')) ||
           # Criteria not found in description, check comments.
-          has_comment_that_contains?('acceptance criteria', story_id)
+          has_comment_that_contains?('acceptance criteria', comments)
       end
     end
   end

@@ -8,4 +8,8 @@ OWNER(s): Alex Handler
         Other issues:
                 Implement update button styles on accounts - https://www.pivotaltracker.com/story/show/138332121 - Card is marked 'unstarted', but has the 'to_prod' label.
 
+OWNER(s): NOBODY??!?!
+        Nobody is assigned to the following cards:
+                Shouldn't turn on Email for RTA live - https://www.pivotaltracker.com/story/show/148444949
+
 No systems to deploy.
