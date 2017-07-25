@@ -4,17 +4,11 @@ module PivotalCardChecker
     # criteria, actually have acceptance criteria.
     class AllCardsAssignedChecker < Checker
       def check
-        get_current_stories
-      end
-
-      def has_acceptance_criteria(story_id, description)
-        # Check for 'criteria approved' label
-        has_label?(story_id, 'criteria approved') ||
-          # Check for acceptance criteria in card descrption.
-          (!description.nil? &&
-          (description.downcase.include? 'acceptance criteria')) ||
-          # Criteria not found in description, check comments.
-          has_comment_that_contains?('acceptance criteria', story_id)
+        @results = []
+        @all_story_cards.each do |story_card|
+          @results << story_card if story_card.owners.empty? && story_card.in_current_iteration
+        end
+        @results
       end
     end
   end

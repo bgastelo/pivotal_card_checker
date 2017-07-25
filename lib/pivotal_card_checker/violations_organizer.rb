@@ -5,6 +5,7 @@ module PivotalCardChecker
     SYS_LABEL_INDEX = 1
     ACCEPTANCE_CRIT_INDEX = 2
     OTHER_ISSUES_INDEX = 3
+    UNASSIGNED_CARDS_INDEX = 4
 
     def initialize
       @bad_card_info = Hash.new { |hash, key| hash[key] = CardViolationsManager.new }
@@ -14,7 +15,8 @@ module PivotalCardChecker
       [[PROD_INFO_ISSUE, results[PROD_INFO_INDEX]],
        [SYS_LABEL_ISSUE, results[SYS_LABEL_INDEX]],
        [ACCEPTANCE_CRIT_ISSUE, results[ACCEPTANCE_CRIT_INDEX]],
-       [OTHER_ISSUE, results[OTHER_ISSUES_INDEX]]].each do |type, violations|
+       [OTHER_ISSUE, results[OTHER_ISSUES_INDEX]],
+       [UNASSIGNED_CARDS_ISSUE, results[UNASSIGNED_CARDS_INDEX]]].each do |type, violations|
         process_list(type, violations)
       end
 
@@ -32,6 +34,8 @@ module PivotalCardChecker
 
     # Returns a comma seperated list of all the story's owners.
     def get_owners(owners)
+      return 'NOBODY??!?!' if owners.empty?
+
       owner_names = []
       owners.each do |person|
         owner_names << person.name

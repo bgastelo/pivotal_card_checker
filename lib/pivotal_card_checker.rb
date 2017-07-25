@@ -13,6 +13,7 @@ require 'pivotal_card_checker/checkers/acceptance_criteria_checker'
 require 'pivotal_card_checker/checkers/other_issues_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 require 'pivotal_card_checker/checkers/epic_cards_checker'
+require 'pivotal_card_checker/checkers/all_cards_assigned_checker'
 require 'tracker_api'
 
 module PivotalCardChecker
@@ -20,6 +21,7 @@ module PivotalCardChecker
   SYS_LABEL_ISSUE = 2
   ACCEPTANCE_CRIT_ISSUE = 3
   OTHER_ISSUE = 4
+  UNASSIGNED_CARDS_ISSUE = 5
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, prints out a report containing all violations along with an
@@ -36,7 +38,8 @@ module PivotalCardChecker
       checkers = [Checkers::ProdInfoChecker.new(@all_story_cards),
                   Checkers::SysLabelChecker.new(@all_story_cards),
                   Checkers::AcceptanceCritChecker.new(@all_story_cards),
-                  Checkers::OtherIssuesChecker.new(@all_story_cards)]
+                  Checkers::OtherIssuesChecker.new(@all_story_cards),
+                  Checkers::AllCardsAssignedChecker.new(@all_story_cards)]
       results = []
       checkers.each do |checker|
         results << checker.check

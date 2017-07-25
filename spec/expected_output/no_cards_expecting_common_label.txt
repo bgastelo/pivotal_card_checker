@@ -4,6 +4,8 @@ OWNER(s): Diego Scataglini
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
                 start caching thumbnail articles in /insights/all - https://www.pivotaltracker.com/story/show/149080517
                 start caching med articles/list_articles in feed_items/all - https://www.pivotaltracker.com/story/show/149080473
+        Other issues:
+                latest insights stays cached when sticky is used - https://www.pivotaltracker.com/story/show/149039323 - Card is marked 'accepted', but doesn't have prod acceptance
 
 OWNER(s): Brett Novak
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
@@ -11,6 +13,10 @@ OWNER(s): Brett Novak
                 Investigate blank screen Qa Screenshots - https://www.pivotaltracker.com/story/show/149185789
         Missing acceptance criteria:
                 DCT: Pipeline Data Collection Project - https://www.pivotaltracker.com/story/show/147616769 - No acceptance criteria in desciption or comments.
+        Other issues:
+                DCT: Davita - Resolve lack of results - https://www.pivotaltracker.com/story/show/148745381 - Card is marked 'accepted', but doesn't have prod acceptance
+                DCT: Frac Focus Data Download Project - https://www.pivotaltracker.com/story/show/147517001 - Card is marked 'accepted', but doesn't have prod acceptance
+                DCT: United Airlines - Resolve lack of results - https://www.pivotaltracker.com/story/show/148673879 - Card is marked 'accepted', but doesn't have prod acceptance
 
 OWNER(s): Brett Novak, Jeffrey Esser
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):

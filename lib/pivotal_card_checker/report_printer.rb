@@ -22,6 +22,7 @@ module PivotalCardChecker
         print_section('        Missing system label:', card_manager.sys_label_issues, true)
         print_section('        Missing acceptance criteria:', card_manager.acceptance_crit_issues, true)
         print_section('        Other issues:', card_manager.other_issues, true)
+        print_section('        Nobody is assigned to the following cards:', card_manager.unassigned_cards_issues, false)
         puts "\n"
       end
     end
