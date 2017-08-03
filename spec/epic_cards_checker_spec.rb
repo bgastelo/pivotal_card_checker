@@ -14,7 +14,7 @@ describe PivotalCardChecker::Checkers::EpicCardsChecker do
 
     result = PivotalCardChecker::Checkers::EpicCardsChecker.new(@systems, @epic_labels).check
 
-    expect(result['website redo spring 2017'].length).to eql(1)
-    expect(result['website redo spring 2017'].first.name).to eql('Vlads Test Card')
+    expect(result[1]['website redo spring 2017'].length).to eql(1)
+    expect(result[1]['website redo spring 2017']['cms'].first.name).to eql('Vlads Test Card')
   end
 end

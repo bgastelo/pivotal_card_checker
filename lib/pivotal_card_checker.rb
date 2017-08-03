@@ -1,6 +1,6 @@
 require 'pivotal_card_checker/version'
 require 'pivotal_card_checker/data_retriever'
-require 'pivotal_card_checker/report_printer'
+require 'pivotal_card_checker/report_generator'
 require 'pivotal_card_checker/deploy_card_creator'
 require 'pivotal_card_checker/card_violations_manager'
 require 'pivotal_card_checker/card_violation'
@@ -47,21 +47,20 @@ module PivotalCardChecker
 
       bad_card_info = ViolationsOrganizer.new.organize(results)
 
-      ReportPrinter.new(bad_card_info, @all_stories).print_report
+      ReportGenerator.new(bad_card_info, @all_stories).generate_report
     end
 
-    def self.check_cards(api_key, proj_id, print_sys_to_deploy = true)
+    def self.check_cards(api_key, proj_id, generate_sys_to_deploy = true)
       card_checker = new(api_key, proj_id)
-      card_checker.check_cards
-      card_checker.print_systems_to_deploy if print_sys_to_deploy
+      card_checker.check_cards << (generate_sys_to_deploy ? card_checker.generate_systems_to_deploy : '')
     end
 
-    def print_systems_to_deploy
+    def generate_systems_to_deploy
       systems = find_systems_to_deploy(false)
       if systems.keys.empty?
-        puts 'No systems to deploy.'
+        "No systems to deploy.\n"
       else
-        puts "Systems to deploy: #{systems.keys.join(', ')}"
+        "Systems to deploy: #{systems.keys.join(', ')}\n"
       end
     end
 
