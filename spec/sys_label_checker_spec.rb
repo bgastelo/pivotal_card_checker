@@ -12,4 +12,14 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
     expect(result.length).to eql(1)
   end
+
+  it 'should not consider ui to be a system label, hence zero results/violations' do
+    VCR.use_cassette 'ui_sys_label_check' do
+      @all_story_cards =
+        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+    end
+
+    result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
+    expect(result.values.length).to eql(0)
+  end
 end
