@@ -1,0 +1,38 @@
+
+========= Pivotal Card Checker ===========
+OWNER(s): Diego Scataglini
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                start caching thumbnail articles in /insights/all - https://www.pivotaltracker.com/story/show/149080517
+                start caching med articles/list_articles in feed_items/all - https://www.pivotaltracker.com/story/show/149080473
+        Other issues:
+                latest insights stays cached when sticky is used - https://www.pivotaltracker.com/story/show/149039323 - Card is marked 'accepted', but doesn't have prod acceptance
+
+OWNER(s): Brett Novak
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                Expand Tesla DCT to All Countries - https://www.pivotaltracker.com/story/show/147957293
+                Investigate blank screen Qa Screenshots - https://www.pivotaltracker.com/story/show/149185789
+        Missing acceptance criteria:
+                DCT: Pipeline Data Collection Project - https://www.pivotaltracker.com/story/show/147616769 - No acceptance criteria in desciption or comments.
+        Other issues:
+                DCT: Davita - Resolve lack of results - https://www.pivotaltracker.com/story/show/148745381 - Card is marked 'accepted', but doesn't have prod acceptance
+                DCT: Frac Focus Data Download Project - https://www.pivotaltracker.com/story/show/147517001 - Card is marked 'accepted', but doesn't have prod acceptance
+                DCT: United Airlines - Resolve lack of results - https://www.pivotaltracker.com/story/show/148673879 - Card is marked 'accepted', but doesn't have prod acceptance
+
+OWNER(s): Brett Novak, Jeffrey Esser
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                Walmart, Instacart portion of grocery tracker - https://www.pivotaltracker.com/story/show/146533243
+
+OWNER(s): Alex Handler
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                Produts page entry (summary) - https://www.pivotaltracker.com/story/show/148857587
+        Missing acceptance criteria:
+                Vertical social icons hover behavior - https://www.pivotaltracker.com/story/show/148871431 - No acceptance criteria in desciption or comments.
+                description migration for etf product - https://www.pivotaltracker.com/story/show/149167499 - No acceptance criteria in desciption or comments.
+
+OWNER(s): Renaldo Pierre Louis
+        Missing acceptance criteria:
+                HE/SF Migration - https://www.pivotaltracker.com/story/show/148857563 - No acceptance criteria in desciption or comments.
+                Add and set default byline info - https://www.pivotaltracker.com/story/show/148857567 - No acceptance criteria in desciption or comments.
+                Ensure email reporting tracks content category - https://www.pivotaltracker.com/story/show/148857569 - No acceptance criteria in desciption or comments.
+                Add email header - https://www.pivotaltracker.com/story/show/148857577 - No acceptance criteria in desciption or comments.
+
