@@ -7,9 +7,9 @@ module PivotalCardChecker
     end
 
     def generate_report
-      report = "\n========= Pivotal Card Checker ===========\n"
+      report = "========= Pivotal Card Checker ===========\n"
       if @bad_card_info.empty?
-        report << "CONGRATS! No card violations.\n"
+        report << "CONGRATS! No card violations.\n\n"
       else
         report << print_card_violations
       end

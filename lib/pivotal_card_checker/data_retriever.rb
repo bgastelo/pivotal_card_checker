@@ -11,7 +11,8 @@ module PivotalCardChecker
 
     def retrieve_data
       # Gets the current iteration and all backlog iterations.
-      iterations = @hedgeye_project.iterations(scope: :current_backlog)
+      iterations = @hedgeye_project.iterations(scope: :current_backlog,
+                                               fields: "stories(:default,comments,owners)")
 
       process_iterations(iterations, iterations.first.number)
 
