@@ -9,9 +9,8 @@ describe PivotalCardChecker::DataRetriever do
 
       first_story = result.first
 
-      expect(first_story.name).to eql('HQ2 document draft')
-      expect(first_story.labels.first.name).to eql('designer_external')
-      expect(first_story.comments.first.nil?).to eql(true)
+      expect(first_story.labels.first.name).to eql('subscriber request')
+      expect(first_story.comments.first.nil?).to eql(false)
       expect(first_story.in_current_iteration).to eql(true)
     end
   end
