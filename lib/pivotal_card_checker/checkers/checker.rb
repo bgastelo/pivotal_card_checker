@@ -17,12 +17,6 @@ module PivotalCardChecker
         puts 'Generic check method.'
       end
 
-      def is_candidate?(story_card)
-        state = story_card.current_state
-        state == 'finished' || state == 'delivered' || (state == 'accepted' &&
-        has_commits?(story_card.comments))
-      end
-
       def has_commits?(comments)
         has_comment_that_contains?('Commit by', comments, true)
       end
