@@ -16,6 +16,12 @@ module PivotalCardChecker
         end
         missing_prod_info
       end
+
+      def is_candidate?(story_card)
+        state = story_card.current_state
+        state == 'finished' || state == 'delivered' || ((state == 'accepted' ||
+        state == 'started') && has_commits?(story_card.comments))
+      end
     end
   end
 end
