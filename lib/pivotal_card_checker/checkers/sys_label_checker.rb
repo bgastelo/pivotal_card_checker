@@ -5,7 +5,7 @@ module PivotalCardChecker
     class SysLabelChecker < Checker
       def check
         @all_story_cards.each do |story_card|
-          next unless sys_label_candidate?(story_card)
+          next unless is_candidate?(story_card)
           sys_labels_on_story = find_system_labels_on_story(story_card.labels)
           sys_label_violation_check(story_card, sys_labels_on_story)
         end
@@ -38,12 +38,6 @@ module PivotalCardChecker
             end
           end
         end
-      end
-
-      def sys_label_candidate?(story_card)
-        state = story_card.current_state
-        state == 'finished' || state == 'delivered' || (state == 'accepted' &&
-        has_commits?(story_card.comments))
       end
     end
   end

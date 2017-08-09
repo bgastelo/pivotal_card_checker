@@ -17,7 +17,7 @@ module PivotalCardChecker
         missing_prod_info
       end
 
-      def prod_info_candidate?(story_card)
+      def is_candidate?(story_card)
         state = story_card.current_state
         state == 'finished' || state == 'delivered' || ((state == 'accepted' ||
         state == 'started') && has_commits?(story_card.comments))
