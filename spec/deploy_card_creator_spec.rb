@@ -5,7 +5,7 @@ require 'spec_helper'
 describe PivotalCardChecker::DeployCardCreator do
   DEPLOY_LABEL_ID = 2_506_935
 
-  it 'should create one deploy card with just one cms story' do
+  it 'should create a deploy card with just one cms story' do
     VCR.use_cassette 'deploy_card_creation_8_9_2017' do
       @card_title, @card_description, @card_labels =
         PivotalCardChecker::CardChecker.create_deploy_card('using cassette', 414_867, [DEPLOY_LABEL_ID])
@@ -18,7 +18,7 @@ describe PivotalCardChecker::DeployCardCreator do
     expect(correct_system_labels - @card_labels).to eql([])
   end
 
-  it 'should create one deploy card with fsfsd' do
+  it 'should create a deploy card with consolidated labels under the website redo epic' do
     VCR.use_cassette 'deploy_card_creation_8_9_2017_consolidation_test_epic' do
       @card_title, @card_description, @card_labels =
         PivotalCardChecker::CardChecker.create_deploy_card('using cassette', 414_867, [DEPLOY_LABEL_ID])
@@ -31,7 +31,7 @@ describe PivotalCardChecker::DeployCardCreator do
     expect(correct_system_labels - @card_labels).to eql([])
   end
 
-  it 'should create one deploy card with lkj' do
+  it 'should create a deploy card with consolidated labels not under any epic' do
     VCR.use_cassette 'deploy_card_creation_8_9_2017_consolidation_test_reg' do
       @card_title, @card_description, @card_labels =
         PivotalCardChecker::CardChecker.create_deploy_card('using cassette', 414_867, [DEPLOY_LABEL_ID])
