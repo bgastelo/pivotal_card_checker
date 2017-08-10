@@ -22,6 +22,13 @@ module PivotalCardChecker
   ACCEPTANCE_CRIT_ISSUE = 3
   OTHER_ISSUE = 4
   UNASSIGNED_CARDS_ISSUE = 5
+  LABEL_URLS = { 'cms' => 'cms.hedgeye.com',
+           'reader' => 'app.hedgeye.com',
+           'billing engine' => 'accounts.hedgeye.com',
+           'marketing' => 'www.hedgeye.com',
+           'macro monitor' => 'drivers.hedgeye.com',
+           'retail-data' => 'retail-data.hedgeye.com'
+         }.freeze
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, prints out a report containing all violations along with an
