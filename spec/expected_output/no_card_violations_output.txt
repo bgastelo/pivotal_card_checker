@@ -1,0 +1,4 @@
+========= Pivotal Card Checker ===========
+CONGRATS! No card violations.
+
+Systems to deploy: cms, reader, billing engine, marketing

@@ -10,7 +10,9 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
     end
 
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
+
     expect(result.length).to eql(1)
+    expect(result.keys.first.name).to eql('vlad test card')
   end
 
   it 'should not consider ui to be a system label, hence zero results/violations' do

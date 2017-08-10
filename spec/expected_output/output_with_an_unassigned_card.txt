@@ -1,23 +1,17 @@
-
 ========= Pivotal Card Checker ===========
-OWNER(s): Forrest Chang
+OWNER(s): Renaldo Pierre Louis
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                Add to product strategy dashboard - https://www.pivotaltracker.com/story/show/148857575
+                Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
 
-OWNER(s): Don Humphreys
+OWNER(s): Diego Scataglini
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                Create Q2 report for AirBnB; teardown servers - https://www.pivotaltracker.com/story/show/149307557
-        Other issues:
-                Create Q2 report for AirBnB; teardown servers - https://www.pivotaltracker.com/story/show/149307557 - Card is marked 'delivered', but doesn't have staging acceptance
-
-OWNER(s): Scott Smith
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                spec fails test for assigning asset allocation to Early Look before switchover - https://www.pivotaltracker.com/story/show/149453169
-        Missing system label:
-                spec fails test for assigning asset allocation to Early Look before switchover - https://www.pivotaltracker.com/story/show/149453169 - No system labels detected (reader, cms, dct, etc...)
+                3-month Early Look Complimentary subscription seems to be one day too long. - https://www.pivotaltracker.com/story/show/149897775
+                Health Care cross discovery spike - https://www.pivotaltracker.com/story/show/149965126
+                reader/archives templates is messed up - https://www.pivotaltracker.com/story/show/150146166
+                re-enable feed_items_controller action cache - https://www.pivotaltracker.com/story/show/150146414
 
 OWNER(s): NOBODY??!?!
-        Nobody is assigned to the following cards:
-                Vlad Test cArd - https://www.pivotaltracker.com/story/show/149453611
+        Nobody is assigned to the following card(s):
+                Vlads Test Card - https://www.pivotaltracker.com/story/show/150145929
 
-No systems to deploy.
+Systems to deploy: cms, reader, marketing, billing engine
