@@ -27,7 +27,7 @@ module PivotalCardChecker
       inverted_stories = Hash.new { |hash, key| hash[key] = [] }
       stories.each do |label, story_cards|
         story_cards.each do |story_card|
-          inverted_stories[story_card] << label
+          inverted_stories[story_card] << (LABEL_URLS[label].nil? ? label : LABEL_URLS[label])
         end
       end
 

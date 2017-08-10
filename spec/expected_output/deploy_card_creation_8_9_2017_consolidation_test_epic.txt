@@ -1,6 +1,6 @@
 website redo spring 2017
-  cms, reader
+  cms.hedgeye.com, app.hedgeye.com
     [testcard](https://www.pivotaltracker.com/story/show/150116980)
 
-cms
+cms.hedgeye.com
 [Implement fast job search for all SF-related jobs for a user ID](https://www.pivotaltracker.com/story/show/149861918)
