@@ -23,8 +23,23 @@ module PivotalCardChecker
       [title, card_description, label_names]
     end
 
+    def consolidate_sys_labels(stories)
+      inverted_stories = Hash.new { |hash, key| hash[key] = [] }
+      stories.each do |label, story_cards|
+        story_cards.each do |story_card|
+          inverted_stories[story_card] << label
+        end
+      end
+
+      stories = Hash.new { |hash, key| hash[key] = [] }
+      inverted_stories.each do |story_card, labels|
+        stories[labels.join(', ')] << story_card
+      end
+      stories
+    end
+
     def reg_cards_description(reg_stories)
-      add_story_info_to_desc(reg_stories, '')
+      add_story_info_to_desc(consolidate_sys_labels(reg_stories), '')
     end
 
     def epic_cards_description(epic_stories)
@@ -32,7 +47,8 @@ module PivotalCardChecker
       card_description = ''
       epic_stories.each do |label, sys_map|
         card_description << "#{label}\n"
-        card_description = add_story_info_to_desc(sys_map, card_description,
+        stories = consolidate_sys_labels(sys_map)
+        card_description = add_story_info_to_desc(stories, card_description,
                                                   false, '  ', '    ')
         card_description << "\n"
       end
