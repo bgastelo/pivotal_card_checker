@@ -1,31 +1,33 @@
-
 ========= Pivotal Card Checker ===========
+OWNER(s): Renaldo Pierre Louis
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
+                Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849
+        Missing system label:
+                Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849 - No system labels detected (reader, cms, dct, etc...)
+        Other issues:
+                Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849 - Card is marked 'finished', but has no commits.
+
 OWNER(s): Diego Scataglini
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                reader:/hedgeye_tv when reading HomepageConfiguration keep account of override true/false - https://www.pivotaltracker.com/story/show/148146299
+                3-month Early Look Complimentary subscription seems to be one day too long. - https://www.pivotaltracker.com/story/show/149897775
+                Health Care cross discovery spike - https://www.pivotaltracker.com/story/show/149965126
+                reader/archives templates is messed up - https://www.pivotaltracker.com/story/show/150146166
+
+OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
+        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+                Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264
         Missing system label:
-                Change All Insights Lead Article to Most Recent or Sticky  - https://www.pivotaltracker.com/story/show/148148887 - Expected label(s): 'reader', 'cms', but found: 'reader' instead.
-                hedgeye tv section not showing up on homepage - https://www.pivotaltracker.com/story/show/148341469 - Did not find expected label(s): 'cms'
-
-OWNER(s): Scott Smith
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                add asset allocations to mvd script - https://www.pivotaltracker.com/story/show/147040771
-
-OWNER(s): Brett Novak, Don Humphreys
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295
+                Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - No system labels detected (reader, cms, dct, etc...)
         Other issues:
-                DCT: Start AirBnB Q2 run - https://www.pivotaltracker.com/story/show/148149295 - Card is marked 'finished', but has no commits.
+                Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - Card is marked 'delivered', but doesn't have staging acceptance
 
-OWNER(s): Don Humphreys, Renaldo Pierre Louis
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                TOS acceptance turns on web/email access and sends normal welcome email - https://www.pivotaltracker.com/story/show/146411083
-
-OWNER(s): Alex Handler
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
-                ETF Pro billboard - https://www.pivotaltracker.com/story/show/148416243
-                migration for ETF pro billboard - https://www.pivotaltracker.com/story/show/148419255
+OWNER(s): Brett Novak
         Other issues:
-                Implement update button styles on accounts - https://www.pivotaltracker.com/story/show/138332121 - Card is marked 'unstarted', but has the 'to_prod' label.
+                Frontier DCT check - https://www.pivotaltracker.com/story/show/149744435 - Card is marked 'delivered', but doesn't have staging acceptance
 
-Systems to deploy: billing engine, cms, reader
+OWNER(s): Don Humphreys
+        Other issues:
+                Display PDF hits tracking - https://www.pivotaltracker.com/story/show/149965438 - Card is marked 'started', but has the 'to_prod' label.
+
+Systems to deploy: cms, dct, reader, marketing, billing engine
