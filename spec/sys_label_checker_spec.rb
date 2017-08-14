@@ -24,4 +24,14 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
     expect(result.values.length).to eql(0)
   end
+
+  it 'should not detect a story with the label: not_to_prod.' do
+    VCR.use_cassette 'one_card_is_not_to_prod' do
+      @all_story_cards =
+        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+    end
+
+    result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
+    expect(result.length).to eql(0)
+  end
 end

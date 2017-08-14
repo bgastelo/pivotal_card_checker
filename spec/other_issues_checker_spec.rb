@@ -25,4 +25,14 @@ describe PivotalCardChecker::Checkers::OtherIssuesChecker do
     expect(result.length).to eql(1)
     expect(result.keys.first.name).to eql('Vlad test card')
   end
+
+  it 'should not detect a story with the label: not_to_prod.' do
+    VCR.use_cassette 'one_card_is_not_to_prod' do
+      @all_story_cards =
+        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+    end
+
+    result = PivotalCardChecker::Checkers::OtherIssuesChecker.new(@all_story_cards).check
+    expect(result.length).to eql(0)
+  end
 end
