@@ -8,7 +8,8 @@ describe PivotalCardChecker::Checkers::EpicCardsChecker do
       api_key = 'using cassette'
       proj_id = 414_867
       data_retriever = PivotalCardChecker::DataRetriever.new(api_key, proj_id)
-      @systems = PivotalCardChecker::CardChecker.new(api_key, proj_id).find_systems_to_deploy(true)
+      cards_to_deploy, deployed_cards = PivotalCardChecker::CardChecker.new(api_key, proj_id).find_systems_to_deploy(true)
+      @systems = cards_to_deploy.merge(deployed_cards)
       @epic_labels = data_retriever.retrieve_epics
     end
 

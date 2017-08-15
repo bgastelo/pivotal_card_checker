@@ -63,7 +63,7 @@ module PivotalCardChecker
     end
 
     def generate_systems_to_deploy
-      systems = find_systems_to_deploy(false)
+      systems = find_systems_to_deploy(false).first
       if systems.keys.empty?
         "No systems to deploy.\n"
       else
@@ -83,11 +83,12 @@ module PivotalCardChecker
     end
 
     def create_deploy_card(default_label_ids)
-      systems = find_systems_to_deploy(true)
+      cards_to_deploy, deployed_cards = find_systems_to_deploy(true)
+      systems = cards_to_deploy.merge(deployed_cards)
       epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
       reg_stories, epic_stories = Checkers::EpicCardsChecker.new(systems, epic_labels).check
       DeployCardCreator.new(@api_key, @proj_id,
-                            default_label_ids).create_deploy_card(systems,
+                            default_label_ids).create_deploy_card(cards_to_deploy,
                                                                   reg_stories,
                                                                   epic_stories)
     end
