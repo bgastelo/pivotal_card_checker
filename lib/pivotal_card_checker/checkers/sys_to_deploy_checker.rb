@@ -4,18 +4,27 @@ module PivotalCardChecker
     # deployed (determined by the cards labels).
     class SystemsToDeployChecker < SysLabelChecker
       def check
-        systems_to_deploy = Hash.new {}
+        cards_to_deploy = Hash.new { |hash, key| hash[key] = [] }
+        deployed_cards = Hash.new { |hash, key| hash[key] = [] }
         @all_story_cards.each do |story_card|
+          state = story_card.current_state
           next unless has_label?(story_card.labels, 'to_prod') &&
-                      (story_card.current_state == 'finished' ||
-                      story_card.current_state == 'delivered')
-          sys_labels_on_story = find_system_labels_on_story(story_card.labels)
-          sys_labels_on_story.each do |sys_label|
-            systems_to_deploy[sys_label] = [] if systems_to_deploy[sys_label].nil?
-            systems_to_deploy[sys_label] << story_card
+                      (state == 'finished' || state == 'delivered' ||
+                      state == 'accepted')
+          if state == 'accepted'
+            add_card_to_hash(story_card, deployed_cards)
+          else
+            add_card_to_hash(story_card, cards_to_deploy)
           end
         end
-        systems_to_deploy
+        [cards_to_deploy, deployed_cards]
+      end
+
+      def add_card_to_hash(story_card, current_hash)
+        sys_labels_on_story = find_system_labels_on_story(story_card.labels)
+        sys_labels_on_story.each do |sys_label|
+          current_hash[sys_label] << story_card
+        end
       end
     end
   end

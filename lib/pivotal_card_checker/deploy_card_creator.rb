@@ -7,19 +7,19 @@ module PivotalCardChecker
       @default_label_ids = default_label_ids
     end
 
-    def create_deploy_card(systems, reg_stories, epic_stories)
-      title = "#{Time.now.strftime('%-m/%-d/%y')} #{systems.keys.join(', ')} deploy"
+    def create_deploy_card(cards_to_deploy, reg_stories, epic_stories)
+      title = "#{Time.now.strftime('%-m/%-d/%y')} #{cards_to_deploy.keys.join(', ')} deploy"
       hedgeye_project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
       card_description = (epic_cards_description(epic_stories) <<
                           reg_cards_description(reg_stories)).rstrip
-      card_labels = gather_card_label_ids(systems.keys).concat @default_label_ids
+      card_labels = gather_card_label_ids(cards_to_deploy.keys).concat @default_label_ids
       hedgeye_project.create_story(name: title,
                                    description: card_description,
                                    story_type: 'Chore',
                                    current_state: 'unstarted',
                                    label_ids: card_labels)
 
-      label_names = systems.keys << 'deploy'
+      label_names = cards_to_deploy.keys << 'deploy'
       [title, card_description, label_names]
     end
 
