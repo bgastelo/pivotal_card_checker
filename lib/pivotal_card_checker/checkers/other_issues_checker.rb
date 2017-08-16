@@ -5,7 +5,7 @@ module PivotalCardChecker
     class OtherIssuesChecker < Checker
       def check
         @all_story_cards.each do |story_card|
-          violation_validation(story_card, has_commits?(story_card.comments))
+          violation_validation(story_card, has_commits?(story_card.comments)) if !has_label?(story_card.labels, 'not_to_prod')
         end
         @results
       end
