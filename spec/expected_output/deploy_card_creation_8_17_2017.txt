@@ -1,0 +1,19 @@
+etf pro
+  accounts.hedgeye.com
+    [about hedgeye copy update](https://www.pivotaltracker.com/story/show/150235674)
+  accounts.hedgeye.com, cms.hedgeye.com
+    [ETF Pro copy update - landing pages and welcome email](https://www.pivotaltracker.com/story/show/150235607)
+
+accounts.hedgeye.com, cms.hedgeye.com, www.hedgeye.com, app.hedgeye.com
+[Create separate Aurora user for each app](https://www.pivotaltracker.com/story/show/150143485)
+
+cms.hedgeye.com
+[Create investopedia plan pricings](https://www.pivotaltracker.com/story/show/150175462)
+
+app.hedgeye.com
+[reader code cleanup](https://www.pivotaltracker.com/story/show/150259488)
+[remove ArchiveController](https://www.pivotaltracker.com/story/show/150259585)
+[print button should show only on :show action](https://www.pivotaltracker.com/story/show/150148400)
+[Responsive navigation bug](https://www.pivotaltracker.com/story/show/150150918)
+[RTA sub nav "tabs" should persist for each sub nav view](https://www.pivotaltracker.com/story/show/150174729)
+[redirect reader:/home to reader:/](https://www.pivotaltracker.com/story/show/150238153)
