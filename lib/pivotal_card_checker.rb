@@ -84,13 +84,22 @@ module PivotalCardChecker
 
     def create_deploy_card(default_label_ids)
       cards_to_deploy, deployed_cards = find_systems_to_deploy(true)
-      systems = cards_to_deploy.merge(deployed_cards)
+      systems = merge_card_hashes(cards_to_deploy, deployed_cards)
       epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
       reg_stories, epic_stories = Checkers::EpicCardsChecker.new(systems, epic_labels).check
       DeployCardCreator.new(@api_key, @proj_id,
                             default_label_ids).create_deploy_card(cards_to_deploy,
                                                                   reg_stories,
                                                                   epic_stories)
+    end
+
+    def merge_card_hashes(cards_to_deploy, deployed_cards)
+      cards_to_deploy.each do |labels, cards|
+        cards.each do |story_card|
+          deployed_cards[labels] << story_card
+        end
+      end
+      deployed_cards
     end
   end
 end
