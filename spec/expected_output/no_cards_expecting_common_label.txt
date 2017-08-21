@@ -13,7 +13,7 @@ OWNER(s): Diego Scataglini
 OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264
-        Missing system label:
+        Missing system label(s):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - No system labels detected (reader, cms, dct, etc...)
         Other issues:
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - Card is marked 'delivered', but doesn't have staging acceptance

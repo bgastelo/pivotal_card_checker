@@ -3,7 +3,7 @@ OWNER(s): Renaldo Pierre Louis
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
                 Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
                 Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849
-        Missing system label:
+        Missing system label(s):
                 Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849 - No system labels detected (reader, cms, dct, etc...)
         Other issues:
                 Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849 - Card is marked 'finished', but has no commits.
@@ -17,7 +17,7 @@ OWNER(s): Diego Scataglini
 OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
         Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264
-        Missing system label:
+        Missing system label(s):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - No system labels detected (reader, cms, dct, etc...)
         Other issues:
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - Card is marked 'delivered', but doesn't have staging acceptance
