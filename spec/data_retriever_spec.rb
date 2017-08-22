@@ -5,7 +5,7 @@ require 'spec_helper'
 describe PivotalCardChecker::DataRetriever do
   it 'should retrieve all of the current and backlog cards.' do
     VCR.use_cassette 'data_retriever_test' do
-      result = PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+      result = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
 
       first_story = result.first
 
@@ -17,7 +17,7 @@ describe PivotalCardChecker::DataRetriever do
 
   it 'should retrieve all of the epic labels.' do
     VCR.use_cassette 'data_retriever_epics_test' do
-      result = PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_epics
+      result = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_epics
 
       expect(result.first).to eql("pivotal card health tools")
     end

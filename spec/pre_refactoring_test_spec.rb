@@ -8,7 +8,7 @@ class PivotalCardChecker::CardChecker
       # Cassette recorded July 6, 2017
       VCR.use_cassette 'multiple_card_violations_response' do
         printed = 
-          PivotalCardChecker::CardChecker.check_cards('using cassette', 414_867)
+          PivotalCardChecker::CardChecker.check_cards(API_KEY, PROJECT_ID)
 
         printed.should eq(IO.read('spec/expected_output/multiple_card_violations_output.txt'))
       end
@@ -17,7 +17,7 @@ class PivotalCardChecker::CardChecker
     it 'should produce output that matches the text in no_card_violations_output.txt' do
       VCR.use_cassette 'no_card_violations' do
         printed =
-          PivotalCardChecker::CardChecker.check_cards('6399a1acd7b2ab0ac1b30c00fb23f7e8', 414_867)
+          PivotalCardChecker::CardChecker.check_cards(API_KEY, PROJECT_ID)
 
         printed.should eq(IO.read('spec/expected_output/no_card_violations_output.txt'))
       end
@@ -26,7 +26,7 @@ class PivotalCardChecker::CardChecker
     it 'should produce output that matches the text in no_cards_expecting_common_label.txt' do
       VCR.use_cassette 'no_cards_expecting_common_label' do
         printed =
-          PivotalCardChecker::CardChecker.check_cards('using cassette', 414_867)
+          PivotalCardChecker::CardChecker.check_cards(API_KEY, PROJECT_ID)
 
         printed.should eq(IO.read('spec/expected_output/no_cards_expecting_common_label.txt'))
       end
@@ -35,7 +35,7 @@ class PivotalCardChecker::CardChecker
     it 'should produce output that matches the text in not_printing_sys_to_deploy.txt' do
       VCR.use_cassette 'no_cards_expecting_common_label' do
         printed =
-          PivotalCardChecker::CardChecker.check_cards('using cassette', 414_867, false)
+          PivotalCardChecker::CardChecker.check_cards(API_KEY, PROJECT_ID, false)
 
         printed.should eq(IO.read('spec/expected_output/not_printing_sys_to_deploy.txt'))
       end
@@ -44,7 +44,7 @@ class PivotalCardChecker::CardChecker
     it 'should produce output that matches the text in output_with_an_unassigned_card.txt' do
       VCR.use_cassette 'output_with_an_unassigned_card' do
         printed =
-          PivotalCardChecker::CardChecker.check_cards('using cassette', 414_867)
+          PivotalCardChecker::CardChecker.check_cards(API_KEY, PROJECT_ID)
 
         printed.should eq(IO.read('spec/expected_output/output_with_an_unassigned_card.txt'))
       end

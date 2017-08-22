@@ -20,7 +20,7 @@ module PivotalCardChecker
       @bad_card_info.each do |owner_name, card_manager|
         card_violations << "OWNER(s): #{owner_name}\n"
         card_violations << print_section("        Missing prod description label (\'to_prod\', \'delayed_prod\', or \'not_to_prod\'):\n", card_manager.prod_info_issues, false)
-        card_violations << print_section("        Missing system label:\n", card_manager.sys_label_issues, true)
+        card_violations << print_section("        Missing system label(s):\n", card_manager.sys_label_issues, true)
         card_violations << print_section("        Missing acceptance criteria:\n", card_manager.acceptance_crit_issues, true)
         card_violations << print_section("        Other issues:\n", card_manager.other_issues, true)
         card_violations << print_section("        Nobody is assigned to the following card(s):\n", card_manager.unassigned_cards_issues, false)

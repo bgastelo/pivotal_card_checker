@@ -7,7 +7,7 @@ describe PivotalCardChecker::Checkers::SystemsToDeployChecker do
   it 'should detect that we there are no systems to deploy' do
     VCR.use_cassette 'no_systems_to_deploy' do
       @all_story_cards =
-        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+        PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new(@all_story_cards).check
@@ -17,7 +17,7 @@ describe PivotalCardChecker::Checkers::SystemsToDeployChecker do
   it 'should detect that we are deploying: billing engine, cms, dct, marketing and reader' do
     VCR.use_cassette 'multiple_card_violations_response' do
       @all_story_cards =
-        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+        PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::SystemsToDeployChecker.new(@all_story_cards).check

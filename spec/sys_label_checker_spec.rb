@@ -6,7 +6,7 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
   it 'should detect one story that is missing a prod info label' do
     VCR.use_cassette 'sys_label_check' do
       @all_story_cards =
-        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+        PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
@@ -18,7 +18,7 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
   it 'should not consider ui to be a system label, hence zero results/violations' do
     VCR.use_cassette 'ui_sys_label_check' do
       @all_story_cards =
-        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+        PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check
@@ -28,7 +28,7 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
   it 'should not detect a story with the label: not_to_prod.' do
     VCR.use_cassette 'one_card_is_not_to_prod' do
       @all_story_cards =
-        PivotalCardChecker::DataRetriever.new('using cassette', 414_867).retrieve_data
+        PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::SysLabelChecker.new(@all_story_cards).check

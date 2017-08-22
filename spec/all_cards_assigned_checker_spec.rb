@@ -5,8 +5,8 @@ require 'spec_helper'
 describe PivotalCardChecker::Checkers::AllCardsAssignedChecker do
   it 'should detect one story that is missing a prod info label' do
     VCR.use_cassette 'unassigned_cards_check_two_violations' do
-      @all_story_cards = PivotalCardChecker::DataRetriever.new('using cassette',
-                                                      414_867).retrieve_data
+      @all_story_cards = PivotalCardChecker::DataRetriever.new(API_KEY,
+                                                      PROJECT_ID).retrieve_data
     end
 
     result = PivotalCardChecker::Checkers::AllCardsAssignedChecker.new(@all_story_cards).check
