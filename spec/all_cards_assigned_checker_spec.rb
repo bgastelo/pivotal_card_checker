@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::AllCardsAssignedChecker do
-  it 'should detect one story that is missing a prod info label' do
+  it 'should detect two stories that are unassigned' do
     VCR.use_cassette 'unassigned_cards_check_two_violations' do
       @all_story_cards = PivotalCardChecker::DataRetriever.new(API_KEY,
                                                       PROJECT_ID).retrieve_data

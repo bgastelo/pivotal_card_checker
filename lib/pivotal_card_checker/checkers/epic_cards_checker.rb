@@ -9,6 +9,8 @@ module PivotalCardChecker
         @epic_results = Hash.new { |hash, key| hash[key] = Hash.new { |hash1, key1| hash1[key1] = [] } }
       end
 
+      # Returns a Hash of cards that are in an epic (@epic_results), and those
+      # that are not (@results).
       def check
         @systems.each do |label, story_cards|
           story_cards.each do |story_card|
@@ -19,6 +21,7 @@ module PivotalCardChecker
         [@results, @epic_results]
       end
 
+      # Returns a list of epic labels, from the given labels list.
       def find_epic_labels_on_story(labels)
         epic_labels = []
         unless labels.nil?
@@ -29,6 +32,8 @@ module PivotalCardChecker
         epic_labels
       end
 
+      # Places the given story card into the epic_results Hash, or the results
+      # Hash.
       def process_labels(epic_labels_on_story, sys_label, story_card)
         if epic_labels_on_story.empty?
           @results[sys_label] << story_card

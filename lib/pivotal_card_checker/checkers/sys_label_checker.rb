@@ -3,6 +3,9 @@ module PivotalCardChecker
     # Verifies the cards to see if any of them are either missing a system
     # label(s) or have an incorrect system label(s).
     class SysLabelChecker < Checker
+
+      # Loops through all of the stories, and checks the candidate cards for
+      # any violations.
       def check
         @all_story_cards.each do |story_card|
           next unless is_candidate?(story_card)
@@ -12,6 +15,7 @@ module PivotalCardChecker
         @results
       end
 
+      # Returns an array of system labels that were found on the story card.
       def find_system_labels_on_story(labels)
         sys_labels = Set.new
         unless labels.nil?
@@ -22,6 +26,8 @@ module PivotalCardChecker
         sys_labels.to_a
       end
 
+      # Checks given cards for violations, and adds any violators to the
+      # @results Hash.
       def sys_label_violation_check(story_card, sys_labels_on_story)
         sys_labels_from_comments = get_system_label_from_commit(story_card.comments)
         if sys_labels_on_story.empty?

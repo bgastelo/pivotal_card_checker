@@ -6,6 +6,8 @@ module PivotalCardChecker
       @all_stories = all_stories
     end
 
+    # Initializes the report, processes the card info data, and then returns the
+    # report, as a string.
     def generate_report
       report = "========= Pivotal Card Checker ===========\n"
       if @bad_card_info.empty?
@@ -15,6 +17,8 @@ module PivotalCardChecker
       end
     end
 
+    # Loops through the card violations, processes each one, then returns the
+    # result.
     def print_card_violations
       card_violations = ''
       @bad_card_info.each do |owner_name, card_manager|
@@ -29,6 +33,9 @@ module PivotalCardChecker
       card_violations
     end
 
+    # Appends a section to the report. This includes the section heading (missing system label(s),
+    # missing acceptance criteria, etc.), and all of the violation information (story name,
+    # link, message).
     def print_section(header_text, list, print_message)
       violation_section = ''
       unless list.empty?

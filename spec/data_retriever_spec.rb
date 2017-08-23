@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::DataRetriever do
-  it 'should retrieve all of the current and backlog cards.' do
+  it 'should retrieve all of the current and backlog cards' do
     VCR.use_cassette 'data_retriever_test' do
       result = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
 
@@ -15,7 +15,7 @@ describe PivotalCardChecker::DataRetriever do
     end
   end
 
-  it 'should retrieve all of the epic labels.' do
+  it 'should retrieve all of the epic labels' do
     VCR.use_cassette 'data_retriever_epics_test' do
       result = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_epics
 

@@ -17,11 +17,15 @@ require 'pivotal_card_checker/checkers/all_cards_assigned_checker'
 require 'tracker_api'
 
 module PivotalCardChecker
+  # The following are used by the CardViolationsManagers, to differentiate the
+  # various violation lists.
   PROD_INFO_ISSUE = 1
   SYS_LABEL_ISSUE = 2
   ACCEPTANCE_CRIT_ISSUE = 3
   OTHER_ISSUE = 4
   UNASSIGNED_CARDS_ISSUE = 5
+
+  # Used by the DeployCardCreator, to create the card description.
   LABEL_URLS = { 'cms' => 'cms.hedgeye.com',
            'reader' => 'app.hedgeye.com',
            'billing engine' => 'accounts.hedgeye.com',
@@ -31,7 +35,7 @@ module PivotalCardChecker
          }.freeze
 
   # Checks all of our current and backlog cards for any of our specified
-  # violations, prints out a report containing all violations along with an
+  # violations, returns a report containing all violations along with an
   # error message and the card owner(s) name.
   class CardChecker
     def initialize(api_key, proj_id)
@@ -39,6 +43,9 @@ module PivotalCardChecker
       @proj_id = proj_id
     end
 
+    # Retrieves the necessary data, then passes it to 5 different checker objects,
+    # then processes their output with a ViolationsOrganizer, before passing the
+    # data to a ReportGenerator, which generates the report that is then returned.
     def check_cards
       @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data
 
@@ -57,11 +64,17 @@ module PivotalCardChecker
       ReportGenerator.new(bad_card_info, @all_stories).generate_report
     end
 
+    # This is the public check_cards method, it creates a new PivotalCardChecker
+    # object, and runs the private check_cards method.
     def self.check_cards(api_key, proj_id, generate_sys_to_deploy = true)
       card_checker = new(api_key, proj_id)
+      # This (below) appends the 'Systems to deploy: ' info to the card report,
+      # if generate_sys_to_deploy is true, else append ''.
       card_checker.check_cards << (generate_sys_to_deploy ? card_checker.generate_systems_to_deploy : '')
     end
 
+    # Calls the find_systems_to_deploy method, then returns a string with the
+    # output.
     def generate_systems_to_deploy
       systems = find_systems_to_deploy(false).first
       if systems.keys.empty?
@@ -71,17 +84,23 @@ module PivotalCardChecker
       end
     end
 
+    # The public method that creates a new PivotalCardChecker and then calls
+    # the private create_deploy_card method.
     def self.create_deploy_card(api_key, proj_id, default_label_ids)
       card_checker = new(api_key, proj_id)
       card_checker.create_deploy_card(default_label_ids)
     end
 
+    # Retrieves the story card data, if necessary, then has a SystemsToDeployChecker
+    # find systems that need to be deployed.
     def find_systems_to_deploy(need_to_retrieve_data)
       @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
 
       Checkers::SystemsToDeployChecker.new(@all_story_cards).check
     end
 
+    # Gathers and process all of the necessary information, then sends it to
+    # a DeployCardCreator object to create the deploy card.
     def create_deploy_card(default_label_ids)
       cards_to_deploy, deployed_cards = find_systems_to_deploy(true)
       systems = merge_card_hashes(cards_to_deploy, deployed_cards)
@@ -93,6 +112,8 @@ module PivotalCardChecker
                                                                   epic_stories)
     end
 
+    # Merges the two hashes that map<String, Array>. This method is necessary
+    # because deployed_cards.merge(cards_to_deploy) didn't work properly.
     def merge_card_hashes(cards_to_deploy, deployed_cards)
       cards_to_deploy.each do |labels, cards|
         cards.each do |story_card|

@@ -14,6 +14,8 @@ module PivotalCardChecker
       @unassigned_cards_issues = []
     end
 
+    # Puts story cards and their error message into a CardViolation object, then
+    # adds them to the appropriate list, based on type.
     def add_violation(type, story_card, message)
       violation = CardViolation.new(story_card, message)
       case type

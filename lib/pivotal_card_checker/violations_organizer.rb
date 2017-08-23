@@ -11,6 +11,8 @@ module PivotalCardChecker
       @bad_card_info = Hash.new { |hash, key| hash[key] = CardViolationsManager.new }
     end
 
+    # Sends the cards to be processed, by type, then returns the resulting
+    # info (@bad_card_info)
     def organize(results)
       [[PROD_INFO_ISSUE, results[PROD_INFO_INDEX]],
        [SYS_LABEL_ISSUE, results[SYS_LABEL_INDEX]],
@@ -23,6 +25,8 @@ module PivotalCardChecker
       @bad_card_info
     end
 
+    # Goes through the list of cards and places them into a Hash, which maps the
+    # owner name(s) to a CardViolationsManager object.
     def process_list(type, list)
       unless list.nil?
         list.each do |story_card, message|
@@ -32,7 +36,8 @@ module PivotalCardChecker
       end
     end
 
-    # Returns a comma seperated list of all the story's owners.
+    # Returns a comma seperated list of all the story's owners. If a card has no
+    # owners, then this method will return 'NOBODY??!?!'.
     def get_owners(owners)
       return 'NOBODY??!?!' if owners.empty?
 

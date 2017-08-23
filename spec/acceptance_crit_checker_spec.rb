@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::AcceptanceCritChecker do
-  it 'should detect one story that is missing a prod info label' do
+  it 'should detect one story that is missing acceptance criteria' do
     VCR.use_cassette 'acceptance_crit_check_one_violation' do
       @result = PivotalCardChecker::DataRetriever.new(API_KEY,
                                                       PROJECT_ID).retrieve_data
@@ -13,7 +13,7 @@ describe PivotalCardChecker::Checkers::AcceptanceCritChecker do
     expect(result.length).to eql(1)
   end
 
-  it 'should detect one story that is missing a prod info label' do
+  it 'should detect zero stories that are missing acceptance criteria' do
     VCR.use_cassette 'acceptance_crit_check_zero_violations' do
       @result = PivotalCardChecker::DataRetriever.new(API_KEY,
                                                       PROJECT_ID).retrieve_data

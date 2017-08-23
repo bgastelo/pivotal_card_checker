@@ -3,6 +3,8 @@ module PivotalCardChecker
     # Verifies the cards to see if any of them violate any smaller issues that we
     # classify as "other"
     class OtherIssuesChecker < Checker
+
+      # Runs the validation method on all the cards, then returns the result.
       def check
         @all_story_cards.each do |story_card|
           violation_validation(story_card, has_commits?(story_card.comments)) if !has_label?(story_card.labels, 'not_to_prod')
@@ -10,6 +12,7 @@ module PivotalCardChecker
         @results
       end
 
+      # Checks if the given story card violates any of the rules outlined below.
       def violation_validation(story_card, has_commits)
         state = story_card.current_state
         comments = story_card.comments

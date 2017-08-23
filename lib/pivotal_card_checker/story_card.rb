@@ -5,7 +5,7 @@ module PivotalCardChecker
 
     def initialize(id, name, description, labels, comments, owners, current_state, in_current_iteration)
       @id = id
-      @name = name
+      @name = name.strip
       @description = description
       @labels = labels
       @comments = comments

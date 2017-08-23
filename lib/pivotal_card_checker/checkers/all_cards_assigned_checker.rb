@@ -3,6 +3,8 @@ module PivotalCardChecker
     # Verifies that all of the given cards that are supposed to have acceptance
     # criteria, actually have acceptance criteria.
     class AllCardsAssignedChecker < Checker
+
+      # Flags cards that don't have any owners and are in the current iteration.
       def check
         @results = []
         @all_story_cards.each do |story_card|
