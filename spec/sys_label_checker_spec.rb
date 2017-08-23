@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::SysLabelChecker do
-  it 'should detect one story that is missing a prod info label' do
+  it 'should detect one story that is missing the system label: reader' do
     VCR.use_cassette 'sys_label_check' do
       @all_story_cards =
         PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
@@ -25,7 +25,7 @@ describe PivotalCardChecker::Checkers::SysLabelChecker do
     expect(result.values.length).to eql(0)
   end
 
-  it 'should not detect a story with the label: not_to_prod.' do
+  it 'should not detect a story with the label: not_to_prod' do
     VCR.use_cassette 'one_card_is_not_to_prod' do
       @all_story_cards =
         PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data

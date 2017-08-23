@@ -3,7 +3,7 @@ require 'tracker_api'
 require 'spec_helper'
 
 describe PivotalCardChecker::Checkers::EpicCardsChecker do
-  it 'should detect one story that is missing a prod info label' do
+  it 'should detect one card that has the epic label: website redo spring 2017' do
     VCR.use_cassette 'epic_cards_check' do
       data_retriever = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID)
       cards_to_deploy, deployed_cards = PivotalCardChecker::CardChecker.new(API_KEY, PROJECT_ID).find_systems_to_deploy(true)

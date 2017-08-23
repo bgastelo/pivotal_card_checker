@@ -14,7 +14,7 @@ describe PivotalCardChecker::Checkers::ProdInfoChecker do
     expect(result[5].name).to eql('vlad test card 3')
   end
 
-  it 'should detect five stories that are started w/ commits that are missing the prod label.' do
+  it 'should detect five stories that are started w/ commits that are missing the prod label' do
     VCR.use_cassette 'five_cards_started_with_commits' do
       @all_story_cards =
         PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID).retrieve_data
