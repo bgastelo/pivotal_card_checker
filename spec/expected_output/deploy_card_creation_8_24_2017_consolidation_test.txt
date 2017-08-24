@@ -1,0 +1,42 @@
+etf pro
+  accounts.hedgeye.com
+    [about hedgeye copy update](https://www.pivotaltracker.com/story/show/150235674)
+
+market edges
+  accounts.hedgeye.com, cms.hedgeye.com
+    [Add custom welcome email](https://www.pivotaltracker.com/story/show/150310449)
+  app.hedgeye.com, cms.hedgeye.com
+    [Market Edges pre-launch billboard](https://www.pivotaltracker.com/story/show/150310312)
+    [Market Edges live billboard](https://www.pivotaltracker.com/story/show/150310318)
+  cms.hedgeye.com
+    [HE/SF Migration](https://www.pivotaltracker.com/story/show/150310203)
+    [description migration for Market Edges product](https://www.pivotaltracker.com/story/show/150310469)
+    [create permapromo for Market Edges](https://www.pivotaltracker.com/story/show/150310460)
+    [create GTKH and Fidelity and 1 month free promo plan pricing](https://www.pivotaltracker.com/story/show/150310447)
+    [Add email header](https://www.pivotaltracker.com/story/show/150310479)
+
+quarterly investment outlook
+  accounts.hedgeye.com, app.hedgeye.com, cms.hedgeye.com, www.hedgeye.com
+    [Add icon](https://www.pivotaltracker.com/story/show/150276791)
+  cms.hedgeye.com
+    [HE/SF Migration](https://www.pivotaltracker.com/story/show/150276782)
+    [Add email header](https://www.pivotaltracker.com/story/show/150276789)
+
+web improvements sept 2017
+  app.hedgeye.com
+    [All Insights/HedgeyeTV: Remove summary on lead article](https://www.pivotaltracker.com/story/show/150275563)
+    [All Insights: Remove dates from LATEST VIDEOS](https://www.pivotaltracker.com/story/show/150275698)
+    [All Insights: Remove dates on LATEST INVESTMENT INSIGHTS](https://www.pivotaltracker.com/story/show/150275643)
+    [All Insights: Swap Guest Contributors and Premium Insights columns](https://www.pivotaltracker.com/story/show/150275730)
+    [All Insights: Change date format from date to long form date time on MEDIA SECTIONS](https://www.pivotaltracker.com/story/show/150275723)
+  app.hedgeye.com, cms.hedgeye.com
+    [All Insights: Put 4 articles in each bottom  columns](https://www.pivotaltracker.com/story/show/150275731)
+
+app.hedgeye.com
+[isolate marketable links from UnlockedContent#show](https://www.pivotaltracker.com/story/show/150338643)
+
+app.hedgeye.com, cms.hedgeye.com
+[vlad test](https://www.pivotaltracker.com/story/show/150526972)
+
+cms.hedgeye.com
+[Add .csv option to "Users with TOS" and "Users with No TOS" and add date/time column](https://www.pivotaltracker.com/story/show/150176162)

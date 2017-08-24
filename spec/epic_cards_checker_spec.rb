@@ -6,7 +6,8 @@ describe PivotalCardChecker::Checkers::EpicCardsChecker do
   it 'should detect one card that has the epic label: website redo spring 2017' do
     VCR.use_cassette 'epic_cards_check' do
       data_retriever = PivotalCardChecker::DataRetriever.new(API_KEY, PROJECT_ID)
-      cards_to_deploy, deployed_cards = PivotalCardChecker::CardChecker.new(API_KEY, PROJECT_ID).find_systems_to_deploy(true)
+      all_story_cards = data_retriever.retrieve_data
+      cards_to_deploy, deployed_cards = PivotalCardChecker::Checkers::SystemsToDeployChecker.new(all_story_cards).check
       @systems = cards_to_deploy.merge(deployed_cards)
       @epic_labels = data_retriever.retrieve_epics
     end

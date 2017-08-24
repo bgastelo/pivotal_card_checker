@@ -14,26 +14,15 @@ describe PivotalCardChecker::DeployCardCreator do
     expect(@card_labels.sort).to eql(['cms', 'deploy'])
   end
 
-  it 'should create a deploy card with consolidated labels under the website redo epic' do
-    VCR.use_cassette 'deploy_card_creation_8_9_2017_consolidation_test_epic' do
+  it 'should create a deploy card with consolidated regular and epic labels' do
+    VCR.use_cassette 'deploy_card_creation_8_24_2017_consolidation_test' do
       @card_title, @card_description, @card_labels =
         PivotalCardChecker::CardChecker.create_deploy_card(API_KEY, PROJECT_ID, [DEPLOY_LABEL_ID])
     end
 
-    expect(@card_title).to eql("#{Time.now.strftime('%-m/%-d/%y')} cms, reader deploy")
-    expect(@card_description).to eql(IO.read('spec/expected_output/deploy_card_creation_8_9_2017_consolidation_test_epic.txt'))
-    expect(@card_labels.sort).to eql(['cms', 'deploy', 'reader'])
-  end
-
-  it 'should create a deploy card with consolidated labels not under any epic' do
-    VCR.use_cassette 'deploy_card_creation_8_9_2017_consolidation_test_reg' do
-      @card_title, @card_description, @card_labels =
-        PivotalCardChecker::CardChecker.create_deploy_card(API_KEY, PROJECT_ID, [DEPLOY_LABEL_ID])
-    end
-
-    expect(@card_title).to eql("#{Time.now.strftime('%-m/%-d/%y')} cms, reader deploy")
-    expect(@card_description).to eql(IO.read('spec/expected_output/deploy_card_creation_8_9_2017_consolidation_test_reg.txt'))
-    expect(@card_labels.sort).to eql(['cms', 'deploy', 'reader'])
+    expect(@card_title).to eql("#{Time.now.strftime('%-m/%-d/%y')} billing engine, reader, cms, marketing deploy")
+    expect(@card_description).to eql(IO.read('spec/expected_output/deploy_card_creation_8_24_2017_consolidation_test.txt'))
+    expect(@card_labels.sort).to eql(['billing engine', 'cms', 'deploy', 'marketing', 'reader'])
   end
 
   it 'should create a deploy card with cms and reader urls, but regular dct and mailroom labels.' do
@@ -47,14 +36,12 @@ describe PivotalCardChecker::DeployCardCreator do
     expect(@card_labels.sort).to eql(['cms', 'dct', 'deploy', 'mailroom', 'reader'])
   end
 
-  it 'should create a deploy card with 10 stories in it.' do
-    VCR.use_cassette 'deploy_card_creation_8_17_2017' do
+  it 'should not be able to create a deploy card, because one already exists.' do
+    VCR.use_cassette 'deploy_card_already_exists' do
       @card_title, @card_description, @card_labels =
         PivotalCardChecker::CardChecker.create_deploy_card(API_KEY, PROJECT_ID, [DEPLOY_LABEL_ID])
     end
 
-    expect(@card_title).to eql("#{Time.now.strftime('%-m/%-d/%y')} reader, cms, billing engine deploy")
-    expect(@card_description).to eql(IO.read('spec/expected_output/deploy_card_creation_8_17_2017.txt'))
-    expect(@card_labels.sort).to eql(['billing engine', 'cms', 'deploy', 'reader'])
+    expect(@card_title).to eql('Deploy card already exists: https://www.pivotaltracker.com/story/show/150346573')
   end
 end

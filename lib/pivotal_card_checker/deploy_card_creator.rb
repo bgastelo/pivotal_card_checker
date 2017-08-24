@@ -26,6 +26,14 @@ module PivotalCardChecker
       [title, card_description, label_names]
     end
 
+    def deploy_card_already_exists(all_story_cards)
+      checker = Checkers::Checker.new(nil)
+      all_story_cards.each do |story|
+        return story.id if checker.has_label?(story.labels, 'deploy')
+      end
+      false
+    end
+
     # Combines stories with multiple system labels into one category. For example,
     # instead of having a story listed under both 'cms' and 'reader', they'll
     # be listed under 'cms, reader'.
