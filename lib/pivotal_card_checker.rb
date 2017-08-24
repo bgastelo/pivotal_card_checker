@@ -76,7 +76,7 @@ module PivotalCardChecker
     # Calls the find_systems_to_deploy method, then returns a string with the
     # output.
     def generate_systems_to_deploy
-      systems = find_systems_to_deploy(false).first
+      systems = Checkers::SystemsToDeployChecker.new(@all_story_cards).check.first
       if systems.keys.empty?
         "No systems to deploy.\n"
       else
@@ -91,25 +91,19 @@ module PivotalCardChecker
       card_checker.create_deploy_card(default_label_ids)
     end
 
-    # Retrieves the story card data, if necessary, then has a SystemsToDeployChecker
-    # find systems that need to be deployed.
-    def find_systems_to_deploy(need_to_retrieve_data)
-      @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data if need_to_retrieve_data
-
-      Checkers::SystemsToDeployChecker.new(@all_story_cards).check
-    end
-
-    # Gathers and process all of the necessary information, then sends it to
-    # a DeployCardCreator object to create the deploy card.
+    # Gathers and process all of the necessary information, then sends it to a
+    # DeployCardCreator object to create the deploy card.
     def create_deploy_card(default_label_ids)
-      cards_to_deploy, deployed_cards = find_systems_to_deploy(true)
+      deploy_card_creator = DeployCardCreator.new(@api_key, @proj_id,
+                                                  default_label_ids)
+      @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data
+      result = deploy_card_creator.deploy_card_already_exists(@all_story_cards)
+      return "Deploy card already exists: https://www.pivotaltracker.com/story/show/#{result}" if result
+      cards_to_deploy, deployed_cards = Checkers::SystemsToDeployChecker.new(@all_story_cards).check
       systems = merge_card_hashes(cards_to_deploy, deployed_cards)
       epic_labels = DataRetriever.new(@api_key, @proj_id).retrieve_epics
       reg_stories, epic_stories = Checkers::EpicCardsChecker.new(systems, epic_labels).check
-      DeployCardCreator.new(@api_key, @proj_id,
-                            default_label_ids).create_deploy_card(cards_to_deploy,
-                                                                  reg_stories,
-                                                                  epic_stories)
+      deploy_card_creator.create_deploy_card(cards_to_deploy, reg_stories, epic_stories)
     end
 
     # Merges the two hashes that map<String, Array>. This method is necessary
