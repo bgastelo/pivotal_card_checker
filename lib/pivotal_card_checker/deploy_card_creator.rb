@@ -26,6 +26,8 @@ module PivotalCardChecker
       [title, card_description, label_names]
     end
 
+    # Checks if a story card exists in the current or backlog iterations with
+    # the 'deploy' label.
     def deploy_card_already_exists(all_story_cards)
       checker = Checkers::Checker.new(nil)
       all_story_cards.each do |story|
