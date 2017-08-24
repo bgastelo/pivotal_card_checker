@@ -38,10 +38,10 @@ describe PivotalCardChecker::DeployCardCreator do
 
   it 'should not be able to create a deploy card, because one already exists.' do
     VCR.use_cassette 'deploy_card_already_exists' do
-      @card_title, @card_description, @card_labels =
+      @response_message =
         PivotalCardChecker::CardChecker.create_deploy_card(API_KEY, PROJECT_ID, [DEPLOY_LABEL_ID])
     end
 
-    expect(@card_title).to eql('Deploy card already exists: https://www.pivotaltracker.com/story/show/150346573')
+    expect(@response_message).to eql('Deploy card already exists: https://www.pivotaltracker.com/story/show/150346573')
   end
 end
