@@ -16,14 +16,14 @@ module PivotalCardChecker
       card_description = (epic_cards_description(epic_stories) <<
                           reg_cards_description(reg_stories)).rstrip
       card_labels = gather_card_label_ids(cards_to_deploy.keys).concat @default_label_ids
-      hedgeye_project.create_story(name: title,
+      story = hedgeye_project.create_story(name: title,
                                    description: card_description,
                                    story_type: 'Chore',
                                    current_state: 'unstarted',
                                    label_ids: card_labels)
 
       label_names = cards_to_deploy.keys << 'deploy'
-      [title, card_description, label_names]
+      [title, card_description, label_names, story.id]
     end
 
     # Checks if a story card exists in the current or backlog iterations with
