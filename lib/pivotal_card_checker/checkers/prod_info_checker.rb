@@ -13,9 +13,9 @@ module PivotalCardChecker
         @all_story_cards.each do |story_card|
           labels = story_card.labels
           next unless is_candidate?(story_card) &&
-                      !has_label?(labels, 'to_prod') &&
-                      !has_label?(labels, 'delayed_prod') &&
-                      !has_label?(labels, 'not_to_prod')
+                      !story_card.has_label?('to_prod') &&
+                      !story_card.has_label?('delayed_prod') &&
+                      !story_card.has_label?('not_to_prod')
           missing_prod_info << story_card
         end
         missing_prod_info
@@ -25,7 +25,7 @@ module PivotalCardChecker
       def is_candidate?(story_card)
         state = story_card.current_state
         state == 'finished' || state == 'delivered' || ((state == 'accepted' ||
-        state == 'started') && has_commits?(story_card.comments))
+        state == 'started') && story_card.has_commits?)
       end
     end
   end

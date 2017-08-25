@@ -12,7 +12,7 @@ module PivotalCardChecker
         deployed_cards = Hash.new { |hash, key| hash[key] = [] }
         @all_story_cards.each do |story_card|
           state = story_card.current_state
-          next unless has_label?(story_card.labels, 'to_prod') &&
+          next unless story_card.has_label?('to_prod') &&
                       (state == 'finished' || state == 'delivered' ||
                       state == 'accepted')
           if state == 'accepted'
@@ -26,7 +26,7 @@ module PivotalCardChecker
 
       # Adds the given story card to the given Hash.
       def add_card_to_hash(story_card, current_hash)
-        sys_labels_on_story = find_system_labels_on_story(story_card.labels)
+        sys_labels_on_story = story_card.find_system_labels_on_story
         sys_labels_on_story.each do |sys_label|
           current_hash[sys_label] << story_card
         end
