@@ -29,9 +29,8 @@ module PivotalCardChecker
     # Checks if a story card exists in the current or backlog iterations with
     # the 'deploy' label.
     def deploy_card_already_exists(all_story_cards)
-      checker = Checkers::Checker.new(nil)
-      all_story_cards.each do |story|
-        return story.id if checker.has_label?(story.labels, 'deploy')
+      all_story_cards.each do |story_card|
+        return story_card.id if story_card.has_label?('deploy')
       end
       false
     end
@@ -90,7 +89,7 @@ module PivotalCardChecker
     # only allows adding multiple labels if you use ids, as opposed to plaintext.
     def gather_card_label_ids(system_labels)
       label_ids_for_deploy_card = []
-      PivotalCardChecker::Checkers::ALL_SYSTEM_LABELS.zip(PivotalCardChecker::Checkers::ALL_SYS_LABEL_IDS).each do |name, id|
+      PivotalCardChecker::ALL_SYSTEM_LABELS.zip(PivotalCardChecker::ALL_SYS_LABEL_IDS).each do |name, id|
         label_ids_for_deploy_card << id if system_labels.include? name
       end
       label_ids_for_deploy_card

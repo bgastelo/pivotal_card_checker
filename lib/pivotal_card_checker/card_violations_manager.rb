@@ -1,7 +1,7 @@
 module PivotalCardChecker
   # Manages the card violations by seperating them into four different
   # lists/types (prod info issues, system label issues, acceptance criteria
-  # issues, and other/miscellaneous issues)
+  # issues, and other/miscellaneous issues).
   class CardViolationsManager
     attr_reader :prod_info_issues, :sys_label_issues, :acceptance_crit_issues,
                 :other_issues, :unassigned_cards_issues

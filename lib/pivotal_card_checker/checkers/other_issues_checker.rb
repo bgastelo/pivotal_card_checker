@@ -1,13 +1,13 @@
 module PivotalCardChecker
   module Checkers
     # Verifies the cards to see if any of them violate any smaller issues that we
-    # classify as "other"
+    # classify as "other".
     class OtherIssuesChecker < Checker
 
       # Runs the validation method on all the cards, then returns the result.
       def check
         @all_story_cards.each do |story_card|
-          violation_validation(story_card, has_commits?(story_card.comments)) if !has_label?(story_card.labels, 'not_to_prod')
+          violation_validation(story_card, story_card.has_commits?) if !story_card.has_label?('not_to_prod')
         end
         @results
       end
@@ -15,19 +15,17 @@ module PivotalCardChecker
       # Checks if the given story card violates any of the rules outlined below.
       def violation_validation(story_card, has_commits)
         state = story_card.current_state
-        comments = story_card.comments
-        labels = story_card.labels
         if state == 'finished' && !has_commits
           @results[story_card] = 'Card is marked \'finished\', but has no commits.'
         elsif state == 'delivered' &&
-              !has_comment_that_contains?('staging acceptance', comments)
+              !story_card.has_comment_that_contains?('staging acceptance')
           @results[story_card] = 'Card is marked \'delivered\', but doesn\'t have staging acceptance'
         elsif state == 'accepted' && has_commits &&
-              has_label?(labels, 'to_prod') &&
-              !has_comment_that_contains?('prod acceptance', comments)
+              story_card.has_label?('to_prod') &&
+              !story_card.has_comment_that_contains?('prod acceptance')
           @results[story_card] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
         elsif (state == 'started' || state == 'unstarted') &&
-              has_label?(labels, 'to_prod')
+              story_card.has_label?('to_prod')
           @results[story_card] = "Card is marked '#{state}', but has the 'to_prod' label."
         end
       end

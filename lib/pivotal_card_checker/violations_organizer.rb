@@ -12,7 +12,7 @@ module PivotalCardChecker
     end
 
     # Sends the cards to be processed, by type, then returns the resulting
-    # info (@bad_card_info)
+    # info (@bad_card_info).
     def organize(results)
       [[PROD_INFO_ISSUE, results[PROD_INFO_INDEX]],
        [SYS_LABEL_ISSUE, results[SYS_LABEL_INDEX]],
