@@ -29,8 +29,10 @@ module PivotalCardChecker
 
       search_results.each do |current_comment|
         temp = current_comment.split(%r{/github.com\/(.*?)\/(.*?)\/})[2]
-        temp = temp[8...temp.length] if temp.include? 'hedgeye-'
-        system_labels_detected << temp.tr('_', ' ') if ALL_SYSTEM_LABELS.include? temp.tr('_', ' ')
+        if temp
+          temp = temp[8...temp.length] if temp.include? 'hedgeye-'
+          system_labels_detected << temp.tr('_', ' ') if ALL_SYSTEM_LABELS.include? temp.tr('_', ' ')
+        end
       end
       system_labels_detected.to_a
     end
