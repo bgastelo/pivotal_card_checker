@@ -7,7 +7,7 @@ module PivotalCardChecker
       # Runs the validation method on all the cards, then returns the result.
       def check
         @all_story_cards.each do |story_card|
-          violation_validation(story_card, story_card.has_commits?) if !story_card.has_label?('not_to_prod')
+          violation_validation(story_card, story_card.has_commits?) if !story_card.has_label?('not_to_prod') && !story_card.has_label?('done when merged') 
         end
         @results
       end
@@ -22,7 +22,7 @@ module PivotalCardChecker
           @results[story_card] = 'Card is marked \'delivered\', but doesn\'t have staging acceptance'
         elsif state == 'accepted' && has_commits &&
               story_card.has_label?('to_prod') &&
-              !story_card.has_comment_that_contains?('prod acceptance')
+              !story_card.has_comment_that_contains?('prod acceptance') && !story_card.has_comment_that_contains?('production acceptance')
           @results[story_card] = 'Card is marked \'accepted\', but doesn\'t have prod acceptance'
         elsif (state == 'started' || state == 'unstarted') &&
               story_card.has_label?('to_prod')

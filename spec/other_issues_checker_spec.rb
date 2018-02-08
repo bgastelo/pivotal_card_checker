@@ -35,4 +35,42 @@ describe PivotalCardChecker::Checkers::OtherIssuesChecker do
     result = PivotalCardChecker::Checkers::OtherIssuesChecker.new(@all_story_cards).check
     expect(result.length).to eql(0)
   end
+
+  describe '#check' do
+
+    it 'ignores non accepted not to prod card' do
+      card = card_with_state_and_label('finished', 'not_to_prod' )
+      checker = PivotalCardChecker::Checkers::OtherIssuesChecker.new([card])
+      checker.should_not_receive(:violation_validation)
+      result = checker.check
+      expect(result.length).to eql(0)
+    end
+
+    it 'ignores non accepted done when merged card' do
+      card = card_with_state_and_label('finished', 'done when merged' )
+      checker = PivotalCardChecker::Checkers::OtherIssuesChecker.new([card])
+      checker.should_not_receive(:violation_validation)
+      result = checker.check
+      expect(result.length).to eql(0)
+    end
+
+
+    it 'ignores prod acceptance card' do
+      card = card_with_state_and_label('accepted', 'to_prod' )
+      card.comments << double('Comment', text: 'prod acceptance')
+      checker = PivotalCardChecker::Checkers::OtherIssuesChecker.new([card])
+      result = checker.check
+      expect(result.length).to eql(0)
+    end
+
+    it 'ignores production acceptance card' do
+      card = card_with_state_and_label('accepted', 'to_prod' )
+      card.comments << double('Comment', text: 'production acceptance')
+      checker = PivotalCardChecker::Checkers::OtherIssuesChecker.new([card])
+      result = checker.check
+      p result
+      expect(result.length).to eql(0)
+    end
+
+  end
 end

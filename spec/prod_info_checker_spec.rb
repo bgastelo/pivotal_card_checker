@@ -24,4 +24,12 @@ describe PivotalCardChecker::Checkers::ProdInfoChecker do
     expect(result.length).to eql(5)
     expect(result[4].name).to eql('vladtestcard')
   end
+
+  it 'should ignore done when merged' do
+      card = card_with_state_and_label('finished', 'done when merged' )
+      checker = PivotalCardChecker::Checkers::ProdInfoChecker.new([card])
+      checker.should_not_receive(:violation_validation)
+      result = checker.check
+      expect(result.length).to eql(0)
+  end
 end

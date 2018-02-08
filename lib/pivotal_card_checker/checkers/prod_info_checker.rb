@@ -15,7 +15,8 @@ module PivotalCardChecker
           next unless is_candidate?(story_card) &&
                       !story_card.has_label?('to_prod') &&
                       !story_card.has_label?('delayed_prod') &&
-                      !story_card.has_label?('not_to_prod')
+                      !story_card.has_label?('not_to_prod')  &&
+                      !story_card.has_label?('done when merged')
           missing_prod_info << story_card
         end
         missing_prod_info

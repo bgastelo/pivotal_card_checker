@@ -51,8 +51,8 @@ module PivotalCardChecker
     def has_comment_that_contains?(search_string, case_sensitive = false)
       @comments.each do |comment|
         return true if !comment.text.nil? && (!case_sensitive &&
-           (comment.text.downcase.include? search_string.downcase) ||
-           case_sensitive && (comment.text.include? search_string))
+                                              (comment.text.downcase.include? search_string.downcase) ||
+                                              case_sensitive && (comment.text.include? search_string))
       end
       false
     end
@@ -76,7 +76,7 @@ module PivotalCardChecker
       has_label?('criteria approved') ||
         # Check for acceptance criteria in card descrption.
         (!@description.nil? &&
-        (@description.downcase.include? 'acceptance criteria')) ||
+         (@description.downcase.include? 'acceptance criteria')) ||
         # Criteria not found in description, check comments.
         has_comment_that_contains?('acceptance criteria')
     end

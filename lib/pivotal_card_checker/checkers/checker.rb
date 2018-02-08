@@ -16,7 +16,7 @@ module PivotalCardChecker
       def is_candidate?(story_card)
         state = story_card.current_state
         (state == 'finished' || state == 'delivered' || (state == 'accepted' &&
-        story_card.has_commits?)) && !story_card.has_label?('not_to_prod')
+                                                         story_card.has_commits?)) && !story_card.has_label?('not_to_prod')  && !story_card.has_label?('done when merged') 
       end
     end
   end
