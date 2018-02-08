@@ -68,7 +68,6 @@ describe PivotalCardChecker::Checkers::OtherIssuesChecker do
       card.comments << double('Comment', text: 'production acceptance')
       checker = PivotalCardChecker::Checkers::OtherIssuesChecker.new([card])
       result = checker.check
-      p result
       expect(result.length).to eql(0)
     end
 

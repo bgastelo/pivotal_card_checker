@@ -1,17 +1,17 @@
 ========= Pivotal Card Checker ===========
 OWNER(s): Renaldo Pierre Louis
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+        Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
 
 OWNER(s): Diego Scataglini
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+        Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 3-month Early Look Complimentary subscription seems to be one day too long. - https://www.pivotaltracker.com/story/show/149897775
                 Health Care cross discovery spike - https://www.pivotaltracker.com/story/show/149965126
                 reader/archives templates is messed up - https://www.pivotaltracker.com/story/show/150146166
                 re-enable feed_items_controller action cache - https://www.pivotaltracker.com/story/show/150146414
 
 OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
-        Missing prod description label ('to_prod', 'delayed_prod', or 'not_to_prod'):
+        Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264
         Missing system label(s):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - No system labels detected (reader, cms, dct, etc...)
