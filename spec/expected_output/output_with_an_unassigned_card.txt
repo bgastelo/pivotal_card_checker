@@ -1,9 +1,9 @@
 ========= Pivotal Card Checker ===========
-OWNER(s): Renaldo Pierre Louis
+OWNER(s): Renaldo Pierre Louis (@rpierre)
         Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
 
-OWNER(s): Diego Scataglini
+OWNER(s): Diego Scataglini (@dscataglini)
         Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 3-month Early Look Complimentary subscription seems to be one day too long. - https://www.pivotaltracker.com/story/show/149897775
                 Health Care cross discovery spike - https://www.pivotaltracker.com/story/show/149965126

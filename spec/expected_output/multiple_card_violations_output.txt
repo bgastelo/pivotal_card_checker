@@ -1,5 +1,5 @@
 ========= Pivotal Card Checker ===========
-OWNER(s): Renaldo Pierre Louis
+OWNER(s): Renaldo Pierre Louis (@rpierre)
         Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 Upgrade Mailroom to 1.9 - https://www.pivotaltracker.com/story/show/149747501
                 Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849
@@ -8,13 +8,13 @@ OWNER(s): Renaldo Pierre Louis
         Other issues:
                 Use Chrome's new JS/CSS coverage checker to cleanup unused code (spike?) - https://www.pivotaltracker.com/story/show/147539849 - Card is marked 'finished', but has no commits.
 
-OWNER(s): Diego Scataglini
+OWNER(s): Diego Scataglini (@dscataglini)
         Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 3-month Early Look Complimentary subscription seems to be one day too long. - https://www.pivotaltracker.com/story/show/149897775
                 Health Care cross discovery spike - https://www.pivotaltracker.com/story/show/149965126
                 reader/archives templates is messed up - https://www.pivotaltracker.com/story/show/150146166
 
-OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
+OWNER(s): Don Humphreys (@dhumphreys), Brett Novak (@bnovak), Forrest Chang (@fchang)
         Missing prod description label ('to_prod', 'delayed_prod', 'not_to_prod', or 'done when merged'):
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264
         Missing system label(s):
@@ -22,11 +22,11 @@ OWNER(s): Don Humphreys, Brett Novak, Forrest Chang
         Other issues:
                 Discuss MFA backup policy - https://www.pivotaltracker.com/story/show/149819264 - Card is marked 'delivered', but doesn't have staging acceptance
 
-OWNER(s): Brett Novak
+OWNER(s): Brett Novak (@bnovak)
         Other issues:
                 Frontier DCT check - https://www.pivotaltracker.com/story/show/149744435 - Card is marked 'delivered', but doesn't have staging acceptance
 
-OWNER(s): Don Humphreys
+OWNER(s): Don Humphreys (@dhumphreys)
         Other issues:
                 Display PDF hits tracking - https://www.pivotaltracker.com/story/show/149965438 - Card is marked 'started', but has the 'to_prod' label.
 

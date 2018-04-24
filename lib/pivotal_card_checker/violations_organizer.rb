@@ -43,10 +43,16 @@ module PivotalCardChecker
 
       owner_names = []
       owners.each do |person|
-        owner_names << person.name
+        owner_names << append_hipchat_mention(person.name)
       end
 
       owner_names.join(', ')
+    end
+
+    def append_hipchat_mention(name)
+      first_name, last_name = name.split(/\s+/)
+      hipchat_mention = "@#{first_name[0].downcase}#{last_name.downcase}"
+      "#{name} (#{hipchat_mention})"
     end
   end
 end
