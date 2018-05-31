@@ -35,7 +35,7 @@ module PivotalCardChecker
         iteration.stories.each do |story|
           @result << StoryCard.new(story.id, story.name, story.description,
                                    story.labels, story.comments, story.owners,
-                                   story.current_state,
+                                   story.current_state, story.story_type,
                                    iteration.number == current_iteration_number)
         end
       end

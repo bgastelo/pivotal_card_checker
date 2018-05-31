@@ -1,9 +1,9 @@
 module PivotalCardChecker
   # Holds the relevant story information.
   class StoryCard
-    attr_reader :id, :name, :description, :labels, :comments, :owners, :current_state, :in_current_iteration
+    attr_reader :id, :name, :description, :labels, :comments, :owners, :current_state, :in_current_iteration, :story_type
 
-    def initialize(id, name, description, labels, comments, owners, current_state, in_current_iteration)
+    def initialize(id, name, description, labels, comments, owners, current_state, story_type, in_current_iteration)
       @id = id
       @name = name.strip
       @description = description
@@ -11,6 +11,7 @@ module PivotalCardChecker
       @comments = comments
       @owners = owners
       @current_state = current_state
+      @story_type = story_type
       @in_current_iteration = in_current_iteration
     end
 
@@ -103,6 +104,10 @@ module PivotalCardChecker
         end
       end
       epic_labels
+    end
+
+    def is_sprint_release?
+      story_type == 'release'
     end
   end
 end
