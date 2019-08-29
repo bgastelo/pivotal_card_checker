@@ -37,12 +37,14 @@ module PivotalCardChecker
 
   # Used by DeployCardCreator, to get the cards labels.
   ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
-                       18_741_299, 2_713_317, 7_254_766, 13_055_644, 12_244_398, 21_569_494].freeze
+                       18_741_299, 2_713_317, 7_254_766, 13_055_644, 12_244_398, 
+                       21_569_494, 21_610_625].freeze
 
   # Used in DeployCardCreator and StoryCard.
   ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
                        'pivotal card health tools', 'mailroom',
-                       'talk to the cards', 'retail-data', 'macro monitor', 'hedgeye-admin'].freeze
+                       'talk to the cards', 'retail-data', 'macro monitor', 
+                       'hedgeye-admin', 'market brief app'].freeze
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, returns a report containing all violations along with an
