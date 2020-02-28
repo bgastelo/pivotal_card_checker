@@ -36,11 +36,6 @@ module PivotalCardChecker
            'hedgeye-hub' => 'hub.admin.com'
          }.freeze
 
-  # Used by DeployCardCreator, to get the cards labels.
-  ALL_SYS_LABEL_IDS = [2_162_869, 3_091_513, 11_686_698, 2_359_297, 2_090_081,
-                       18_741_299, 2_713_317, 7_254_766, 13_055_644, 12_244_398, 
-                       21_569_494, 21_610_625, 21_990_472].freeze
-
   # Used in DeployCardCreator and StoryCard.
   ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
                        'pivotal card health tools', 'mailroom',
@@ -99,16 +94,16 @@ module PivotalCardChecker
 
     # The public method that creates a new PivotalCardChecker and then calls
     # the private create_deploy_card method.
-    def self.create_deploy_card(api_key, proj_id, default_label_ids)
+    def self.create_deploy_card(api_key, proj_id, default_labels)
       card_checker = new(api_key, proj_id)
-      card_checker.create_deploy_card(default_label_ids)
+      card_checker.create_deploy_card(default_labels)
     end
 
     # Gathers and process all of the necessary information, then sends it to a
     # DeployCardCreator object to create the deploy card.
-    def create_deploy_card(default_label_ids)
+    def create_deploy_card(default_labels)
       deploy_card_creator = DeployCardCreator.new(@api_key, @proj_id,
-                                                  default_label_ids)
+                                                  default_labels)
       @all_story_cards = DataRetriever.new(@api_key, @proj_id).retrieve_data
       result = deploy_card_creator.deploy_card_already_exists(@all_story_cards)
       return "Deploy card already exists: https://www.pivotaltracker.com/story/show/#{result}" if result
