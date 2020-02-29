@@ -33,7 +33,7 @@ module PivotalCardChecker
            'macro monitor' => 'drivers.hedgeye.com',
            'retail-data' => 'retail-data.hedgeye.com',
            'hedgeye-admin' => 'admin.hedgeye.com',
-           'hedgeye-hub' => 'hub.admin.com'
+           'hedgeye-hub' => 'hub.hedgeye.com'
          }.freeze
 
   # Used in DeployCardCreator and StoryCard.
