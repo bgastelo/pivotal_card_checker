@@ -1,10 +1,10 @@
 module PivotalCardChecker
   # Creates a card that details the deployment (the "deploy card").
   class DeployCardCreator
-    def initialize(api_key, proj_id, default_label_ids)
+    def initialize(api_key, proj_id, default_labels)
       @api_key = api_key
       @proj_id = proj_id
-      @default_label_ids = default_label_ids
+      @default_labels = default_labels
     end
 
     # Gathers all of the necessary card info (title, description, labels), then
@@ -15,12 +15,12 @@ module PivotalCardChecker
       title = "#{Time.now.strftime('%-m/%-d/%y')} #{cards_to_deploy.keys.join(', ')} deploy"
       card_description = (epic_cards_description(epic_stories) <<
                           reg_cards_description(reg_stories)).rstrip
-      card_labels = gather_card_label_ids(cards_to_deploy.keys).concat @default_label_ids
+      card_labels = gather_card_labels(cards_to_deploy.keys) | @default_labels
       story = hedgeye_project.create_story(name: title,
                                    description: card_description,
                                    story_type: 'Chore',
                                    current_state: 'unstarted',
-                                   label_ids: card_labels)
+                                   labels: card_labels)
 
       label_names = cards_to_deploy.keys << 'deploy'
       [title, card_description, label_names, story.id]
@@ -85,14 +85,11 @@ module PivotalCardChecker
       card_description
     end
 
-    # Gathers all of the system label ids that the deploy card needs. The TrackerApi
-    # only allows adding multiple labels if you use ids, as opposed to plaintext.
-    def gather_card_label_ids(system_labels)
-      label_ids_for_deploy_card = []
-      PivotalCardChecker::ALL_SYSTEM_LABELS.zip(PivotalCardChecker::ALL_SYS_LABEL_IDS).each do |name, id|
-        label_ids_for_deploy_card << id if system_labels.include? name
+    # Gathers all of the system label ids that the deploy card needs.
+    def gather_card_labels(system_labels)
+      PivotalCardChecker::ALL_SYSTEM_LABELS.select do |label|
+        system_labels.include? label
       end
-      label_ids_for_deploy_card
     end
   end
 end
