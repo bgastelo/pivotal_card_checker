@@ -11,12 +11,12 @@ module PivotalCardChecker
     # calls the api to create the story. Returns the card info, which is used
     # in testing (deploy_card_creator_spec).
     def create_deploy_card(cards_to_deploy, reg_stories, epic_stories)
-      hedgeye_project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
+      project = TrackerApi::Client.new(token: @api_key).project(@proj_id)
       title = "#{Time.now.strftime('%-m/%-d/%y')} #{cards_to_deploy.keys.join(', ')} deploy"
       card_description = (epic_cards_description(epic_stories) <<
                           reg_cards_description(reg_stories)).rstrip
       card_labels = gather_card_labels(cards_to_deploy.keys) | @default_labels
-      story = hedgeye_project.create_story(name: title,
+      story = project.create_story(name: title,
                                    description: card_description,
                                    story_type: 'Chore',
                                    current_state: 'unstarted',
@@ -42,7 +42,7 @@ module PivotalCardChecker
       inverted_stories = Hash.new { |hash, key| hash[key] = [] }
       stories.each do |label, story_cards|
         story_cards.each do |story_card|
-          inverted_stories[story_card] << (LABEL_URLS[label].nil? ? label : LABEL_URLS[label])
+          inverted_stories[story_card] << PivotalCardChecker.configuration.label_urls[label] || label
         end
       end
 
@@ -87,7 +87,7 @@ module PivotalCardChecker
 
     # Gathers all of the system label ids that the deploy card needs.
     def gather_card_labels(system_labels)
-      PivotalCardChecker::ALL_SYSTEM_LABELS.select do |label|
+      PivotalCardChecker.configuration.all_system_labels.select do |label|
         system_labels.include? label
       end
     end

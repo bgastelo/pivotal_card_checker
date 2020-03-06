@@ -25,30 +25,26 @@ module PivotalCardChecker
   OTHER_ISSUE = 4
   UNASSIGNED_CARDS_ISSUE = 5
 
-  # Used by DeployCardCreator, to create the card description.
-  LABEL_URLS = { 'cms' => 'cms.hedgeye.com',
-           'reader' => 'app.hedgeye.com',
-           'billing engine' => 'accounts.hedgeye.com',
-           'marketing' => 'www.hedgeye.com',
-           'macro monitor' => 'drivers.hedgeye.com',
-           'retail-data' => 'retail-data.hedgeye.com',
-           'hedgeye-admin' => 'admin.hedgeye.com',
-           'hedgeye-hub' => 'hub.hedgeye.com'
-         }.freeze
+  class << self
+    attr_accessor :configuration
+  end
 
-  # Used in DeployCardCreator and StoryCard.
-  ALL_SYSTEM_LABELS = ['cms', 'billing engine', 'dct', 'reader', 'marketing',
-                       'pivotal card health tools', 'mailroom',
-                       'talk to the cards', 'retail-data', 'macro monitor', 
-                       'hedgeye-admin', 'market brief app', 'hedgeye-hub'].freeze
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
+    # TODO: add data validation?
+  end
 
   # Checks all of our current and backlog cards for any of our specified
   # violations, returns a report containing all violations along with an
   # error message and the card owner(s) name.
   class CardChecker
-    def initialize(api_key, proj_id)
-      @api_key = api_key
-      @proj_id = proj_id
+    def initialize
+      @api_key = PivotalCardChecker.configuration.api_key
+      @proj_id = PivotalCardChecker.configuration.project_id
     end
 
     # Retrieves the necessary data, then passes it to 5 different checker objects,
@@ -74,8 +70,8 @@ module PivotalCardChecker
 
     # This is the public check_cards method, it creates a new PivotalCardChecker
     # object, and runs the private check_cards method.
-    def self.check_cards(api_key, proj_id, generate_sys_to_deploy = true)
-      card_checker = new(api_key, proj_id)
+    def self.check_cards(generate_sys_to_deploy = true)
+      card_checker = new
       # This (below) appends the 'Systems to deploy: ' info to the card report,
       # if generate_sys_to_deploy is true, else append ''.
       card_checker.check_cards << (generate_sys_to_deploy ? card_checker.generate_systems_to_deploy : '')
@@ -94,8 +90,8 @@ module PivotalCardChecker
 
     # The public method that creates a new PivotalCardChecker and then calls
     # the private create_deploy_card method.
-    def self.create_deploy_card(api_key, proj_id, default_labels)
-      card_checker = new(api_key, proj_id)
+    def self.create_deploy_card(default_labels)
+      card_checker = new
       card_checker.create_deploy_card(default_labels)
     end
 
