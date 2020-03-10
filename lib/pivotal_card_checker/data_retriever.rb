@@ -6,14 +6,14 @@ module PivotalCardChecker
       @proj_id = proj_id
       @result = []
       client = TrackerApi::Client.new(token: @api_key)
-      @hedgeye_project = client.project(@proj_id)
+      @project = client.project(@proj_id)
     end
 
     # Retrieves the current iteration and iterations in the backlog, processes
     # them (gets the story cards out)m then returns the story cards in a list.
     def retrieve_data
-      iterations = @hedgeye_project.iterations(scope: :current_backlog,
-                                               fields: "stories(:default,comments,owners)")
+      iterations = @project.iterations(scope: :current_backlog,
+                                       fields: "stories(:default,comments,owners)")
 
       process_iterations(iterations, iterations.first.number)
       @result
@@ -22,7 +22,7 @@ module PivotalCardChecker
     # Retrieves all of the epic labels in the project.
     def retrieve_epics
       labels = []
-      @hedgeye_project.epics.each do |epic|
+      @project.epics.each do |epic|
         labels << epic.label.name
       end
       labels

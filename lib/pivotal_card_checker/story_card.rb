@@ -31,8 +31,10 @@ module PivotalCardChecker
       search_results.each do |current_comment|
         temp = current_comment.split(%r{/github.com\/(.*?)\/(.*?)\/})[2]
         if temp
-          temp = temp[8...temp.length] if temp.include? 'hedgeye-'
-          system_labels_detected << temp.tr('_', ' ') if ALL_SYSTEM_LABELS.include? temp.tr('_', ' ')
+          if (prefix = PivotalCardChecker.configuration.project_prefix)
+            temp = temp[prefix.length...temp.length] if temp.include? prefix
+          end
+          system_labels_detected << temp.tr('_', ' ') if PivotalCardChecker.configuration.all_system_labels.include? temp.tr('_', ' ')
         end
       end
       system_labels_detected.to_a
@@ -89,7 +91,7 @@ module PivotalCardChecker
       sys_labels = Set.new
       unless @labels.nil?
         @labels.each do |label|
-          sys_labels << label.name if ALL_SYSTEM_LABELS.include? label.name
+          sys_labels << label.name if PivotalCardChecker.configuration.all_system_labels.include? label.name
         end
       end
       sys_labels.to_a
