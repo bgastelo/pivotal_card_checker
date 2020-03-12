@@ -14,6 +14,7 @@ require 'pivotal_card_checker/checkers/other_issues_checker'
 require 'pivotal_card_checker/checkers/sys_to_deploy_checker'
 require 'pivotal_card_checker/checkers/epic_cards_checker'
 require 'pivotal_card_checker/checkers/all_cards_assigned_checker'
+require 'pivotal_card_checker/configuration'
 require 'tracker_api'
 
 module PivotalCardChecker
