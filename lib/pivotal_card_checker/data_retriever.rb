@@ -9,6 +9,10 @@ module PivotalCardChecker
       @project = client.project(@proj_id)
     end
 
+    def search_stories(filter)
+      @project.stories(filter: filter)
+    end
+
     # Retrieves the current iteration and iterations in the backlog, processes
     # them (gets the story cards out)m then returns the story cards in a list.
     def retrieve_data

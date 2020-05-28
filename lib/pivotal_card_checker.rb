@@ -78,6 +78,20 @@ module PivotalCardChecker
       card_checker.check_cards << (generate_sys_to_deploy ? card_checker.generate_systems_to_deploy : '')
     end
 
+    def validate_cards
+      retriever = DataRetriever.new(@api_key, @proj_id)
+      unstarted = retriever.search_stories('state:unstarted -type:release')
+      unassigned = unstarted.select { |story| story.owners.none? }
+                            .map { |story| CardViolation.new(story, 'No owner') }
+      unestimated = unstarted.select { |story| story.story_type == 'feature' && story.estimate.nil? }
+                            .map { |story| CardViolation.new(story, 'No estimate') }
+      ReportGenerator.new(unassigned + unestimated, nil).generate_validation_report
+    end
+
+    def self.validate_cards
+      new.validate_cards
+    end
+
     # Calls the find_systems_to_deploy method, then returns a string with the
     # output.
     def generate_systems_to_deploy
