@@ -9,11 +9,18 @@ module PivotalCardChecker
     # Initializes the report, processes the card info data, and then returns the
     # report, as a string.
     def generate_report
+      report_formatting do
+        print_card_violations
+      end
+    end
+
+    # Basic format for the report with a title and clean report message
+    def report_formatting
       report = "========= Pivotal Card Checker ===========\n"
       if @bad_card_info.empty?
         report << "CONGRATS! No card violations.\n\n"
       else
-        report << print_card_violations
+        report << yield
       end
     end
 
@@ -31,6 +38,16 @@ module PivotalCardChecker
         card_violations <<  "\n"
       end
       card_violations
+    end
+
+    def generate_validation_report
+      report_formatting do
+        print_validation_results
+      end
+    end
+
+    def print_validation_results
+      print_section("Card validation errors:\n", @bad_card_info, true)
     end
 
     # Appends a section to the report. This includes the section heading (missing system label(s),
