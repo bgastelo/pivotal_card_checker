@@ -60,9 +60,13 @@ called `main` or `business-main` using the example above.
 repo: "pivotal_card_checker" becomes label: "pivotal card checker"
 ``` 
 
+There is a special label "configuration" which is used to designate cards that require 
+acceptance, but do not have code commits.
+
 ## Example Project
 
-Sinatra is a simple Ruby web server. This example shows how to create HTTP endpoints for the card checker's actions.
+Sinatra is a simple Ruby web server. This example shows how to create HTTP endpoints for 
+the card checker's actions.
 
 ```ruby
 require 'sinatra'
