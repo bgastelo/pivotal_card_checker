@@ -60,7 +60,56 @@ called `main` or `business-main` using the example above.
 repo: "pivotal_card_checker" becomes label: "pivotal card checker"
 ``` 
 
+There is a special label "configuration" which is used to designate cards that require 
+acceptance, but do not have code commits.
+
+## Example Project
+
+Sinatra is a simple Ruby web server. This example shows how to create HTTP endpoints for 
+the card checker's actions.
+
+```ruby
+require 'sinatra'
+require 'pivotal_card_checker'
+
+PivotalCardChecker.configure do |config|
+  config.api_key = ENV['API_KEY']
+  config.project_id = ENV['PROJECT_ID']
+  config.project_prefix = 'company-'
+  config.label_urls = {
+    'app' => 'www.example.com',
+    'images' => 'images.example.com'
+  }
+  config.all_system_labels = ['app', 'images', 'admin']
+end
+
+get '/report' do
+  content_type 'text'
+  PivotalCardChecker::CardChecker.check_cards
+end
+
+get '/deploy_card' do
+  DEPLOY_LABEL = 'deploy'
+  result = PivotalCardChecker::CardChecker.create_deploy_card([DEPLOY_LABEL])
+
+  content_type 'text'
+  if result.is_a?(Array)
+    "Successfully created deploy card: https://www.pivotaltracker.com/story/show/#{result[3]}"
+  else
+    result
+  end
+end
+
+get '/validate' do
+  content_type 'text'
+  PivotalCardChecker::CardChecker.validate_cards
+end
+```
+
 ## Changelog
+
+#### 0.1.1
+Add special label for configuration-only cards
 
 #### 0.1.0
 Add Configuration object

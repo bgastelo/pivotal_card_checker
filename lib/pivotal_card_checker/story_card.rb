@@ -43,12 +43,7 @@ module PivotalCardChecker
     # Checks if a list of labels (labels) contains the label we're looking
     # for (label_looking_for).
     def has_label?(label_looking_for)
-      unless @labels.nil?
-        @labels.each do |label|
-          return true if label.name == label_looking_for
-        end
-      end
-      false
+      @labels&.any? { |label| label.name == label_looking_for }
     end
 
     # Looks through a list of comments (comments) for a string (search_string),
@@ -95,6 +90,10 @@ module PivotalCardChecker
         end
       end
       sys_labels.to_a
+    end
+
+    def configuration_label?
+      has_label?('configuration')
     end
 
     # Returns a list of epic labels, from the labels list.

@@ -15,7 +15,7 @@ module PivotalCardChecker
       # Checks if the given story card violates any of the rules outlined below.
       def violation_validation(story_card, has_commits)
         state = story_card.current_state
-        if state == 'finished' && !has_commits
+        if state == 'finished' && !has_commits && !story_card.configuration_label?
           @results[story_card] = 'Card is marked \'finished\', but has no commits.'
         elsif state == 'delivered' &&
               !story_card.has_comment_that_contains?('staging acceptance')

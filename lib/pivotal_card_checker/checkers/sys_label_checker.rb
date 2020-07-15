@@ -20,7 +20,7 @@ module PivotalCardChecker
       def sys_label_violation_check(story_card, sys_labels_on_story)
         sys_labels_from_comments = story_card.get_system_label_from_commit
         if sys_labels_on_story.empty?
-          if sys_labels_from_comments.empty?
+          if sys_labels_from_comments.empty? && !story_card.configuration_label?
             @results[story_card] = 'No system labels detected (reader, cms, dct, etc...)'
           else
             @results[story_card] = "Did not find expected label(s): '#{sys_labels_from_comments.join('\', \'')}'"
